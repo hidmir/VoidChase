@@ -5,6 +5,7 @@ namespace VoidChase.Spaceship.Input
 	public class SpaceshipInputProvider : SingletonMonoBehaviour<SpaceshipInputProvider>
 	{
 		public InputAction MovementInputAction => CurrentSpaceshipInput.Controlls.Movement;
+		public InputAction ShootInputAction => CurrentSpaceshipInput.Controlls.Shoot;
 		
 		private SpaceshipInput CurrentSpaceshipInput { get; set; }
 

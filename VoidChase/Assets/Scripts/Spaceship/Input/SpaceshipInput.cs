@@ -37,6 +37,15 @@ namespace VoidChase.Spaceship.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""1b3edc64-f9fc-44a6-96e9-d0c741e5dcf3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -94,6 +103,17 @@ namespace VoidChase.Spaceship.Input
                     ""action"": ""Movement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""99c36447-c75a-400e-a054-6cfae49b3581"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -103,6 +123,7 @@ namespace VoidChase.Spaceship.Input
             // Controlls
             m_Controlls = asset.FindActionMap("Controlls", throwIfNotFound: true);
             m_Controlls_Movement = m_Controlls.FindAction("Movement", throwIfNotFound: true);
+            m_Controlls_Shoot = m_Controlls.FindAction("Shoot", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -165,11 +186,13 @@ namespace VoidChase.Spaceship.Input
         private readonly InputActionMap m_Controlls;
         private List<IControllsActions> m_ControllsActionsCallbackInterfaces = new List<IControllsActions>();
         private readonly InputAction m_Controlls_Movement;
+        private readonly InputAction m_Controlls_Shoot;
         public struct ControllsActions
         {
             private @SpaceshipInput m_Wrapper;
             public ControllsActions(@SpaceshipInput wrapper) { m_Wrapper = wrapper; }
             public InputAction @Movement => m_Wrapper.m_Controlls_Movement;
+            public InputAction @Shoot => m_Wrapper.m_Controlls_Shoot;
             public InputActionMap Get() { return m_Wrapper.m_Controlls; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -182,6 +205,9 @@ namespace VoidChase.Spaceship.Input
                 @Movement.started += instance.OnMovement;
                 @Movement.performed += instance.OnMovement;
                 @Movement.canceled += instance.OnMovement;
+                @Shoot.started += instance.OnShoot;
+                @Shoot.performed += instance.OnShoot;
+                @Shoot.canceled += instance.OnShoot;
             }
 
             private void UnregisterCallbacks(IControllsActions instance)
@@ -189,6 +215,9 @@ namespace VoidChase.Spaceship.Input
                 @Movement.started -= instance.OnMovement;
                 @Movement.performed -= instance.OnMovement;
                 @Movement.canceled -= instance.OnMovement;
+                @Shoot.started -= instance.OnShoot;
+                @Shoot.performed -= instance.OnShoot;
+                @Shoot.canceled -= instance.OnShoot;
             }
 
             public void RemoveCallbacks(IControllsActions instance)
@@ -209,6 +238,7 @@ namespace VoidChase.Spaceship.Input
         public interface IControllsActions
         {
             void OnMovement(InputAction.CallbackContext context);
+            void OnShoot(InputAction.CallbackContext context);
         }
     }
 }
