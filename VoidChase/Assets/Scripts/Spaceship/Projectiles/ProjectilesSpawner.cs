@@ -19,6 +19,8 @@ namespace VoidChase.Spaceship.Projectiles
 
 		private float TimeSinceLastSpawning { get; set; }
 
+		private const string INCORRECT_SPAWNING_RANGE_AXIS_VALUE = "SpawningRangeAxis value is incorrect ({0}).";
+
 		protected virtual void Update ()
 		{
 			SpawnProjectiles();
@@ -65,8 +67,17 @@ namespace VoidChase.Spaceship.Projectiles
 		private (float minPositionValue, float maxPositionValue) GetSpawnPositionMinMaxValue ()
 		{
 			Vector3 currentPosition = transform.position;
-			float minPositionValue = currentPosition.x - (SpawningAreaSize / 2.0f);
-			float maxPositionValue = currentPosition.x + (SpawningAreaSize / 2.0f);
+
+			float currentPositionOnSpawningAxisValue = SpawningRangeAxis switch
+			{
+				Axis.X => currentPosition.x,
+				Axis.Y => currentPosition.y,
+				Axis.Z => currentPosition.z,
+				_ => throw new ArgumentException(String.Format(INCORRECT_SPAWNING_RANGE_AXIS_VALUE, SpawningRangeAxis))
+			};
+
+			float minPositionValue = currentPositionOnSpawningAxisValue - (SpawningAreaSize / 2.0f);
+			float maxPositionValue = currentPositionOnSpawningAxisValue + (SpawningAreaSize / 2.0f);
 
 			return (minPositionValue, maxPositionValue);
 		}
@@ -80,7 +91,7 @@ namespace VoidChase.Spaceship.Projectiles
 				Axis.X => new Vector3(positionOnSpawningAxisValue, currentPosition.y, currentPosition.z),
 				Axis.Y => new Vector3(currentPosition.x, positionOnSpawningAxisValue, currentPosition.z),
 				Axis.Z => new Vector3(currentPosition.x, currentPosition.y, positionOnSpawningAxisValue),
-				_ => throw new ArgumentException($"SpawningRangeAxis value is incorrect ({SpawningRangeAxis}).")
+				_ => throw new ArgumentException(String.Format(INCORRECT_SPAWNING_RANGE_AXIS_VALUE, SpawningRangeAxis))
 			};
 		}
 
