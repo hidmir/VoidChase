@@ -1,67 +1,9 @@
-using System;
-using UnityEngine;
+using VoidChase.BaseFunctionalities.MovingObjects;
 
 namespace VoidChase.Spaceship.Projectiles
 {
-	public class ProjectileController : MonoBehaviour
+	public class ProjectileController : MovingObjectController
 	{
-		public event Action<ProjectileController> Hit = delegate { };
-		public event Action<ProjectileController> ReachLifeTime = delegate { };
 		
-		[field: SerializeField]
-		private float Speed { get; set; } = 5.0f;
-		[field: SerializeField]
-		private float LifeTime { get; set; } = 5.0f;
-
-		private Vector3 Direction { get; set; }
-		private bool IsLaunched { get; set; }
-		private float TimeSinceLaunching { get; set; }
-
-		public void Initialize ()
-		{
-			gameObject.SetActive(true);
-		}
-
-		public void Launch (Vector3 position, Vector3 direction)
-		{
-			transform.position = position;
-			Direction = direction;
-			IsLaunched = true;
-			transform.LookAt(position + direction);
-		}
-
-		public void DeInitialize ()
-		{
-			IsLaunched = false;
-			TimeSinceLaunching = 0.0f;
-			gameObject.SetActive(false);
-		}
-
-		protected virtual void Update ()
-		{
-			if (IsLaunched)
-			{
-				UpdateProjectilePosition();
-				UpdateTimeSinceLaunching();
-			}
-		}
-
-		private void UpdateProjectilePosition ()
-		{
-			Vector3 currentPosition = transform.position;
-			Vector3 newPosition = currentPosition + Direction * (Speed * Time.deltaTime);
-
-			transform.position = newPosition;
-		}
-
-		private void UpdateTimeSinceLaunching ()
-		{
-			TimeSinceLaunching += Time.deltaTime;
-
-			if (TimeSinceLaunching > LifeTime)
-			{
-				ReachLifeTime.Invoke(this);
-			}
-		}
 	}
 }
