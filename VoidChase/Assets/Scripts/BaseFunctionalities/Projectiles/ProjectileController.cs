@@ -1,17 +1,19 @@
 using System;
 using UnityEngine;
 
-namespace VoidChase.BaseFunctionalities.MovingObjects
+namespace VoidChase.BaseFunctionalities.Projectiles
 {
-	public class MovingObjectController : MonoBehaviour
+	public class ProjectileController : MonoBehaviour
 	{
-		public event Action<MovingObjectController> Hit = delegate { };
-		public event Action<MovingObjectController> ReachLifeTime = delegate { };
-		
+		public event Action<ProjectileController> Hit = delegate { };
+		public event Action<ProjectileController> ReachLifeTime = delegate { };
+
 		[field: SerializeField]
 		private float Speed { get; set; } = 5.0f;
 		[field: SerializeField]
 		private float LifeTime { get; set; } = 5.0f;
+		[field: SerializeField]
+		private float Damage { get; set; } = 1.0f;
 
 		private Vector3 Direction { get; set; }
 		private bool IsLaunched { get; set; }
@@ -37,12 +39,26 @@ namespace VoidChase.BaseFunctionalities.MovingObjects
 			gameObject.SetActive(false);
 		}
 
+		protected virtual void OnTriggerEnter (Collider other)
+		{
+			AttemptInflictDamage(other);
+		}
+
 		protected virtual void Update ()
 		{
 			if (IsLaunched)
 			{
 				UpdatePosition();
 				UpdateTimeSinceLaunching();
+			}
+		}
+
+		private void AttemptInflictDamage (Collider objectHit)
+		{
+			if (objectHit.TryGetComponent(out IDamageable damageableObject))
+			{
+				damageableObject.InflictDamage(Damage);
+				Hit.Invoke(this);
 			}
 		}
 
