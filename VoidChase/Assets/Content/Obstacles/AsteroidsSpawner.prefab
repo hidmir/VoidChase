@@ -1,0 +1,79 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6390806842860708272
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 40787115564398412, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: <SpawningAreaSize>k__BackingField
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 852007015229080309, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: <Prefab>k__BackingField
+      value: 
+      objectReference: {fileID: 2468650840279676157, guid: d50d54219f86d964e972fe9565713e37, type: 3}
+    - target: {fileID: 2541840142719404782, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541840142719404782, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541840142719404782, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541840142719404782, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541840142719404782, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541840142719404782, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541840142719404782, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541840142719404782, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541840142719404782, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541840142719404782, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2541840142719404782, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975987497091050164, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: m_Name
+      value: AsteroidsSpawner Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975987497091050164, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6633448160534608640, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: <Prefab>k__BackingField
+      value: 
+      objectReference: {fileID: 6032987934638505962, guid: 13871d6b96884ba41917881b4e1d68cc, type: 3}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
