@@ -12,7 +12,11 @@ GameObject:
   - component: {fileID: 1440526249212426859}
   - component: {fileID: 1537589509242610862}
   - component: {fileID: 2991962420599873392}
+  - component: {fileID: 8442645650967325168}
   - component: {fileID: 3077998778934391416}
+  - component: {fileID: 3833649276483660370}
+  - component: {fileID: 6867326702459676214}
+  - component: {fileID: 9082218964479537466}
   m_Layer: 11
   m_Name: Projectile
   m_TagString: Untagged
@@ -106,6 +110,33 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8442645650967325168
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7918798587128658988}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &3077998778934391416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +149,76 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9d40a3148b74d4cbfeda57522a25e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CurrentModulesCollectionController>k__BackingField: {fileID: 6867326702459676214}
+  <CurrentMovementBehaviour>k__BackingField: {fileID: 3833649276483660370}
+--- !u!114 &3833649276483660370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7918798587128658988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c775d7a62902fee44a20b3242b5e52ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ReachLifeTime>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3077998778934391416}
+        m_TargetAssemblyTypeName: VoidChase.Projectiles.ProjectileController, Assembly-CSharp
+        m_MethodName: InvokeRequestDestroying
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <Speed>k__BackingField: 5
   <LifeTime>k__BackingField: 5
+--- !u!114 &6867326702459676214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7918798587128658988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a97c7805fb47274f8d3ca2faa400eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ModulesCollection>k__BackingField:
+  - {fileID: 9082218964479537466}
+--- !u!114 &9082218964479537466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7918798587128658988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031ac09bf6601374e962c837d7c596c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Hit>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3077998778934391416}
+        m_TargetAssemblyTypeName: VoidChase.Projectiles.ProjectileController, Assembly-CSharp
+        m_MethodName: InvokeRequestDestroying
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   <Damage>k__BackingField: 1

@@ -116,7 +116,9 @@ GameObject:
   - component: {fileID: 365028535777279767}
   - component: {fileID: 4826380615108255417}
   - component: {fileID: 6736650881678472343}
+  - component: {fileID: 7234503036437399120}
   - component: {fileID: 1112339697371281313}
+  - component: {fileID: 329524527147026208}
   m_Layer: 10
   m_Name: Spaceship
   m_TagString: Untagged
@@ -171,7 +173,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616801e6ec1ada747a6c0a3df62021ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <CurrentProjectilesPool>k__BackingField: {fileID: 0}
+  <CurrentProjectilesSpawner>k__BackingField: {fileID: 0}
+--- !u!114 &7234503036437399120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985252912011618827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7b049043e9c5e245bd0760cb158cde1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Die>k__BackingField:
+    m_PersistentCalls:
+      m_Calls: []
+  <Health>k__BackingField: 2
 --- !u!54 &1112339697371281313
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -199,6 +217,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!65 &329524527147026208
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985252912011618827}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3.6, y: 1, z: 2.71}
+  m_Center: {x: 0, y: 0, z: 0.15}
 --- !u!1001 &4971541951144656352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -287,7 +326,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4947833891431265406, guid: 7948a865326e2044badc8674741859a3, type: 3}
+    - {fileID: 504069550050255393, guid: 7948a865326e2044badc8674741859a3, type: 3}
+    - {fileID: 7832676304211077147, guid: 7948a865326e2044badc8674741859a3, type: 3}
+    - {fileID: 5654762067785778328, guid: 7948a865326e2044badc8674741859a3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -361,7 +404,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8347101894503641560, guid: c6735a71c95d4834798b4964b68269d2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -435,7 +479,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8347101894503641560, guid: c6735a71c95d4834798b4964b68269d2, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -533,7 +578,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4947833891431265406, guid: 7948a865326e2044badc8674741859a3, type: 3}
+    - {fileID: 504069550050255393, guid: 7948a865326e2044badc8674741859a3, type: 3}
+    - {fileID: 7832676304211077147, guid: 7948a865326e2044badc8674741859a3, type: 3}
+    - {fileID: 5654762067785778328, guid: 7948a865326e2044badc8674741859a3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
