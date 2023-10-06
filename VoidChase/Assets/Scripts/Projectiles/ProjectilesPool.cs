@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Pool;
 
-namespace VoidChase.BaseFunctionalities.Projectiles
+namespace VoidChase.Projectiles
 {
 	public class ProjectilesPool : MonoBehaviour
 	{

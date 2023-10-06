@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using VoidChase.BaseFunctionalities.Projectiles;
+using VoidChase.Projectiles;
 using VoidChase.Spaceship.Input;
 
 namespace VoidChase.Spaceship

@@ -2,10 +2,12 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace VoidChase.BaseFunctionalities.Projectiles
+namespace VoidChase.Projectiles
 {
-	public class AreaProjectilesSpawner : ProjectilesSpawner
+	public class AreaProjectilesSpawner : MonoBehaviour
 	{
+		[field: SerializeField]
+		private ProjectilesSpawner CurrentProjectilesSpawner { get; set; }
 		[field: SerializeField]
 		private float SpawningFrequency { get; set; } = 1.0f;
 		[field: SerializeField]
@@ -36,7 +38,7 @@ namespace VoidChase.BaseFunctionalities.Projectiles
 			if (CanSpawnMovingObject())
 			{
 				Vector3 position = GetRandomPosition();
-				Spawn(position, SpawningDirection);
+				CurrentProjectilesSpawner.Spawn(position, SpawningDirection);
 
 				TimeSinceLastSpawning = 0.0f;
 			}

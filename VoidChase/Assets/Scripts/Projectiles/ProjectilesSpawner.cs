@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace VoidChase.BaseFunctionalities.Projectiles
+namespace VoidChase.Projectiles
 {
 	public class ProjectilesSpawner : MonoBehaviour
 	{
@@ -16,22 +16,15 @@ namespace VoidChase.BaseFunctionalities.Projectiles
 
 		protected virtual void AttachToProjectileEvents (ProjectileController projectile)
 		{
-			projectile.ReachLifeTime += OnReachLifeTime;
-			projectile.Hit += OnHit;
+			projectile.RequestDestroying += OnRequestDestroying;
 		}
 
 		protected virtual void DetachFromProjectileEvents (ProjectileController projectile)
 		{
-			projectile.ReachLifeTime -= OnReachLifeTime;
-			projectile.Hit -= OnHit;
+			projectile.RequestDestroying -= OnRequestDestroying;
 		}
 
-		private void OnReachLifeTime (ProjectileController projectile)
-		{
-			DeSpawnProjectile(projectile);
-		}
-
-		private void OnHit (ProjectileController projectile)
+		private void OnRequestDestroying (ProjectileController projectile)
 		{
 			DeSpawnProjectile(projectile);
 		}
