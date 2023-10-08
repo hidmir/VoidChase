@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using VoidChase.Utilities;
 using Random = UnityEngine.Random;
 
 namespace VoidChase.Projectiles

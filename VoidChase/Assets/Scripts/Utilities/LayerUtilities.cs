@@ -1,9 +1,12 @@
 using UnityEngine;
 
-public static class LayerUtilities
+namespace VoidChase.Utilities
 {
-	public static bool IsEqual(LayerMask firstLayer, int layerNumber)
+	public static class LayerUtilities
 	{
-		return Mathf.Approximately(Mathf.Pow(2, layerNumber), firstLayer);
+		public static bool IsEqual (LayerMask firstLayer, int layerNumber)
+		{
+			return Mathf.Approximately(Mathf.Pow(2, layerNumber), firstLayer);
+		}
 	}
 }

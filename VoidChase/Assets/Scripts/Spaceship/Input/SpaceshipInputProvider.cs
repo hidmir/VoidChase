@@ -1,4 +1,5 @@
 using UnityEngine.InputSystem;
+using VoidChase.Utilities;
 
 namespace VoidChase.Spaceship.Input
 {

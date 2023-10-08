@@ -1,30 +1,30 @@
 using UnityEngine;
 
-public class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBehaviour<T>
+namespace VoidChase.Utilities
 {
-	public static T Instance { get; private set; }
-
-	protected virtual void Awake()
+	public class SingletonMonoBehaviour<T> : MonoBehaviour where T : SingletonMonoBehaviour<T>
 	{
-		if (Instance == null)
+		public static T Instance { get; private set; }
+
+		protected virtual void Awake ()
 		{
-			Instance = (T) this;
+			if (Instance == null)
+			{
+				Instance = (T) this;
+			}
+			else
+			{
+				Destroy(this);
+			}
+
+			Initialize();
 		}
-		else
+
+		protected virtual void Initialize () { }
+
+		private void OnDestroy ()
 		{
-			Destroy(this);
+			Instance = null;
 		}
-
-		Initialize();
-	}
-
-	protected virtual void Initialize()
-	{
-		
-	}
-
-	private void OnDestroy()
-	{
-		Instance = null;
 	}
 }
