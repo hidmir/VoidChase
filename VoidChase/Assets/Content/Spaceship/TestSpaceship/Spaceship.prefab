@@ -158,9 +158,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fd6136e5aa1e3947a51e4fd3d94fc11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <CurrentRigidbody>k__BackingField: {fileID: 1112339697371281313}
   <MovementSpeed>k__BackingField: 5
   <BrakingSpeed>k__BackingField: 5
-  <CurrentRigidbody>k__BackingField: {fileID: 1112339697371281313}
 --- !u!114 &6736650881678472343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616801e6ec1ada747a6c0a3df62021ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <CurrentProjectilesSpawner>k__BackingField: {fileID: 0}
+  <CurrentWeapon>k__BackingField: {fileID: 0}
 --- !u!114 &7234503036437399120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
   <Die>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
-  <Health>k__BackingField: 2
+  <InitialHealth>k__BackingField: 1
 --- !u!54 &1112339697371281313
 Rigidbody:
   m_ObjectHideFlags: 0
