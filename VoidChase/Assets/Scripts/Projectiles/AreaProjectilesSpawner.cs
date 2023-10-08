@@ -17,6 +17,8 @@ namespace VoidChase.Projectiles
 		private float SpawningAreaSize { get; set; } = 5.0f;
 		[field: SerializeField]
 		private Axis SpawningRangeAxis { get; set; } = Axis.X;
+		[field: SerializeField]
+		private bool IsAffectedByGameSpeed { get; set; } = true;
 
 		[field: Header(InspectorNames.VISUALIZATION_NAME)]
 		[field: SerializeField]
@@ -53,7 +55,8 @@ namespace VoidChase.Projectiles
 
 		private bool CanSpawnMovingObject ()
 		{
-			return TimeSinceLastSpawning > 1.0f / (SpawningFrequency * GetCurrentGameSpeed());
+			float frequency = IsAffectedByGameSpeed ? SpawningFrequency * GetCurrentGameSpeed() : SpawningFrequency;
+			return TimeSinceLastSpawning > 1.0f / frequency;
 		}
 
 		private float GetCurrentGameSpeed ()
