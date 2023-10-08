@@ -7,7 +7,7 @@ namespace VoidChase.Spaceship.Input
 	{
 		public InputAction MovementInputAction => CurrentSpaceshipInput.Controlls.Movement;
 		public InputAction ShootInputAction => CurrentSpaceshipInput.Controlls.Shoot;
-		
+
 		private SpaceshipInput CurrentSpaceshipInput { get; set; }
 
 		protected override void Initialize ()

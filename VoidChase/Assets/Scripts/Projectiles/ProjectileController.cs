@@ -1,14 +1,15 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using VoidChase.Modules;
+using VoidChase.Utilities;
 
 namespace VoidChase.Projectiles
 {
 	public class ProjectileController : MonoBehaviour
 	{
 		public event Action<ProjectileController> RequestDestroying = delegate { };
-		
+
+		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
 		private ProjectileMovementBehaviour CurrentMovementBehaviour { get; set; }
 		[field: SerializeField]

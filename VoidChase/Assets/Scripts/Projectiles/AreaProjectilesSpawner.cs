@@ -9,6 +9,8 @@ namespace VoidChase.Projectiles
 	{
 		[field: SerializeField]
 		private ProjectilesSpawner CurrentProjectilesSpawner { get; set; }
+
+		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
 		private float SpawningFrequency { get; set; } = 1.0f;
 		[field: SerializeField]

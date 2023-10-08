@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.Events;
+using VoidChase.Utilities;
 
 namespace VoidChase.Projectiles
 {
 	public class ProjectileMovementBehaviour : MonoBehaviour
 	{
+		[field: Header(InspectorNames.EVENTS_NAME)]
 		[field: SerializeField]
 		public UnityEvent ReachLifeTime { get; private set; }
 
+		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
 		private float Speed { get; set; } = 5.0f;
 		[field: SerializeField]

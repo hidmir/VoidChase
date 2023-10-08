@@ -1,9 +1,11 @@
 using UnityEngine;
+using VoidChase.Utilities;
 
 namespace VoidChase.Projectiles
 {
 	public class ProjectilesSpawner : MonoBehaviour
 	{
+		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
 		protected ProjectilesPool CurrentProjectilesPool { get; private set; }
 

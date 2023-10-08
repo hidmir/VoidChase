@@ -2,11 +2,13 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using VoidChase.Projectiles;
 using VoidChase.Spaceship.Input;
+using VoidChase.Utilities;
 
 namespace VoidChase.Spaceship
 {
 	public class ShootingController : MonoBehaviour
 	{
+		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
 		private ProjectilesSpawner CurrentProjectilesSpawner { get; set; }
 

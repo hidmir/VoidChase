@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.Pool;
+using VoidChase.Utilities;
 
 namespace VoidChase.Projectiles
 {
 	public class ProjectilesPool : MonoBehaviour
 	{
+		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
 		private int PoolSize { get; set; } = 50;
 		[field: SerializeField]

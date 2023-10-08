@@ -1,13 +1,16 @@
 using UnityEngine;
 using UnityEngine.Events;
+using VoidChase.Utilities;
 
 namespace VoidChase.Modules
 {
 	public class DestructibleModule : BaseModule, IDamageable
 	{
+		[field: Header(InspectorNames.EVENTS_NAME)]
 		[field: SerializeField]
 		public UnityEvent Die { get; set; }
 
+		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
 		private float InitialHealth { get; set; } = 1.0f;
 		
