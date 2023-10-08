@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using VoidChase.Projectiles;
 using VoidChase.Spaceship.Input;
+using VoidChase.Spaceship.Weapons;
 using VoidChase.Utilities;
 
 namespace VoidChase.Spaceship
@@ -10,7 +10,7 @@ namespace VoidChase.Spaceship
 	{
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
-		private ProjectilesSpawner CurrentProjectilesSpawner { get; set; }
+		private BaseWeapon CurrentWeapon { get; set; }
 
 		protected virtual void Start ()
 		{
@@ -37,7 +37,7 @@ namespace VoidChase.Spaceship
 
 		private void OnShoot (InputAction.CallbackContext obj)
 		{
-			CurrentProjectilesSpawner.Spawn(transform.position, transform.forward);
+			CurrentWeapon.Shoot(transform.position);
 		}
 	}
 }
