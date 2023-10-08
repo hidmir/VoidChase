@@ -17,6 +17,12 @@ namespace VoidChase.Projectiles
 		[field: SerializeField]
 		private Axis SpawningRangeAxis { get; set; } = Axis.X;
 
+		[field: Header(InspectorNames.VISUALIZATION_NAME)]
+		[field: SerializeField]
+		private Color VisualizationColor { get; set; } = Color.yellow;
+		[field: SerializeField]
+		private float VisualizationWidth { get; set; } = 0.5f;
+
 		private float TimeSinceLastSpawning { get; set; }
 
 		private const string INCORRECT_SPAWNING_RANGE_AXIS_VALUE = "SpawningRangeAxis value is incorrect ({0}).";
@@ -98,8 +104,8 @@ namespace VoidChase.Projectiles
 		{
 			(Vector3 minPosition, Vector3 maxPosition) = GetSpawnMinMaxPosition();
 
-			Gizmos.color = Color.yellow;
-			GizmosExtensions.DrawWireCapsule(minPosition, maxPosition, 0.5f);
+			Gizmos.color = VisualizationColor;
+			GizmosExtensions.DrawWireCapsule(minPosition, maxPosition, VisualizationWidth);
 		}
 
 		private (Vector3 minPosition, Vector3 maxPosition) GetSpawnMinMaxPosition ()
