@@ -29,7 +29,10 @@ namespace VoidChase.Spaceship
 
 		private void DetachFromEvents ()
 		{
-			SpaceshipInputProvider.Instance.ShootInputAction.performed -= OnShoot;
+			if (SpaceshipInputProvider.Instance != null)
+			{
+				SpaceshipInputProvider.Instance.ShootInputAction.performed -= OnShoot;
+			}
 		}
 
 		private void OnShoot (InputAction.CallbackContext obj)
