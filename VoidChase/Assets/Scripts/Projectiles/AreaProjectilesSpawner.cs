@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using VoidChase.GameManagement;
 using VoidChase.Utilities;
 using Random = UnityEngine.Random;
 
@@ -52,7 +53,12 @@ namespace VoidChase.Projectiles
 
 		private bool CanSpawnMovingObject ()
 		{
-			return TimeSinceLastSpawning > 1.0f / SpawningFrequency;
+			return TimeSinceLastSpawning > 1.0f / (SpawningFrequency * GetCurrentGameSpeed());
+		}
+
+		private float GetCurrentGameSpeed ()
+		{
+			return GameManager.Instance.CurrentGameSpeedController.CurrentSpeed;
 		}
 
 		private Vector3 GetRandomPosition ()

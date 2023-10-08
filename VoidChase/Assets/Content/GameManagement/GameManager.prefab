@@ -30,6 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8839746769604211987}
+  - {fileID: 2794605664120768616}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -46,6 +47,84 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <CurrentSceneBoundariesController>k__BackingField: {fileID: 8596379471014861169}
+  <CurrentGameSpeedController>k__BackingField: {fileID: 4871247201556165896}
+--- !u!1001 &1128973298070722402
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3479532927116864701}
+    m_Modifications:
+    - target: {fileID: 2982091245525835530, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982091245525835530, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982091245525835530, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982091245525835530, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982091245525835530, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982091245525835530, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982091245525835530, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982091245525835530, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982091245525835530, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982091245525835530, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2982091245525835530, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3055886196108531375, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+      propertyPath: m_Name
+      value: GameSpeedController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+--- !u!4 &2794605664120768616 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2982091245525835530, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+  m_PrefabInstance: {fileID: 1128973298070722402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4871247201556165896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5490115265460363882, guid: 374f42124046a8a4dace62638e28a7ca, type: 3}
+  m_PrefabInstance: {fileID: 1128973298070722402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3bf20d112d7c2e40b91907f0c1b0cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2086043139904086266
 PrefabInstance:
   m_ObjectHideFlags: 0
