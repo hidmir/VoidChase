@@ -3,7 +3,7 @@ using VoidChase.Utilities;
 
 namespace VoidChase.MovingObjects
 {
-	public class MovingObjectsSpawner : MonoBehaviour
+	public class MovingObjectsSpawner : BaseMovingObjectsSpawner
 	{
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
@@ -24,7 +24,7 @@ namespace VoidChase.MovingObjects
 
 		private MovingObjectsPool cachedPool;
 
-		public void Spawn (Vector3 position, Vector3 direction)
+		public override void Spawn (Vector3 position, Vector3 direction)
 		{
 			MovingObjectController movingObject = CurrentPool.Get();
 			AttachToEvents(movingObject);

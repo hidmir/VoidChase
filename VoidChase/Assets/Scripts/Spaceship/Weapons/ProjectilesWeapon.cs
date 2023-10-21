@@ -9,7 +9,7 @@ namespace VoidChase.Spaceship.Weapons
 	{
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
-		private MovingObjectsSpawner CurrentMovingObjectsSpawner { get; set; }
+		private BaseMovingObjectsSpawner CurrentMovingObjectsSpawner { get; set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]

@@ -6,8 +6,12 @@ using Random = UnityEngine.Random;
 
 namespace VoidChase.MovingObjects
 {
-	public class AreaMovingObjectsSpawner : MovingObjectsSpawner
+	public class AreaMovingObjectsEmitter : MonoBehaviour
 	{
+		[field: Header(InspectorNames.REFERENCES_NAME)]
+		[field: SerializeField]
+		private BaseMovingObjectsSpawner Spawner { get; set; }
+
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
 		private float SpawningFrequency { get; set; } = 1.0f;
@@ -47,7 +51,7 @@ namespace VoidChase.MovingObjects
 			if (CanSpawnMovingObject())
 			{
 				Vector3 position = GetRandomPosition();
-				Spawn(position, SpawningDirection);
+				Spawner.Spawn(position, SpawningDirection);
 
 				TimeSinceLastSpawning = 0.0f;
 			}
