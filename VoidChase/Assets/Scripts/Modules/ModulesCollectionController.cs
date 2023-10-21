@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace VoidChase.Modules
@@ -14,6 +15,11 @@ namespace VoidChase.Modules
 			{
 				module.Initialize();
 			}
+		}
+
+		protected virtual void Reset ()
+		{
+			ModulesCollection = GetComponents<BaseModule>().ToList();
 		}
 	}
 }

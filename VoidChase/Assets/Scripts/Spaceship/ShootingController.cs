@@ -14,9 +14,15 @@ namespace VoidChase.Spaceship
 
 		private BaseWeapon CurrentWeapon { get; set; }
 
+		public void SelectWeapon (string weaponName)
+		{
+			WeaponsProvider.Instance.TryGetObject(weaponName, out BaseWeapon weapon);
+			CurrentWeapon = weapon;
+		}
+
 		protected virtual void Start ()
 		{
-			CacheInitialWeapon();
+			SelectWeapon(InitialWeapon);
 			AttachToEvents();
 		}
 
@@ -41,12 +47,6 @@ namespace VoidChase.Spaceship
 		private void OnShoot (InputAction.CallbackContext obj)
 		{
 			CurrentWeapon.Shoot(transform.position);
-		}
-
-		private void CacheInitialWeapon ()
-		{
-			WeaponsProvider.Instance.TryGetObject(InitialWeapon, out BaseWeapon weapon);
-			CurrentWeapon = weapon;
 		}
 	}
 }
