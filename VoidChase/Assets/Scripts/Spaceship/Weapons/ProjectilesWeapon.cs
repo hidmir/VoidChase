@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-using VoidChase.Projectiles;
+using VoidChase.MovingObjects;
 using VoidChase.Utilities;
 
 namespace VoidChase.Spaceship.Weapons
@@ -9,7 +9,7 @@ namespace VoidChase.Spaceship.Weapons
 	{
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
-		private ProjectilesSpawner CurrentProjectilesSpawner { get; set; }
+		private MovingObjectsSpawner CurrentMovingObjectsSpawner { get; set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
@@ -19,7 +19,7 @@ namespace VoidChase.Spaceship.Weapons
 		{
 			foreach (ProjectileData projectileData in ProjectilesDataCollection)
 			{
-				CurrentProjectilesSpawner.Spawn(position + projectileData.PositionOffset, projectileData.Direction);
+				CurrentMovingObjectsSpawner.Spawn(position + projectileData.PositionOffset, projectileData.Direction);
 			}
 		}
 	}

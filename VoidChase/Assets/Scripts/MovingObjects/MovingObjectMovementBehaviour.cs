@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using VoidChase.Utilities;
 
-namespace VoidChase.Projectiles
+namespace VoidChase.MovingObjects
 {
-	public class ProjectileMovementBehaviour : MonoBehaviour
+	public class MovingObjectMovementBehaviour : MonoBehaviour
 	{
 		[field: Header(InspectorNames.EVENTS_NAME)]
 		[field: SerializeField]

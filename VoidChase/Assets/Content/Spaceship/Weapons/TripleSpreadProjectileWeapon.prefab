@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43be8d77f24c11f4c8186d82f974dd3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <CurrentProjectilesSpawner>k__BackingField: {fileID: 0}
+  <CurrentMovingObjectsSpawner>k__BackingField: {fileID: 8041997323949149811}
   <ProjectilesDataCollection>k__BackingField:
   - <PositionOffset>k__BackingField: {x: 0.2, y: 0.3, z: 0}
     <Direction>k__BackingField: {x: 0.3, y: 1, z: 0}
@@ -119,3 +119,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6761653920077280632, guid: 76a83a98aa3564a44930ea0fab5d328d, type: 3}
   m_PrefabInstance: {fileID: 7010196933835737118}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8041997323949149811 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1068427390590273133, guid: 76a83a98aa3564a44930ea0fab5d328d, type: 3}
+  m_PrefabInstance: {fileID: 7010196933835737118}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a1de5ad8987c744c870f9dfbd054e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

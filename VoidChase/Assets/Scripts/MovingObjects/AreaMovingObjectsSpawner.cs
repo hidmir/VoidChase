@@ -4,9 +4,9 @@ using VoidChase.GameManagement;
 using VoidChase.Utilities;
 using Random = UnityEngine.Random;
 
-namespace VoidChase.Projectiles
+namespace VoidChase.MovingObjects
 {
-	public class AreaProjectilesSpawner : ProjectilesSpawner
+	public class AreaMovingObjectsSpawner : MovingObjectsSpawner
 	{
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]

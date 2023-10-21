@@ -3,15 +3,15 @@ using UnityEngine;
 using VoidChase.Modules;
 using VoidChase.Utilities;
 
-namespace VoidChase.Projectiles
+namespace VoidChase.MovingObjects
 {
-	public class ProjectileController : MonoBehaviour
+	public class MovingObjectController : MonoBehaviour
 	{
-		public event Action<ProjectileController> RequestDestroying = delegate { };
+		public event Action<MovingObjectController> RequestDestroying = delegate { };
 
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
-		private ProjectileMovementBehaviour CurrentMovementBehaviour { get; set; }
+		private MovingObjectMovementBehaviour CurrentMovementBehaviour { get; set; }
 		[field: SerializeField]
 		private ModulesCollectionController CurrentModulesCollectionController { get; set; }
 

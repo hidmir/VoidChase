@@ -9,13 +9,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 40787115564398412, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
+      propertyPath: <MovingObjectName>k__BackingField
+      value: MediumAsteroid
+      objectReference: {fileID: 0}
+    - target: {fileID: 40787115564398412, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
       propertyPath: <SpawningAreaSize>k__BackingField
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 40787115564398412, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
-      propertyPath: <CurrentProjectilesPool>k__BackingField
-      value: 
-      objectReference: {fileID: 798864999658351673}
     - target: {fileID: 852007015229080309, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
       propertyPath: <Prefab>k__BackingField
       value: 
@@ -79,91 +79,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6840701098119926798, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 2541840142719404782, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5159973637490977964}
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
---- !u!4 &8932567509874731870 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2541840142719404782, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
-  m_PrefabInstance: {fileID: 6390806842860708272}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7324144707854453874
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 8932567509874731870}
-    m_Modifications:
-    - target: {fileID: 2467830079292399838, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 2467830079292399838, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2467830079292399838, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2467830079292399838, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2467830079292399838, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2467830079292399838, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2467830079292399838, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2467830079292399838, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2467830079292399838, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2467830079292399838, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2467830079292399838, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4326782290514479463, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-      propertyPath: m_Name
-      value: AsteroidsPool
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
---- !u!114 &798864999658351673 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7976637668737425483, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-  m_PrefabInstance: {fileID: 7324144707854453874}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2b71593540e76e4792500d0593e216d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &5159973637490977964 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2467830079292399838, guid: 0214f71e137322e4b9cff6d6ebc0ce13, type: 3}
-  m_PrefabInstance: {fileID: 7324144707854453874}
-  m_PrefabAsset: {fileID: 0}
+  m_SourcePrefab: {fileID: 100100000, guid: be572428aea3c4945b4e646ac0f42cd0, type: 3}
