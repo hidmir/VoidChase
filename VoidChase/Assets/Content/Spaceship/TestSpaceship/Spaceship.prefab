@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616801e6ec1ada747a6c0a3df62021ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <CurrentWeapon>k__BackingField: {fileID: 0}
+  <InitialWeapon>k__BackingField: SingleProjectile
 --- !u!114 &7234503036437399120
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,12 +8,15 @@ namespace VoidChase.Spaceship
 {
 	public class ShootingController : MonoBehaviour
 	{
-		[field: Header(InspectorNames.REFERENCES_NAME)]
+		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
+		private string InitialWeapon { get; set; }
+
 		private BaseWeapon CurrentWeapon { get; set; }
 
 		protected virtual void Start ()
 		{
+			CacheInitialWeapon();
 			AttachToEvents();
 		}
 
@@ -38,6 +41,12 @@ namespace VoidChase.Spaceship
 		private void OnShoot (InputAction.CallbackContext obj)
 		{
 			CurrentWeapon.Shoot(transform.position);
+		}
+
+		private void CacheInitialWeapon ()
+		{
+			WeaponsProvider.Instance.TryGetObject(InitialWeapon, out BaseWeapon weapon);
+			CurrentWeapon = weapon;
 		}
 	}
 }
