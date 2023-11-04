@@ -29,6 +29,14 @@ namespace VoidChase.Utilities
             return objectReference != null;
         }
 
+        public IEnumerable<TObjectReference> GetAllObjects ()
+        {
+            foreach (TObjectData objectData in ObjectDataCollection)
+            {
+                yield return objectData.ObjectReference;
+            }
+        }
+
         protected override void Initialize ()
         {
             base.Initialize();
