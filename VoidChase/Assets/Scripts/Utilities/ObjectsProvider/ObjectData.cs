@@ -5,10 +5,10 @@ using UnityEngine;
 namespace VoidChase.Utilities
 {
 	[Serializable]
-	public class ObjectData<TObjectReference>
+	public class ObjectData<TType, TObjectReference>
 	{
 		[field: SerializeField]
-		public string Name { get; private set; }
+		public TType Type { get; private set; }
 		[field: SerializeField]
 		public TObjectReference ObjectReference { get; private set; }
 	}

@@ -7,7 +7,7 @@ namespace VoidChase.MovingObjects
 	{
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
-		private string MovingObjectName { get; set; }
+		private MovingObjectType MovingObjectType { get; set; }
 
 		protected MovingObjectsPool CurrentPool
 		{
@@ -54,7 +54,7 @@ namespace VoidChase.MovingObjects
 
 		private MovingObjectsPool GetPoolByName ()
 		{
-			MovingObjectsPoolProvider.Instance.TryGetObject(MovingObjectName, out MovingObjectsPool pool);
+			MovingObjectsPoolProvider.Instance.TryGetObject(MovingObjectType, out MovingObjectsPool pool);
 			return pool;
 		}
 	}

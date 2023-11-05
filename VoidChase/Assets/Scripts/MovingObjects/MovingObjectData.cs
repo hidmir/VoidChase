@@ -4,5 +4,5 @@ using VoidChase.Utilities;
 namespace VoidChase.MovingObjects
 {
 	[Serializable]
-	public class MovingObjectData : ObjectData<MovingObjectsPool> { }
+	public class MovingObjectData : ObjectData<MovingObjectType, MovingObjectsPool> { }
 }

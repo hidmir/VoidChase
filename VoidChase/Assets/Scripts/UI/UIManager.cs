@@ -8,14 +8,14 @@ namespace VoidChase.UI
 		[field: SerializeField]
 		private PanelsProvider CurrentPanelsProvider { get; set; }
 
-		public void ShowPanel (string panelName)
+		public void ShowPanel (PanelType panelType)
 		{
-			SetPanelState(panelName, true);
+			SetPanelState(panelType, true);
 		}
 
-		public void HidePanel (string panelName)
+		public void HidePanel (PanelType panelType)
 		{
-			SetPanelState(panelName, false);
+			SetPanelState(panelType, false);
 		}
 
 		protected virtual void Start ()
@@ -31,9 +31,9 @@ namespace VoidChase.UI
 			}
 		}
 
-		private void SetPanelState (string panelName, bool isEnabled)
+		private void SetPanelState (PanelType panelType, bool isEnabled)
 		{
-			if (CurrentPanelsProvider.TryGetObject(panelName, out GameObject objectReference))
+			if (CurrentPanelsProvider.TryGetObject(panelType, out GameObject objectReference))
 			{
 				objectReference.SetActive(isEnabled);
 			}

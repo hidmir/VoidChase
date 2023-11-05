@@ -5,5 +5,5 @@ using VoidChase.Utilities;
 namespace VoidChase.UI
 {
 	[Serializable]
-	public class PanelData : ObjectData<GameObject> { }
+	public class PanelData : ObjectData<PanelType, GameObject> { }
 }

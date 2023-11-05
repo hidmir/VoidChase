@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using VoidChase.Modules;
+using VoidChase.Spaceship.Weapons;
 using VoidChase.Utilities;
 
 namespace VoidChase.Spaceship.PowerUps
@@ -13,7 +14,7 @@ namespace VoidChase.Spaceship.PowerUps
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
-		private string WeaponName { get; set; }
+		private WeaponType WeaponType { get; set; }
 
 		protected virtual void OnTriggerEnter (Collider other)
 		{
@@ -24,7 +25,7 @@ namespace VoidChase.Spaceship.PowerUps
 		{
 			if (objectHit.TryGetComponent(out ShootingController shootingController))
 			{
-				shootingController.SelectWeapon(WeaponName);
+				shootingController.SelectWeapon(WeaponType);
 				SwitchWeapon.Invoke();
 			}
 		}

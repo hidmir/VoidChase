@@ -1,29 +1,31 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 //TOOD: Move to better namespace
 namespace VoidChase.Utilities
 {
-    public class ObjectsProvider<TProvider, TObjectData, TObjectReference> : SingletonMonoBehaviour<TProvider> 
-        where TProvider: ObjectsProvider<TProvider, TObjectData, TObjectReference>
-        where TObjectData : ObjectData<TObjectReference>
+    public class ObjectsProvider<TProvider, TObjectData, TType, TObjectReference> : SingletonMonoBehaviour<TProvider> 
+        where TProvider: ObjectsProvider<TProvider, TObjectData, TType, TObjectReference>
+        where TObjectData : ObjectData<TType, TObjectReference>
+        where TType : Enum
         where TObjectReference : class
     {
         [field: Header(InspectorNames.SETTINGS_NAME)]
         [field: SerializeField]
         private List<TObjectData> ObjectDataCollection { get; set; }
 
-        private Dictionary<string, TObjectReference> ObjectsMap { get; set; } = new ();
+        private Dictionary<TType, TObjectReference> ObjectsMap { get; set; } = new ();
 
         private const string OBJECT_NOT_FOUND_MESSAGE = "Cannot find object with name {0}.";
 
-        public bool TryGetObject (string objectName, out TObjectReference objectReference)
+        public bool TryGetObject (TType objectType, out TObjectReference objectReference)
         {
             objectReference = null;
 
-            if (!ObjectsMap.TryGetValue(objectName, out objectReference))
+            if (!ObjectsMap.TryGetValue(objectType, out objectReference))
             {
-                Debug.LogError(string.Format(OBJECT_NOT_FOUND_MESSAGE, objectName));
+                Debug.LogError(string.Format(OBJECT_NOT_FOUND_MESSAGE, objectType));
             }
 
             return objectReference != null;
@@ -47,7 +49,7 @@ namespace VoidChase.Utilities
         {
             foreach (TObjectData objectData in ObjectDataCollection)
             {
-                ObjectsMap.Add(objectData.Name, objectData.ObjectReference);
+                ObjectsMap.Add(objectData.Type, objectData.ObjectReference);
             }
         }
     }

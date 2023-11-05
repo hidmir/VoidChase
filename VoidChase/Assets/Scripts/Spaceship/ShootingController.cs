@@ -10,13 +10,13 @@ namespace VoidChase.Spaceship
 	{
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
-		private string InitialWeapon { get; set; }
+		private WeaponType InitialWeapon { get; set; }
 
 		private BaseWeapon CurrentWeapon { get; set; }
 
-		public void SelectWeapon (string weaponName)
+		public void SelectWeapon (WeaponType weaponType)
 		{
-			WeaponsProvider.Instance.TryGetObject(weaponName, out BaseWeapon weapon);
+			WeaponsProvider.Instance.TryGetObject(weaponType, out BaseWeapon weapon);
 			CurrentWeapon = weapon;
 		}
 
