@@ -8,9 +8,21 @@ namespace VoidChase.SceneManagement
     public class SceneLoader : SingletonMonoBehaviour<SceneLoader>
     {
         [field: SerializeField]
-        private string StartSceneName { get; set; }
+        private string MainMenuSceneName { get; set; }
+        [field: SerializeField]
+        private string LevelSceneNamePrefix { get; set; }
 
         public float LoadingProgress { get; private set; }
+
+        public void LoadMainMenuScene ()
+        {
+            LoadSceneAsync(MainMenuSceneName);
+        }
+
+        public void LoadLevelScene (int levelIndex)
+        {
+            LoadSceneAsync(LevelSceneNamePrefix + levelIndex);
+        }
 
         public void LoadSceneAsync (string sceneName)
         {
@@ -19,7 +31,7 @@ namespace VoidChase.SceneManagement
 
         protected virtual void Start ()
         {
-            LoadSceneAsync(StartSceneName);
+            LoadMainMenuScene ();
         }
 
         private IEnumerator LoadSceneProcess (string sceneName)
