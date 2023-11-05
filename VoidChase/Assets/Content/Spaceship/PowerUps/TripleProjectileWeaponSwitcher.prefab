@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: <WeaponName>k__BackingField
       value: TripleProjectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7281170580914793821, guid: ac65664e61a60274a9da0b9f83bd1e31, type: 3}
+      propertyPath: <WeaponType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

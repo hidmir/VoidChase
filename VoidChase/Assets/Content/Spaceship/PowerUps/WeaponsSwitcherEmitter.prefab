@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1de5ad8987c744c870f9dfbd054e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MovingObjectName>k__BackingField: TripleProjectileWeaponSwitcher
+  <MovingObjectType>k__BackingField: 4
 --- !u!1 &7320242866089912609
 GameObject:
   m_ObjectHideFlags: 0
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1de5ad8987c744c870f9dfbd054e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MovingObjectName>k__BackingField: SingleProjectileWeaponSwitcher
+  <MovingObjectType>k__BackingField: 3
 --- !u!1 &7438337696799044684
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,7 +188,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a1de5ad8987c744c870f9dfbd054e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MovingObjectName>k__BackingField: TripleSpreadProjectileWeaponSwitcher
+  <MovingObjectType>k__BackingField: 5
 --- !u!1001 &7796981171280270084
 PrefabInstance:
   m_ObjectHideFlags: 0

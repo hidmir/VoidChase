@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 4347878317891416616}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1290915988522400442
 MonoBehaviour:
@@ -57,6 +57,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6002258334994894519}
     m_Modifications:
+    - target: {fileID: 1068427390590273133, guid: 76a83a98aa3564a44930ea0fab5d328d, type: 3}
+      propertyPath: <MovingObjectType>k__BackingField
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1749852180211341652, guid: 76a83a98aa3564a44930ea0fab5d328d, type: 3}
       propertyPath: m_Name
       value: ProjectilesSpawner

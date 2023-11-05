@@ -48,11 +48,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ObjectDataCollection>k__BackingField:
-  - <Name>k__BackingField: SingleProjectile
+  - <Type>k__BackingField: 0
     <ObjectReference>k__BackingField: {fileID: 8713848984263611980}
-  - <Name>k__BackingField: TripleProjectile
+  - <Type>k__BackingField: 1
     <ObjectReference>k__BackingField: {fileID: 2847625678496481049}
-  - <Name>k__BackingField: TripleSpreadProjectile
+  - <Type>k__BackingField: 2
     <ObjectReference>k__BackingField: {fileID: 2177963722371445916}
 --- !u!1001 &2058982568779825882
 PrefabInstance:

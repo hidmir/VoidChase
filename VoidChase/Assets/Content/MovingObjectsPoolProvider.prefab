@@ -51,17 +51,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ObjectDataCollection>k__BackingField:
-  - <Name>k__BackingField: MediumAsteroid
+  - <Type>k__BackingField: 0
     <ObjectReference>k__BackingField: {fileID: 5190513039236227606}
-  - <Name>k__BackingField: MediumAsteroid1
+  - <Type>k__BackingField: 1
     <ObjectReference>k__BackingField: {fileID: 8748621941127617955}
-  - <Name>k__BackingField: DefaultProjectile
+  - <Type>k__BackingField: 2
     <ObjectReference>k__BackingField: {fileID: 3793988829283856051}
-  - <Name>k__BackingField: SingleProjectileWeaponSwitcher
+  - <Type>k__BackingField: 3
     <ObjectReference>k__BackingField: {fileID: 285215567475360339}
-  - <Name>k__BackingField: TripleProjectileWeaponSwitcher
+  - <Type>k__BackingField: 4
     <ObjectReference>k__BackingField: {fileID: 3001457342189874161}
-  - <Name>k__BackingField: TripleSpreadProjectileWeaponSwitcher
+  - <Type>k__BackingField: 5
     <ObjectReference>k__BackingField: {fileID: 4136855364160580885}
 --- !u!1001 &75330078162572774
 PrefabInstance:
