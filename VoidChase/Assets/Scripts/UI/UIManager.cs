@@ -25,17 +25,17 @@ namespace VoidChase.UI
 
 		private void SetAllPanelsState (bool isEnabled)
 		{
-			foreach (GameObject panel in CurrentPanelsProvider.GetAllObjects())
+			foreach (PanelController panel in CurrentPanelsProvider.GetAllObjects())
 			{
-				panel.SetActive(isEnabled);
+				panel.SetVisibility(isEnabled);
 			}
 		}
 
 		private void SetPanelState (PanelType panelType, bool isEnabled)
 		{
-			if (CurrentPanelsProvider.TryGetObject(panelType, out GameObject objectReference))
+			if (CurrentPanelsProvider.TryGetObject(panelType, out PanelController objectReference))
 			{
-				objectReference.SetActive(isEnabled);
+				objectReference.SetVisibility(isEnabled);
 			}
 		}
 	}
