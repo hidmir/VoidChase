@@ -114,8 +114,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 365028535777279767}
+  - component: {fileID: 1241705959456186630}
   - component: {fileID: 4826380615108255417}
   - component: {fileID: 6736650881678472343}
+  - component: {fileID: 8870913889095804776}
   - component: {fileID: 7234503036437399120}
   - component: {fileID: 1112339697371281313}
   - component: {fileID: 329524527147026208}
@@ -146,6 +148,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &1241705959456186630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985252912011618827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73bfdd9c3505c734bbf24a09737de53b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentModulesCollectionController: {fileID: 8870913889095804776}
 --- !u!114 &4826380615108255417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +188,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 616801e6ec1ada747a6c0a3df62021ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InitialWeapon>k__BackingField: SingleProjectile
+  <InitialWeapon>k__BackingField: 0
+--- !u!114 &8870913889095804776
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2985252912011618827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a97c7805fb47274f8d3ca2faa400eed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ModulesCollection>k__BackingField:
+  - {fileID: 7234503036437399120}
 --- !u!114 &7234503036437399120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,8 +217,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Die>k__BackingField:
     m_PersistentCalls:
-      m_Calls: []
-  <InitialHealth>k__BackingField: 1
+      m_Calls:
+      - m_Target: {fileID: 1241705959456186630}
+        m_TargetAssemblyTypeName: VoidChase.Spaceship.SpaceshipController, Assembly-CSharp
+        m_MethodName: KillPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <InitialHealth>k__BackingField: 5
 --- !u!54 &1112339697371281313
 Rigidbody:
   m_ObjectHideFlags: 0
