@@ -17,6 +17,23 @@ namespace VoidChase.Spaceship
 		[field: SerializeField]
 		private float BrakingSpeed { get; set; } = 5.0f;
 
+		public bool IsMovementEnabled { get; private set; }
+		private Vector3 CachedVelocity { get; set; }
+
+		public void SetMovementState (bool isEnabled)
+		{
+			IsMovementEnabled = isEnabled;
+
+			if (isEnabled)
+			{
+				CachedVelocity = CurrentRigidbody.velocity;
+			}
+			else
+			{
+				CurrentRigidbody.velocity = CachedVelocity;
+			}
+		}
+
 		protected virtual void Update ()
 		{
 			UpdateMovement();
@@ -24,6 +41,11 @@ namespace VoidChase.Spaceship
 
 		private void UpdateMovement ()
 		{
+			if (!IsMovementEnabled)
+			{
+				return;
+			}
+			
 			Vector2 movementInputValue = SpaceshipInputProvider.Instance.MovementInputAction.ReadValue<Vector2>();
 			Vector2 velocity = movementInputValue != Vector2.zero ? GetMovementVelocity(movementInputValue) : GetBrakingVelocity();
 
