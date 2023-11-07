@@ -160,7 +160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73bfdd9c3505c734bbf24a09737de53b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentModulesCollectionController: {fileID: 8870913889095804776}
+  spaceshipMovementController: {fileID: 4826380615108255417}
+  shootingController: {fileID: 6736650881678472343}
+  modulesCollectionController: {fileID: 8870913889095804776}
 --- !u!114 &4826380615108255417
 MonoBehaviour:
   m_ObjectHideFlags: 0
