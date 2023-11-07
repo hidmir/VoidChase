@@ -12,6 +12,7 @@ namespace VoidChase.Spaceship
 		[field: SerializeField]
 		private WeaponType InitialWeapon { get; set; }
 
+		public bool IsShootingEnabled { get; set; }
 		private BaseWeapon CurrentWeapon { get; set; }
 
 		public void SelectWeapon (WeaponType weaponType)
@@ -46,6 +47,11 @@ namespace VoidChase.Spaceship
 
 		private void OnShoot (InputAction.CallbackContext obj)
 		{
+			if (!IsShootingEnabled)
+			{
+				return;
+			}
+
 			CurrentWeapon.Shoot(transform.position);
 		}
 	}
