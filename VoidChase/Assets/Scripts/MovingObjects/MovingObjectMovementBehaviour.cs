@@ -16,6 +16,7 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private float LifeTime { get; set; } = 5.0f;
 
+		public bool IsMovementEnabled { get; set; }
 		private Vector3 Direction { get; set; }
 		private bool IsLaunched { get; set; }
 		private float TimeSinceLaunching { get; set; }
@@ -23,6 +24,7 @@ namespace VoidChase.MovingObjects
 		public virtual void Initialize ()
 		{
 			gameObject.SetActive(true);
+			IsMovementEnabled = true;
 		}
 
 		public virtual void Launch (Vector3 position, Vector3 direction)
@@ -42,7 +44,7 @@ namespace VoidChase.MovingObjects
 
 		protected virtual void Update ()
 		{
-			if (IsLaunched)
+			if (IsLaunched && IsMovementEnabled)
 			{
 				UpdatePosition();
 				UpdateTimeSinceLaunching();

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using VoidChase.GameManagement;
 using VoidChase.Modules;
 using VoidChase.Utilities;
 
@@ -34,6 +35,31 @@ namespace VoidChase.MovingObjects
 		public void InvokeRequestDestroying ()
 		{
 			RequestDestroying.Invoke(this);
+		}
+
+		private void OnEnable ()
+		{
+			AttachToEvents();
+		}
+
+		private void OnDisable ()
+		{
+			DetachFromEvents();
+		}
+
+		private void AttachToEvents ()
+		{
+			GameGlobalVariables.IsGamePaused.CurrentValueChanged += OnIsGamePausedValueChanged;
+		}
+
+		private void DetachFromEvents ()
+		{
+			GameGlobalVariables.IsGamePaused.CurrentValueChanged -= OnIsGamePausedValueChanged;
+		}
+
+		private void OnIsGamePausedValueChanged (bool isGamePaused)
+		{
+			CurrentMovementBehaviour.IsMovementEnabled = !isGamePaused;
 		}
 	}
 }

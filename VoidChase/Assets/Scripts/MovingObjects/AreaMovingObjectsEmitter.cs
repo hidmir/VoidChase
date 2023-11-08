@@ -31,17 +31,31 @@ namespace VoidChase.MovingObjects
 		private float VisualizationWidth { get; set; } = 0.5f;
 
 		private float TimeSinceLastSpawning { get; set; }
+		private bool IsSpawningEnabled { get; set; } = true;
 
 		private const string INCORRECT_SPAWNING_RANGE_AXIS_VALUE = "SpawningRangeAxis value is incorrect ({0}).";
 
 		protected virtual void Update ()
 		{
-			SpawnMovingObjects();
+			if (IsSpawningEnabled)
+			{
+				SpawnMovingObjects();
+			}
 		}
 
 		protected virtual void OnDrawGizmos ()
 		{
 			DrawSpawningRange();
+		}
+
+		private void OnEnable ()
+		{
+			AttachToEvents();
+		}
+
+		private void OnDisable ()
+		{
+			DetachFromEvents();
 		}
 
 		private void SpawnMovingObjects ()
@@ -125,6 +139,21 @@ namespace VoidChase.MovingObjects
 		{
 			(float minPositionValue, float maxPositionValue) = GetSpawnPositionMinMaxValue();
 			return (GetPositionOnSpawningAxis(minPositionValue), GetPositionOnSpawningAxis(maxPositionValue));
+		}
+
+		private void AttachToEvents ()
+		{
+			GameGlobalVariables.IsGamePaused.CurrentValueChanged += OnIsGamePausedValueChanged;
+		}
+
+		private void DetachFromEvents ()
+		{
+			GameGlobalVariables.IsGamePaused.CurrentValueChanged -= OnIsGamePausedValueChanged;
+		}
+
+		private void OnIsGamePausedValueChanged (bool isGamePaused)
+		{
+			IsSpawningEnabled = !isGamePaused;
 		}
 
 		private enum Axis
