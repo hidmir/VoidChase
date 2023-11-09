@@ -4,13 +4,11 @@ namespace VoidChase.UI.LevelSelection
 	{
 		public void HandleSelectLevel (int levelIndex)
 		{
-			CurrentModel.HideLevelSelection();
-			CurrentModel.LoadLevel(levelIndex);
+			CurrentModel.SelectLevel(levelIndex);
 		}
 
 		public void HandleBack ()
 		{
-			CurrentModel.HideLevelSelection();
 			CurrentModel.ShowMainMenu();
 		}
 	}

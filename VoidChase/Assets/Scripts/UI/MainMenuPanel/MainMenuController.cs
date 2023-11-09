@@ -4,13 +4,11 @@ namespace VoidChase.UI.MainMenu
 	{
 		public void HandleStart ()
 		{
-			CurrentModel.HideMainMenu();
 			CurrentModel.ShowLevelSelection();
 		}
 
 		public void HandleOptions ()
 		{
-			CurrentModel.HideMainMenu();
 			CurrentModel.ShowOptions();
 		}
 

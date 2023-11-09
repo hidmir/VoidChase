@@ -4,19 +4,16 @@ namespace VoidChase.UI.LevelSelection
 {
 	public class LevelSelectionModel : Model<LevelSelectionView>
 	{
-		public void LoadLevel (int index)
+		public void SelectLevel (int index)
 		{
+			CurrentView.SetContentState(false);
 			SceneLoader.Instance.LoadLevelScene(index);
 		}
 
 		public void ShowMainMenu ()
 		{
+			CurrentView.SetContentState(false);
 			UIManager.Instance.ShowPanel(PanelType.MAIN_MENU);
-		}
-
-		public void HideLevelSelection ()
-		{
-			UIManager.Instance.HidePanel(PanelType.LEVEL_SELECTION);
 		}
 	}
 }
