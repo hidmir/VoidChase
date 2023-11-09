@@ -4,8 +4,7 @@ namespace VoidChase.UI.GameOver
 	{
 		public void HandleContinue ()
 		{
-			CurrentModel.LoadMainMenu();
-			CurrentView.SetContentState(false);
+			CurrentModel.ExitLevel();
 		}
 	}
 }

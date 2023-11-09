@@ -1,13 +1,13 @@
 using VoidChase.GameManagement;
-using VoidChase.SceneManagement;
 
 namespace VoidChase.UI.GameOver
 {
 	public class GameOverModel : Model<GameOverView>
 	{
-		public void LoadMainMenu ()
+		public void ExitLevel ()
 		{
-			SceneLoader.Instance.LoadMainMenuScene();
+			CurrentView.SetContentState(false);
+			GameManager.Instance.ExitLevel();
 		}
 		
 		private void OnEnable ()
