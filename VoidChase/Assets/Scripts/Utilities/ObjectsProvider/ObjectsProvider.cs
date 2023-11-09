@@ -17,7 +17,7 @@ namespace VoidChase.Utilities
 
         private Dictionary<TType, TObjectReference> ObjectsMap { get; set; } = new ();
 
-        private const string OBJECT_NOT_FOUND_MESSAGE = "Cannot find object with name {0}.";
+        private const string KEY_NOT_FOUND_MESSAGE = "Cannot find key with name {0}.";
 
         public bool TryGetObject (TType objectType, out TObjectReference objectReference)
         {
@@ -25,7 +25,7 @@ namespace VoidChase.Utilities
 
             if (!ObjectsMap.TryGetValue(objectType, out objectReference))
             {
-                Debug.LogError(string.Format(OBJECT_NOT_FOUND_MESSAGE, objectType));
+                Debug.LogError(string.Format(KEY_NOT_FOUND_MESSAGE, objectType));
             }
 
             return objectReference != null;
