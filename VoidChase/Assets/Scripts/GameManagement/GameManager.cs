@@ -1,4 +1,5 @@
 using UnityEngine;
+using VoidChase.SceneManagement;
 using VoidChase.Utilities;
 
 namespace VoidChase.GameManagement
@@ -15,6 +16,12 @@ namespace VoidChase.GameManagement
 		{
 			PauseGame();
 			GameGlobalActions.InvokeEndGame();
+		}
+
+		public void ExitLevel ()
+		{
+			GameGlobalActions.InvokeExitLevel();
+			SceneLoader.Instance.LoadMainMenuScene();
 		}
 
 		public void PauseGame ()
