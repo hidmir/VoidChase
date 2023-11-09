@@ -6,6 +6,7 @@ namespace VoidChase.UI
 		LEVEL_SELECTION,
 		OPTIONS,
 		GAME_OVER,
+		GAME_VIEW,
 		PAUSE_MENU
 	}
 }
