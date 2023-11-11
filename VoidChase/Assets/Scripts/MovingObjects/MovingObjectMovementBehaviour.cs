@@ -32,7 +32,6 @@ namespace VoidChase.MovingObjects
 			transform.position = position;
 			Direction = direction;
 			IsLaunched = true;
-			transform.LookAt(position + direction);
 		}
 
 		public virtual void DeInitialize ()
