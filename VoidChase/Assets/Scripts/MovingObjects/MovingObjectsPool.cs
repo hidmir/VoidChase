@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 using VoidChase.Utilities;
@@ -12,7 +13,7 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private int PoolMaxSize { get; set; } = 150;
 		[field: SerializeField]
-		private MovingObjectController Prefab { get; set; }
+		private List<MovingObjectController> PrefabCollection { get; set; }
 
 		protected ObjectPool<MovingObjectController> CurrentPool { get; private set; }
 
@@ -38,7 +39,7 @@ namespace VoidChase.MovingObjects
 
 		private MovingObjectController CreateObject ()
 		{
-			MovingObjectController movingObject = Instantiate(Prefab, transform);
+			MovingObjectController movingObject = Instantiate(GetRandomPrefab(), transform);
 			movingObject.gameObject.SetActive(false);
 
 			return movingObject;
@@ -52,6 +53,12 @@ namespace VoidChase.MovingObjects
 		private void ReleaseObject (MovingObjectController movingObject)
 		{
 			movingObject.DeInitialize();
+		}
+
+		private MovingObjectController GetRandomPrefab ()
+		{
+			int spawnerIndex = Random.Range(0, PrefabCollection.Count);
+			return PrefabCollection[spawnerIndex];
 		}
 	}
 }
