@@ -2,9 +2,9 @@ namespace VoidChase.UI.LevelSelection
 {
 	public class LevelSelectionController : Controller<LevelSelectionModel, LevelSelectionView>
 	{
-		public void HandleSelectLevel (int levelIndex)
+		public void HandleSelectLevel (int levelNumber)
 		{
-			CurrentModel.SelectLevel(levelIndex);
+			CurrentModel.SelectLevel(levelNumber);
 		}
 
 		public void HandleBack ()

@@ -19,9 +19,9 @@ namespace VoidChase.SceneManagement
             LoadSceneAsync(MainMenuSceneName);
         }
 
-        public void LoadLevelScene (int levelIndex)
+        public void LoadLevelScene (int levelNumber)
         {
-            LoadSceneAsync(LevelSceneNamePrefix + levelIndex);
+            LoadSceneAsync(LevelSceneNamePrefix + levelNumber);
         }
 
         public void LoadSceneAsync (string sceneName)

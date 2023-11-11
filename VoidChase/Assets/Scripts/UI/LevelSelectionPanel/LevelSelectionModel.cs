@@ -4,10 +4,10 @@ namespace VoidChase.UI.LevelSelection
 {
 	public class LevelSelectionModel : Model<LevelSelectionView>
 	{
-		public void SelectLevel (int index)
+		public void SelectLevel (int number)
 		{
 			CurrentView.SetContentState(false);
-			SceneLoader.Instance.LoadLevelScene(index);
+			SceneLoader.Instance.LoadLevelScene(number);
 		}
 
 		public void ShowMainMenu ()
