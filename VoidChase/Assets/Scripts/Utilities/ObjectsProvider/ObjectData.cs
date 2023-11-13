@@ -5,10 +5,9 @@ using UnityEngine;
 namespace VoidChase.Utilities
 {
 	[Serializable]
-	public class ObjectData<TType, TObjectReference>
+	public abstract class ObjectData<TKey, TObjectReference>
 	{
-		[field: SerializeField]
-		public TType Type { get; private set; }
+		public abstract TKey Key { get; set; }
 		[field: SerializeField]
 		public TObjectReference ObjectReference { get; private set; }
 	}

@@ -2,5 +2,5 @@ using VoidChase.Utilities;
 
 namespace VoidChase.UI
 {
-	public class PanelsProvider : ObjectsProvider<PanelsProvider, PanelData, PanelType, PanelController> { }
+	public class PanelsProvider : ObjectsProvider<PanelsProvider, PanelData, string, PanelController> { }
 }

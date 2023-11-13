@@ -24,6 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3633405301005315013}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -39,7 +40,6 @@ Transform:
   - {fileID: 4199879083329914164}
   - {fileID: 3075776895524923264}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1069809918713007983
 MonoBehaviour:
@@ -54,24 +54,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ObjectDataCollection>k__BackingField:
-  - <Type>k__BackingField: 0
-    <ObjectReference>k__BackingField: {fileID: 6188523932240650275}
-  - <Type>k__BackingField: 1
-    <ObjectReference>k__BackingField: {fileID: 8999088949260489617}
-  - <Type>k__BackingField: 2
-    <ObjectReference>k__BackingField: {fileID: 3097212210763936469}
-  - <Type>k__BackingField: 3
-    <ObjectReference>k__BackingField: {fileID: 6618881075235948236}
-  - <Type>k__BackingField: 4
-    <ObjectReference>k__BackingField: {fileID: 3976842883236132282}
-  - <Type>k__BackingField: 5
-    <ObjectReference>k__BackingField: {fileID: 7274414421573556032}
-  - <Type>k__BackingField: 6
-    <ObjectReference>k__BackingField: {fileID: 7003903229482802615}
-  - <Type>k__BackingField: 7
-    <ObjectReference>k__BackingField: {fileID: 8355108715093090550}
-  - <Type>k__BackingField: 8
-    <ObjectReference>k__BackingField: {fileID: 7139579899873854018}
+  - <ObjectReference>k__BackingField: {fileID: 6188523932240650275}
+    <Key>k__BackingField: GreenSmallAsteroid
+  - <ObjectReference>k__BackingField: {fileID: 8999088949260489617}
+    <Key>k__BackingField: GreenFastAsteroid
+  - <ObjectReference>k__BackingField: {fileID: 3097212210763936469}
+    <Key>k__BackingField: ColorfulSmallAsteroid
+  - <ObjectReference>k__BackingField: {fileID: 6618881075235948236}
+    <Key>k__BackingField: ColorfulFastAsteroid
+  - <ObjectReference>k__BackingField: {fileID: 3976842883236132282}
+    <Key>k__BackingField: ColorfulBigAsteroid
+  - <ObjectReference>k__BackingField: {fileID: 7274414421573556032}
+    <Key>k__BackingField: BlackSmallAsteroid
+  - <ObjectReference>k__BackingField: {fileID: 7003903229482802615}
+    <Key>k__BackingField: BlackFastAsteroid
+  - <ObjectReference>k__BackingField: {fileID: 8355108715093090550}
+    <Key>k__BackingField: RedPlayerProjectile
+  - <ObjectReference>k__BackingField: {fileID: 7139579899873854018}
+    <Key>k__BackingField: BluePlayerProjectile
 --- !u!1001 &443985447593695131
 PrefabInstance:
   m_ObjectHideFlags: 0

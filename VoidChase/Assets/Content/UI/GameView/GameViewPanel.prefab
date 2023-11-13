@@ -30,7 +30,6 @@ RectTransform:
   m_Children:
   - {fileID: 4354585202450325564}
   m_Father: {fileID: 6777851716185626797}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -71,7 +70,6 @@ RectTransform:
   m_Children:
   - {fileID: 1030520507336164581}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -118,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <CurrentView>k__BackingField: {fileID: 7243097456614214821}
+  pauseMenuPanelName: PauseMenu
 --- !u!114 &7243097456614214821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +163,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1030520507336164581}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}

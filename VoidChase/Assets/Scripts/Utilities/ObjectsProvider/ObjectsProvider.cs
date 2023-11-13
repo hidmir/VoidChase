@@ -1,31 +1,29 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 //TOOD: Move to better namespace
 namespace VoidChase.Utilities
 {
-    public class ObjectsProvider<TProvider, TObjectData, TType, TObjectReference> : SingletonMonoBehaviour<TProvider> 
-        where TProvider: ObjectsProvider<TProvider, TObjectData, TType, TObjectReference>
-        where TObjectData : ObjectData<TType, TObjectReference>
-        where TType : Enum
+    public class ObjectsProvider<TProvider, TObjectData, TKey, TObjectReference> : SingletonMonoBehaviour<TProvider> 
+        where TProvider: ObjectsProvider<TProvider, TObjectData, TKey, TObjectReference>
+        where TObjectData : ObjectData<TKey, TObjectReference>
         where TObjectReference : class
     {
         [field: Header(InspectorNames.SETTINGS_NAME)]
         [field: SerializeField]
         private List<TObjectData> ObjectDataCollection { get; set; }
 
-        private Dictionary<TType, TObjectReference> ObjectsMap { get; set; } = new ();
+        private Dictionary<TKey, TObjectReference> ObjectsMap { get; set; } = new ();
 
         private const string KEY_NOT_FOUND_MESSAGE = "Cannot find key with name {0}.";
 
-        public bool TryGetObject (TType objectType, out TObjectReference objectReference)
+        public bool TryGetObject (TKey objectKey, out TObjectReference objectReference)
         {
             objectReference = null;
 
-            if (!ObjectsMap.TryGetValue(objectType, out objectReference))
+            if (!ObjectsMap.TryGetValue(objectKey, out objectReference))
             {
-                Debug.LogError(string.Format(KEY_NOT_FOUND_MESSAGE, objectType));
+                Debug.LogError(string.Format(KEY_NOT_FOUND_MESSAGE, objectKey));
             }
 
             return objectReference != null;
@@ -49,7 +47,7 @@ namespace VoidChase.Utilities
         {
             foreach (TObjectData objectData in ObjectDataCollection)
             {
-                ObjectsMap.Add(objectData.Type, objectData.ObjectReference);
+                ObjectsMap.Add(objectData.Key, objectData.ObjectReference);
             }
         }
     }

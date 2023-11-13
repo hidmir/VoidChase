@@ -6,8 +6,8 @@ namespace VoidChase.MovingObjects
 	public class MovingObjectsSpawner : BaseMovingObjectsSpawner
 	{
 		[field: Header(InspectorNames.SETTINGS_NAME)]
-		[field: SerializeField]
-		private MovingObjectType MovingObjectType { get; set; }
+		[field: SerializeField, Dropdown(StringCollectionNames.MOVING_OBJECTS_COLLECTION_NAME)]
+		private string MovingObjectName { get; set; }
 
 		protected MovingObjectsPool CurrentPool
 		{
@@ -54,7 +54,7 @@ namespace VoidChase.MovingObjects
 
 		private MovingObjectsPool GetPoolByName ()
 		{
-			MovingObjectsPoolProvider.Instance.TryGetObject(MovingObjectType, out MovingObjectsPool pool);
+			MovingObjectsPoolProvider.Instance.TryGetObject(MovingObjectName, out MovingObjectsPool pool);
 			return pool;
 		}
 	}

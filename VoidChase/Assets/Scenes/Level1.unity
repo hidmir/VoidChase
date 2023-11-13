@@ -152,7 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83a95a59ffd6c7146a8b20222e8e8878, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelType: 4
+  panelName: GameView
   showAtStart: 1
 --- !u!4 &89030394
 Transform:
@@ -161,13 +161,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 89030392}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &165280932
 PrefabInstance:
@@ -177,10 +177,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 189461683355660243, guid: c2f5f774b986b36409a8671e399aec27, type: 3}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 189461683355660243, guid: c2f5f774b986b36409a8671e399aec27, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -241,6 +237,10 @@ PrefabInstance:
     - target: {fileID: 31642375180225785, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
       propertyPath: m_Name
       value: MovingObjectsSpawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: <MovingObjectName>k__BackingField
+      value: GreenSmallAsteroid
       objectReference: {fileID: 0}
     - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
       propertyPath: m_RootOrder
@@ -393,13 +393,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276419127}
+  serializedVersion: 2
   m_LocalRotation: {x: 0.3781009, y: -0.40488303, z: 0.18879963, w: 0.81084156}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -53.069, z: 0}
 --- !u!1 &292659519
 GameObject:
@@ -485,13 +485,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 292659519}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &320013473
 GameObject:
@@ -516,13 +516,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 320013473}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &372727943
 PrefabInstance:
@@ -532,17 +532,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 456168781775957451, guid: 761fe4bb86129b14baf4f4849068b24c, type: 3}
-      propertyPath: <MovingObjectType>k__BackingField
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 4737917671007140875, guid: 761fe4bb86129b14baf4f4849068b24c, type: 3}
       propertyPath: m_Name
       value: WeaponsProvider
-      objectReference: {fileID: 0}
-    - target: {fileID: 6469070479211658230, guid: 761fe4bb86129b14baf4f4849068b24c, type: 3}
-      propertyPath: m_RootOrder
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6469070479211658230, guid: 761fe4bb86129b14baf4f4849068b24c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -644,6 +636,10 @@ PrefabInstance:
     - target: {fileID: 2985252912011618827, guid: 01fddd66911952841906826124ba4f15, type: 3}
       propertyPath: m_Name
       value: Spaceship
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736650881678472343, guid: 01fddd66911952841906826124ba4f15, type: 3}
+      propertyPath: <InitialWeapon>k__BackingField
+      value: SingleProjectile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -849,13 +845,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867934034}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1041070271
 GameObject:
@@ -880,13 +876,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041070271}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1297385283
 GameObject:
@@ -948,13 +944,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297385283}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1485862878
 GameObject:
@@ -979,13 +975,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1485862878}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1596940372
 PrefabInstance:
@@ -998,6 +994,10 @@ PrefabInstance:
     - target: {fileID: 31642375180225785, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
       propertyPath: m_Name
       value: MovingObjectsSpawner (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: <MovingObjectName>k__BackingField
+      value: GreenFastAsteroid
       objectReference: {fileID: 0}
     - target: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
       propertyPath: <MovingObjectType>k__BackingField
@@ -1259,3 +1259,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e504348845ceee40846823a786b97c0, type: 3}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 1485862879}
+  - {fileID: 292659522}
+  - {fileID: 276419129}
+  - {fileID: 1620205514921524423}
+  - {fileID: 320013474}
+  - {fileID: 1297385286}
+  - {fileID: 2029492185}
+  - {fileID: 1659342556}
+  - {fileID: 372727943}
+  - {fileID: 165280932}
+  - {fileID: 867934035}
+  - {fileID: 89030394}
+  - {fileID: 1041070272}
+  - {fileID: 460336966}
+  - {fileID: 724959272}

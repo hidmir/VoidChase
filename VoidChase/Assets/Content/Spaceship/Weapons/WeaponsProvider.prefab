@@ -24,6 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4737917671007140875}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -33,7 +34,6 @@ Transform:
   - {fileID: 2616564353379878504}
   - {fileID: 4331530796312780886}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6200061987512300251
 MonoBehaviour:
@@ -48,12 +48,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ObjectDataCollection>k__BackingField:
-  - <Type>k__BackingField: 0
-    <ObjectReference>k__BackingField: {fileID: 8713848984263611980}
-  - <Type>k__BackingField: 1
-    <ObjectReference>k__BackingField: {fileID: 2847625678496481049}
-  - <Type>k__BackingField: 2
-    <ObjectReference>k__BackingField: {fileID: 2177963722371445916}
+  - <ObjectReference>k__BackingField: {fileID: 8713848984263611980}
+    <Key>k__BackingField: SingleProjectile
+  - <ObjectReference>k__BackingField: {fileID: 2847625678496481049}
+    <Key>k__BackingField: TripleProjectile
+  - <ObjectReference>k__BackingField: {fileID: 2177963722371445916}
+    <Key>k__BackingField: TripleSpreadProjectile
 --- !u!1001 &2058982568779825882
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -105,6 +105,10 @@ PrefabInstance:
     - target: {fileID: 4097465141757445298, guid: 7000c4ba8fc3c484388c52893d86ee76, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7763324239521572491, guid: 7000c4ba8fc3c484388c52893d86ee76, type: 3}
+      propertyPath: <MovingObjectName>k__BackingField
+      value: RedPlayerProjectile
       objectReference: {fileID: 0}
     - target: {fileID: 8637956728747258641, guid: 7000c4ba8fc3c484388c52893d86ee76, type: 3}
       propertyPath: m_Name
@@ -202,6 +206,10 @@ PrefabInstance:
       propertyPath: <CurrentProjectilesSpawner>k__BackingField
       value: 
       objectReference: {fileID: 8587845517055829073}
+    - target: {fileID: 8041997323949149811, guid: f758ac170149d384aa4c9b48f32c15f9, type: 3}
+      propertyPath: <MovingObjectName>k__BackingField
+      value: BluePlayerProjectile
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -278,6 +286,10 @@ PrefabInstance:
     - target: {fileID: 6002258334994894519, guid: f0b433b7d682ec64188db2983c326854, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8021805028894392637, guid: f0b433b7d682ec64188db2983c326854, type: 3}
+      propertyPath: <MovingObjectName>k__BackingField
+      value: RedPlayerProjectile
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

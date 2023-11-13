@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 470c07525684b034f8bb010175081793, type: 3}
-  m_Name: AsteroidsNames
+  m_Name: MovingObjectsNames
   m_EditorClassIdentifier: 
   <Collection>k__BackingField:
-  - GreenSmall
-  - GreenFast
-  - ColorfulSmall
-  - ColorfulFast
-  - ColorfulBig
-  - BlackSmall
-  - BlackFast
+  - GreenSmallAsteroid
+  - GreenFastAsteroid
+  - ColorfulSmallAsteroid
+  - ColorfulFastAsteroid
+  - ColorfulBigAsteroid
+  - BlackSmallAsteroid
+  - BlackFastAsteroid
+  - RedPlayerProjectile
+  - BluePlayerProjectile

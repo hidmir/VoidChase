@@ -9,15 +9,15 @@ namespace VoidChase.Spaceship
 	public class ShootingController : MonoBehaviour
 	{
 		[field: Header(InspectorNames.SETTINGS_NAME)]
-		[field: SerializeField]
-		private WeaponType InitialWeapon { get; set; }
+		[field: SerializeField, Dropdown(StringCollectionNames.WEAPONS_COLLECTION_NAME)]
+		private string InitialWeapon { get; set; }
 
 		public bool IsShootingEnabled { get; set; }
 		private BaseWeapon CurrentWeapon { get; set; }
 
-		public void SelectWeapon (WeaponType weaponType)
+		public void SelectWeapon (string weaponName)
 		{
-			WeaponsProvider.Instance.TryGetObject(weaponType, out BaseWeapon weapon);
+			WeaponsProvider.Instance.TryGetObject(weaponName, out BaseWeapon weapon);
 			CurrentWeapon = weapon;
 		}
 

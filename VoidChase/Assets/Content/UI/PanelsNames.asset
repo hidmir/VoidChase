@@ -15,6 +15,7 @@ MonoBehaviour:
   <Collection>k__BackingField:
   - MainMenu
   - LevelSelection
+  - Options
   - GameOver
   - GameView
   - PauseMenu
