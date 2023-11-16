@@ -22,3 +22,7 @@ MonoBehaviour:
   - BlackFastAsteroid
   - RedPlayerProjectile
   - BluePlayerProjectile
+  - SingleProjectileWeaponSwitcher
+  - DoubleProjectileWeaponSwitcher
+  - TripleProjectileWeaponSwitcher
+  - TripleSpreadProjectileWeaponSwitcher
