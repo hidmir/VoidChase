@@ -6,71 +6,71 @@ using VoidChase.Utilities;
 
 namespace VoidChase.SceneManagement
 {
-    public class SceneLoader : SingletonMonoBehaviour<SceneLoader>
-    {
-        [SerializeField] private SceneData mainMenuSceneData;
-        [SerializeField] private List<LevelData> levelDataCollection;
+	public class SceneLoader : SingletonMonoBehaviour<SceneLoader>
+	{
+		[SerializeField] private SceneData mainMenuSceneData;
+		[SerializeField] private List<LevelData> levelDataCollection;
 
-        public float LoadingProgress { get; private set; }
+		public float LoadingProgress { get; private set; }
 
-        private const string CANNOT_LOAD_LEVEL = "Level cannot be loaded because there is no scene data with number {0}.";
+		private const string CANNOT_LOAD_LEVEL = "Level cannot be loaded because there is no scene data with number {0}.";
 
-        public void LoadMainMenuScene ()
-        {
-            LoadSceneAsync(mainMenuSceneData.ScenePath);
-        }
+		public void LoadMainMenuScene ()
+		{
+			LoadSceneAsync(mainMenuSceneData.ScenePath);
+		}
 
-        public void LoadLevelScene (int levelNumber)
-        {
-            if (TryGetLevelScenePath(out string scenePath, levelNumber))
-            {
-                LoadSceneAsync(scenePath);
-            }
-            else
-            {
-                Debug.LogError(string.Format(CANNOT_LOAD_LEVEL, levelNumber.ToString()));
-            }
-        }
+		public void LoadLevelScene (int levelNumber)
+		{
+			if (TryGetLevelScenePath(out string scenePath, levelNumber))
+			{
+				LoadSceneAsync(scenePath);
+			}
+			else
+			{
+				Debug.LogError(string.Format(CANNOT_LOAD_LEVEL, levelNumber.ToString()));
+			}
+		}
 
-        public void LoadSceneAsync (string sceneName)
-        {
-            StartCoroutine(LoadSceneProcess(sceneName));
-        }
+		public void LoadSceneAsync (string sceneName)
+		{
+			StartCoroutine(LoadSceneProcess(sceneName));
+		}
 
-        protected virtual void Start ()
-        {
-            LoadMainMenuScene ();
-        }
+		protected virtual void Start ()
+		{
+			LoadMainMenuScene();
+		}
 
-        private IEnumerator LoadSceneProcess (string sceneName)
-        {
-            AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
+		private IEnumerator LoadSceneProcess (string sceneName)
+		{
+			AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
 
-            while (!asyncOperation.isDone)
-            {
-                LoadingProgress = asyncOperation.progress;
-                yield return null;
-            }
+			while (!asyncOperation.isDone)
+			{
+				LoadingProgress = asyncOperation.progress;
+				yield return null;
+			}
 
-            LoadingProgress = 1.0f;
-        }
+			LoadingProgress = 1.0f;
+		}
 
-        private bool TryGetLevelScenePath (out string scenePath, int levelNumber)
-        {
-            scenePath = string.Empty;
-            
-            for (int index = 0; index < levelDataCollection.Count; index++)
-            {
-                LevelData levelData = levelDataCollection[index];
+		private bool TryGetLevelScenePath (out string scenePath, int levelNumber)
+		{
+			scenePath = string.Empty;
 
-                if (levelData.Number == levelNumber)
-                {
-                    scenePath = levelData.SceneData.ScenePath;
-                    break;
-                }
-            }
+			for (int index = 0; index < levelDataCollection.Count; index++)
+			{
+				LevelData levelData = levelDataCollection[index];
 
-            return scenePath != string.Empty;
-        }
-    }
+				if (levelData.Number == levelNumber)
+				{
+					scenePath = levelData.SceneData.ScenePath;
+					break;
+				}
+			}
+
+			return scenePath != string.Empty;
+		}
+	}
 }
