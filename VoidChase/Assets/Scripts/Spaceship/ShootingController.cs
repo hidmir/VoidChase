@@ -17,7 +17,7 @@ namespace VoidChase.Spaceship
 
 		public void SelectWeapon (string weaponName)
 		{
-			WeaponsProvider.Instance.TryGetObject(weaponName, out BaseWeapon weapon);
+			WeaponsProvider.Instance.TryGetWeapon(weaponName, out BaseWeapon weapon);
 			CurrentWeapon = weapon;
 		}
 

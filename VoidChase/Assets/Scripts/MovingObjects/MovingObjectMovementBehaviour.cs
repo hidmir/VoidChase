@@ -23,7 +23,6 @@ namespace VoidChase.MovingObjects
 
 		public virtual void Initialize ()
 		{
-			gameObject.SetActive(true);
 			IsMovementEnabled = true;
 		}
 
@@ -38,7 +37,6 @@ namespace VoidChase.MovingObjects
 		{
 			IsLaunched = false;
 			TimeSinceLaunching = 0.0f;
-			gameObject.SetActive(false);
 		}
 
 		protected virtual void Update ()

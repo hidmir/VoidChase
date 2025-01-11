@@ -5,9 +5,11 @@ using VoidChase.Utilities;
 namespace VoidChase.Spaceship.Weapons
 {
 	[Serializable]
-	public class WeaponData : ObjectData<string, BaseWeapon>
+	public class WeaponData
 	{
 		[field: SerializeField, Dropdown(StringCollectionNames.WEAPONS_COLLECTION_NAME)]
-		public override string Key { get; set; }
+		public string Name { get; set; }
+		[field: SerializeField]
+		public BaseWeapon ObjectReference { get; private set; }
 	}
 }

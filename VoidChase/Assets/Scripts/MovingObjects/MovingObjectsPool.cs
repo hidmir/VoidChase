@@ -48,10 +48,12 @@ namespace VoidChase.MovingObjects
 		private void GetObject (MovingObjectController movingObject)
 		{
 			movingObject.Initialize();
+			movingObject.gameObject.SetActive(true);
 		}
 
 		private void ReleaseObject (MovingObjectController movingObject)
 		{
+			movingObject.gameObject.SetActive(false);
 			movingObject.DeInitialize();
 		}
 

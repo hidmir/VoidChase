@@ -25,7 +25,7 @@ namespace VoidChase.UI
 
 		private void SetAllPanelsState (bool isEnabled)
 		{
-			foreach (PanelController panel in CurrentPanelsProvider.GetAllObjects())
+			foreach (PanelController panel in CurrentPanelsProvider.GetAllPanels())
 			{
 				panel.SetVisibility(isEnabled);
 			}
@@ -33,7 +33,7 @@ namespace VoidChase.UI
 
 		private void SetPanelState (string panelName, bool isEnabled)
 		{
-			if (CurrentPanelsProvider.TryGetObject(panelName, out PanelController objectReference))
+			if (CurrentPanelsProvider.TryGetPanel(panelName, out PanelController objectReference))
 			{
 				objectReference.SetVisibility(isEnabled);
 			}

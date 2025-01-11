@@ -5,9 +5,11 @@ using VoidChase.Utilities;
 namespace VoidChase.MovingObjects
 {
 	[Serializable]
-	public class MovingObjectData : ObjectData<string, MovingObjectsPool>
+	public class MovingObjectData
 	{
 		[field: SerializeField, Dropdown(StringCollectionNames.MOVING_OBJECTS_COLLECTION_NAME)]
-		public override string Key { get; set; }
+		public string Name { get; set; }
+		[field: SerializeField]
+		public MovingObjectsPool ObjectReference { get; private set; }
 	}
 }

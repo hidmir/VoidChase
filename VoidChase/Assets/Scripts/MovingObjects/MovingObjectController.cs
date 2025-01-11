@@ -8,7 +8,7 @@ namespace VoidChase.MovingObjects
 {
 	public class MovingObjectController : MonoBehaviour
 	{
-		public event Action<MovingObjectController> RequestDestroying = delegate { };
+		public event Action<MovingObjectController> DestroyingRequested = delegate { };
 
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
@@ -34,7 +34,7 @@ namespace VoidChase.MovingObjects
 
 		public void InvokeRequestDestroying ()
 		{
-			RequestDestroying.Invoke(this);
+			DestroyingRequested.Invoke(this);
 		}
 
 		private void OnEnable ()

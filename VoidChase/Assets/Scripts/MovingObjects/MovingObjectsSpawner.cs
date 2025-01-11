@@ -33,15 +33,15 @@ namespace VoidChase.MovingObjects
 
 		protected virtual void AttachToEvents (MovingObjectController movingObject)
 		{
-			movingObject.RequestDestroying += OnRequestDestroying;
+			movingObject.DestroyingRequested += OnDestroyingRequested;
 		}
 
 		protected virtual void DetachFromEvents (MovingObjectController movingObject)
 		{
-			movingObject.RequestDestroying -= OnRequestDestroying;
+			movingObject.DestroyingRequested -= OnDestroyingRequested;
 		}
 
-		private void OnRequestDestroying (MovingObjectController movingObject)
+		private void OnDestroyingRequested (MovingObjectController movingObject)
 		{
 			DeSpawn(movingObject);
 		}
