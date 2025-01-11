@@ -6,12 +6,16 @@ namespace VoidChase.Spaceship
 {
 	public class SpaceshipController : MonoBehaviour
 	{
-		[SerializeField] private SpaceshipMovementController spaceshipMovementController;
-		[SerializeField] private ShootingController shootingController;
-		[SerializeField] private ModulesCollectionController modulesCollectionController;
+		[field: SerializeField]
+		private SpaceshipMovementController MovementController { get; set; }
+		[field: SerializeField]
+		private ShootingController ShootingController { get; set; }
+		[field: SerializeField]
+		private ModulesCollectionController ModulesCollectionController { get; set; }
 
 		public void KillPlayer ()
 		{
+			//TODO: Refactor?
 			GameManager.Instance.EndGame();
 		}
 
@@ -32,16 +36,16 @@ namespace VoidChase.Spaceship
 
 		private void Reset ()
 		{
-			spaceshipMovementController = GetComponent<SpaceshipMovementController>();
-			shootingController = GetComponent<ShootingController>();
-			modulesCollectionController = GetComponent<ModulesCollectionController>();
+			MovementController = GetComponent<SpaceshipMovementController>();
+			ShootingController = GetComponent<ShootingController>();
+			ModulesCollectionController = GetComponent<ModulesCollectionController>();
 		}
 
 		private void Initialize ()
 		{
-			modulesCollectionController.InitializeModules();
-			spaceshipMovementController.SetMovementState(true);
-			shootingController.IsShootingEnabled = true;
+			ModulesCollectionController.InitializeModules();
+			MovementController.SetMovementState(true);
+			ShootingController.isShootingEnabled = true;
 		}
 
 		private void AttachToEvents ()
@@ -56,8 +60,8 @@ namespace VoidChase.Spaceship
 
 		private void OnIsGamePausedValueChanged (bool isPaused)
 		{
-			spaceshipMovementController.SetMovementState(!isPaused);
-			shootingController.IsShootingEnabled = !isPaused;
+			MovementController.SetMovementState(!isPaused);
+			ShootingController.isShootingEnabled = !isPaused;
 		}
 	}
 }

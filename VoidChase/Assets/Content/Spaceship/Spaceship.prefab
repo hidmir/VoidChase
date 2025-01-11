@@ -135,9 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73bfdd9c3505c734bbf24a09737de53b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceshipMovementController: {fileID: 4826380615108255417}
-  shootingController: {fileID: 6736650881678472343}
-  modulesCollectionController: {fileID: 8870913889095804776}
+  <MovementController>k__BackingField: {fileID: 4826380615108255417}
+  <ShootingController>k__BackingField: {fileID: 6736650881678472343}
+  <ModulesCollectionController>k__BackingField: {fileID: 8870913889095804776}
 --- !u!114 &4826380615108255417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b049043e9c5e245bd0760cb158cde1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Die>k__BackingField:
+  <ObjectDestroyed>k__BackingField:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1241705959456186630}

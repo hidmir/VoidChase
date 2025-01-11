@@ -17,35 +17,36 @@ namespace VoidChase.Spaceship
 		[field: SerializeField]
 		private float BrakingSpeed { get; set; } = 5.0f;
 
-		public bool IsMovementEnabled { get; private set; }
-		private Vector3 CachedVelocity { get; set; }
+		private bool isMovementEnabled;
+		private Vector3 cachedVelocity;
 
 		public void SetMovementState (bool isEnabled)
 		{
-			IsMovementEnabled = isEnabled;
+			isMovementEnabled = isEnabled;
 
+			//TODO: Check if it works correctly.
 			if (isEnabled)
 			{
-				CachedVelocity = CurrentRigidbody.velocity;
+				cachedVelocity = CurrentRigidbody.velocity;
 			}
 			else
 			{
-				CurrentRigidbody.velocity = CachedVelocity;
+				CurrentRigidbody.velocity = cachedVelocity;
 			}
 		}
 
-		protected virtual void Update ()
+		private void Update ()
 		{
 			UpdateMovement();
 		}
 
 		private void UpdateMovement ()
 		{
-			if (!IsMovementEnabled)
+			if (!isMovementEnabled)
 			{
 				return;
 			}
-			
+
 			Vector2 movementInputValue = SpaceshipInputProvider.Instance.MovementInputAction.ReadValue<Vector2>();
 			Vector2 velocity = movementInputValue != Vector2.zero ? GetMovementVelocity(movementInputValue) : GetBrakingVelocity();
 
@@ -64,6 +65,7 @@ namespace VoidChase.Spaceship
 
 		private Vector2 ClampVelocityToSceneBoundaries (Vector2 velocity)
 		{
+			//TODO: Refactor referencing to singleton?
 			(float maxX, float minX, float maxY, float minY) = GameManager.Instance.CurrentSceneBoundariesController.GetMaxMinPositions();
 			Vector3 currentPosition = CurrentRigidbody.transform.position;
 

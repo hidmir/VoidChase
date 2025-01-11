@@ -8,7 +8,7 @@ namespace VoidChase.Spaceship.Weapons
 	public class WeaponData
 	{
 		[field: SerializeField, Dropdown(StringCollectionNames.WEAPONS_COLLECTION_NAME)]
-		public string Name { get; set; }
+		public string Name { get; private set; }
 		[field: SerializeField]
 		public BaseWeapon ObjectReference { get; private set; }
 	}

@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae2c6d1558ac4e49b33a244d952acbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SwitchWeapon>k__BackingField:
+  <WeaponSwitched>k__BackingField:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4641512073943563540}

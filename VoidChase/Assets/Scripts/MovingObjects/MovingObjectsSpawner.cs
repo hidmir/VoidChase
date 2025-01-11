@@ -11,22 +11,22 @@ namespace VoidChase.MovingObjects
 
 		public override void Spawn (Vector3 position, Vector3 direction)
 		{
-			if (Pool == null)
-			{
-				return;
-			}
-			
 			MovingObjectController movingObject = Pool.Get();
 			AttachToEvents(movingObject);
 			movingObject.Launch(position, direction);
 		}
 
-		protected virtual void AttachToEvents (MovingObjectController movingObject)
+		private void Awake ()
+		{
+			Pool.Initialize(transform);
+		}
+
+		private void AttachToEvents (MovingObjectController movingObject)
 		{
 			movingObject.DestroyingRequested += OnDestroyingRequested;
 		}
 
-		protected virtual void DetachFromEvents (MovingObjectController movingObject)
+		private void DetachFromEvents (MovingObjectController movingObject)
 		{
 			movingObject.DestroyingRequested -= OnDestroyingRequested;
 		}
