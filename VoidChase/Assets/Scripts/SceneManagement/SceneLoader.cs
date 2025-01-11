@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using VoidChase.Utilities;
@@ -12,8 +13,6 @@ namespace VoidChase.SceneManagement
 		[SerializeField] private List<LevelData> levelDataCollection;
 
 		public float LoadingProgress { get; private set; }
-
-		private const string CANNOT_LOAD_LEVEL = "Level cannot be loaded because there is no scene data with number {0}.";
 
 		public void LoadMainMenuScene ()
 		{
@@ -28,18 +27,18 @@ namespace VoidChase.SceneManagement
 			}
 			else
 			{
-				Debug.LogError(string.Format(CANNOT_LOAD_LEVEL, levelNumber.ToString()));
+				Debug.LogError($"Level cannot be loaded because there is no scene data with number {levelNumber.ToString()}.");
 			}
 		}
 
-		public void LoadSceneAsync (string sceneName)
-		{
-			StartCoroutine(LoadSceneProcess(sceneName));
-		}
-
-		protected virtual void Start ()
+		private void Start ()
 		{
 			LoadMainMenuScene();
+		}
+
+		private void LoadSceneAsync (string sceneName)
+		{
+			StartCoroutine(LoadSceneProcess(sceneName));
 		}
 
 		private IEnumerator LoadSceneProcess (string sceneName)
@@ -57,19 +56,7 @@ namespace VoidChase.SceneManagement
 
 		private bool TryGetLevelScenePath (out string scenePath, int levelNumber)
 		{
-			scenePath = string.Empty;
-
-			for (int index = 0; index < levelDataCollection.Count; index++)
-			{
-				LevelData levelData = levelDataCollection[index];
-
-				if (levelData.Number == levelNumber)
-				{
-					scenePath = levelData.SceneData.ScenePath;
-					break;
-				}
-			}
-
+			scenePath = levelDataCollection.FirstOrDefault(levelData => levelData.Number == levelNumber)?.SceneData.ScenePath;
 			return scenePath != string.Empty;
 		}
 	}
