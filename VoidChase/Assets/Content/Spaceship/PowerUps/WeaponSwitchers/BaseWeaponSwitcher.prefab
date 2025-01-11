@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 5232645902491599256}
     - target: {fileID: 5099182269008558109, guid: 727cadb7c23ccc54eb078eccd456ebc7, type: 3}
       propertyPath: m_Name
-      value: BaseWeaponSwitcher Variant
+      value: BaseWeaponSwitcher
       objectReference: {fileID: 0}
     - target: {fileID: 6424761801458590484, guid: 727cadb7c23ccc54eb078eccd456ebc7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -112,4 +112,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  <WeaponName>k__BackingField: SingleProjectile
+  <WeaponName>k__BackingField: Single Projectile

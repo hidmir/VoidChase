@@ -8,7 +8,7 @@ namespace VoidChase.Modules
 	{
 		[field: Header(InspectorNames.EVENTS_NAME)]
 		[field: SerializeField]
-		public UnityEvent Die { get; set; }
+		public UnityEvent ObjectDestroyed { get; set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
@@ -28,7 +28,7 @@ namespace VoidChase.Modules
 
 			if (Health <= 0.0f)
 			{
-				Die.Invoke();
+				ObjectDestroyed.Invoke();
 			}
 		}
 	}

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using VoidChase.Utilities;
@@ -16,6 +17,7 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private float LifeTime { get; set; } = 5.0f;
 
+		[NonSerialized]
 		public bool isMovementEnabled;
 		private Vector3 cachedDirection;
 		private bool isLaunched;

@@ -98,12 +98,14 @@ namespace VoidChase.MovingObjects
 			Vector3 currentPosition = transform.position;
 			float halfSpawningAreaSize = SpawningAreaSize / 2.0f;
 
+#pragma warning disable CS8524
 			float currentPositionOnSpawningAxisValue = SpawningRangeAxis switch
 			{
 				Axis.X => currentPosition.x,
 				Axis.Y => currentPosition.y,
 				Axis.Z => currentPosition.z
 			};
+#pragma warning restore CS8524
 
 			float minPositionValue = currentPositionOnSpawningAxisValue - halfSpawningAreaSize;
 			float maxPositionValue = currentPositionOnSpawningAxisValue + halfSpawningAreaSize;
@@ -115,12 +117,14 @@ namespace VoidChase.MovingObjects
 		{
 			Vector3 currentPosition = transform.position;
 
+#pragma warning disable CS8524
 			return SpawningRangeAxis switch
 			{
 				Axis.X => new Vector3(positionOnSpawningAxisValue, currentPosition.y, currentPosition.z),
 				Axis.Y => new Vector3(currentPosition.x, positionOnSpawningAxisValue, currentPosition.z),
 				Axis.Z => new Vector3(currentPosition.x, currentPosition.y, positionOnSpawningAxisValue)
 			};
+#pragma warning restore CS8524
 		}
 
 		private void DrawSpawningRange ()

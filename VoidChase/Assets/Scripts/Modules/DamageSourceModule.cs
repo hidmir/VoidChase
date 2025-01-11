@@ -4,17 +4,17 @@ using VoidChase.Utilities;
 
 namespace VoidChase.Modules
 {
-	public class DamageInflictorModule : BaseModule
+	public class DamageSourceModule : BaseModule
 	{
 		[field: Header(InspectorNames.EVENTS_NAME)]
 		[field: SerializeField]
-		public UnityEvent Hit { get; private set; }
+		public UnityEvent DamageableHit { get; private set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
 		private float Damage { get; set; } = 1.0f;
 
-		protected virtual void OnTriggerEnter (Collider other)
+		private void OnTriggerEnter (Collider other)
 		{
 			AttemptInflictDamage(other);
 		}
@@ -24,7 +24,7 @@ namespace VoidChase.Modules
 			if (objectHit.TryGetComponent(out IDamageable damageableObject))
 			{
 				damageableObject.InflictDamage(Damage);
-				Hit.Invoke();
+				DamageableHit.Invoke();
 			}
 		}
 	}

@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031ac09bf6601374e962c837d7c596c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Hit>k__BackingField:
+  <DamageableHit>k__BackingField:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9156468763099704017}
@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7b049043e9c5e245bd0760cb158cde1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Die>k__BackingField:
+  <ObjectDestroyed>k__BackingField:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 9156468763099704017}
