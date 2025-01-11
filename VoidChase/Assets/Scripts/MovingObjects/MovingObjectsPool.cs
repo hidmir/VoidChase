@@ -1,11 +1,15 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 using VoidChase.Utilities;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 namespace VoidChase.MovingObjects
 {
-	public class MovingObjectsPool : MonoBehaviour
+	[Serializable]
+	public class MovingObjectsPool
 	{
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
@@ -16,6 +20,13 @@ namespace VoidChase.MovingObjects
 		private List<MovingObjectController> PrefabCollection { get; set; }
 
 		protected ObjectPool<MovingObjectController> CurrentPool { get; private set; }
+		private Transform cachedParent;
+
+		public void Initialize (Transform objectsParent)
+		{
+			cachedParent = objectsParent;
+			CurrentPool = new ObjectPool<MovingObjectController>(CreateObject, GetObject, ReleaseObject, null, true, PoolSize, PoolMaxSize);
+		}
 
 		public MovingObjectController Get ()
 		{
@@ -27,19 +38,9 @@ namespace VoidChase.MovingObjects
 			CurrentPool.Release(movingObject);
 		}
 
-		protected virtual void Awake ()
-		{
-			Initialize();
-		}
-
-		protected virtual void Initialize ()
-		{
-			CurrentPool = new ObjectPool<MovingObjectController>(CreateObject, GetObject, ReleaseObject, null, true, PoolSize, PoolMaxSize);
-		}
-
 		private MovingObjectController CreateObject ()
 		{
-			MovingObjectController movingObject = Instantiate(GetRandomPrefab(), transform);
+			MovingObjectController movingObject = Object.Instantiate(GetRandomPrefab(), cachedParent);
 			movingObject.gameObject.SetActive(false);
 
 			return movingObject;

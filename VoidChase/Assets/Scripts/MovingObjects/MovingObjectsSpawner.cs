@@ -5,18 +5,18 @@ namespace VoidChase.MovingObjects
 {
 	public class MovingObjectsSpawner : BaseMovingObjectsSpawner
 	{
-		[field: Header(InspectorNames.REFERENCES_NAME)]
+		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
-		private MovingObjectsPool BoundPool { get; set; }
+		private MovingObjectsPool Pool { get; set; }
 
 		public override void Spawn (Vector3 position, Vector3 direction)
 		{
-			if (BoundPool == null)
+			if (Pool == null)
 			{
 				return;
 			}
 			
-			MovingObjectController movingObject = BoundPool.Get();
+			MovingObjectController movingObject = Pool.Get();
 			AttachToEvents(movingObject);
 			movingObject.Launch(position, direction);
 		}
@@ -39,7 +39,7 @@ namespace VoidChase.MovingObjects
 		private void DeSpawn (MovingObjectController movingObject)
 		{
 			DetachFromEvents(movingObject);
-			BoundPool.Release(movingObject);
+			Pool.Release(movingObject);
 		}
 	}
 }
