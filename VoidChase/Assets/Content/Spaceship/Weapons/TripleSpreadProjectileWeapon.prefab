@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 103428632011424442, guid: a78c04fb63bc64a4bb10bfeb48a46491, type: 3}
       propertyPath: m_Name
-      value: TripleSpreadProjectileWeapon Variant
+      value: TripleSpreadProjectileWeapon
       objectReference: {fileID: 0}
     - target: {fileID: 742984972736444282, guid: a78c04fb63bc64a4bb10bfeb48a46491, type: 3}
       propertyPath: m_LocalPosition.x
@@ -100,6 +100,18 @@ PrefabInstance:
       propertyPath: <MovingObjectName>k__BackingField
       value: BluePlayerProjectile
       objectReference: {fileID: 0}
+    - target: {fileID: 5194314731488788284, guid: a78c04fb63bc64a4bb10bfeb48a46491, type: 3}
+      propertyPath: <Pool>k__BackingField.<PrefabCollection>k__BackingField.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194314731488788284, guid: a78c04fb63bc64a4bb10bfeb48a46491, type: 3}
+      propertyPath: <Pool>k__BackingField.<PrefabCollection>k__BackingField.Array.data[0]
+      value: 
+      objectReference: {fileID: 6609012889809283875, guid: 1b249cdb43d16074dbcd794c6aa158d3, type: 3}
+    - target: {fileID: 5194314731488788284, guid: a78c04fb63bc64a4bb10bfeb48a46491, type: 3}
+      propertyPath: <Pool>k__BackingField.<PrefabCollection>k__BackingField.Array.data[1]
+      value: 
+      objectReference: {fileID: 6609012889809283875, guid: 1b249cdb43d16074dbcd794c6aa158d3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

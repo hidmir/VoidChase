@@ -48,15 +48,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ab053b3d47803743b8a128e2c9d7ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ObjectDataCollection>k__BackingField:
-  - <ObjectReference>k__BackingField: {fileID: 5463292865091764628}
-    <Key>k__BackingField: SingleProjectile
-  - <ObjectReference>k__BackingField: {fileID: 3887942030631460206}
-    <Key>k__BackingField: DoubleProjectile
-  - <ObjectReference>k__BackingField: {fileID: 3209004270268229556}
-    <Key>k__BackingField: TripleProjectile
-  - <ObjectReference>k__BackingField: {fileID: 7528031919459910949}
-    <Key>k__BackingField: TripleSpreadProjectile
+  <WeaponDataCollection>k__BackingField:
+  - <Name>k__BackingField: Single Projectile
+    <ObjectReference>k__BackingField: {fileID: 5463292865091764628}
+  - <Name>k__BackingField: Double Projectile
+    <ObjectReference>k__BackingField: {fileID: 3887942030631460206}
+  - <Name>k__BackingField: Triple Projectile
+    <ObjectReference>k__BackingField: {fileID: 3209004270268229556}
+  - <Name>k__BackingField: Triple Spread Projectile
+    <ObjectReference>k__BackingField: {fileID: 7528031919459910949}
 --- !u!1001 &1142154431443609584
 PrefabInstance:
   m_ObjectHideFlags: 0

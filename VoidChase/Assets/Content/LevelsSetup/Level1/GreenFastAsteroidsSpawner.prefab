@@ -1,67 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &103428632011424442
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 742984972736444282}
-  - component: {fileID: 1721334101498087658}
-  m_Layer: 0
-  m_Name: BaseProjectileWeapon
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &742984972736444282
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103428632011424442}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 6859175165362829655}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1721334101498087658
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 103428632011424442}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43be8d77f24c11f4c8186d82f974dd3b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <CurrentMovingObjectsSpawner>k__BackingField: {fileID: 5194314731488788284}
-  <ProjectilesDataCollection>k__BackingField: []
---- !u!1001 &7126634235497467281
+--- !u!1001 &7529661852276855310
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 742984972736444282}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 31642375180225785, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
       propertyPath: m_Name
-      value: ProjectilesSpawner
+      value: GreenFastAsteroidsSpawner Variant
       objectReference: {fileID: 0}
     - target: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
       propertyPath: <MovingObjectName>k__BackingField
-      value: RedPlayerProjectile
+      value: GreenFastAsteroid
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: <MovingObjectType>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: <Pool>k__BackingField.<PrefabCollection>k__BackingField.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: <Pool>k__BackingField.<PrefabCollection>k__BackingField.Array.data[0]
+      value: 
+      objectReference: {fileID: 5011935604695191498, guid: 9bf9b6b1e74e42c488e1c6b9fcf434b1, type: 3}
+    - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -108,19 +77,3 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
---- !u!114 &5194314731488788284 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
-  m_PrefabInstance: {fileID: 7126634235497467281}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a1de5ad8987c744c870f9dfbd054e15, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &6859175165362829655 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
-  m_PrefabInstance: {fileID: 7126634235497467281}
-  m_PrefabAsset: {fileID: 0}
