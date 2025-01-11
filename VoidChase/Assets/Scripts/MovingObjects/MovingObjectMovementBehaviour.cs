@@ -8,7 +8,7 @@ namespace VoidChase.MovingObjects
 	{
 		[field: Header(InspectorNames.EVENTS_NAME)]
 		[field: SerializeField]
-		public UnityEvent ReachLifeTime { get; private set; }
+		public UnityEvent LifeTimeReached { get; private set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
@@ -16,32 +16,32 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private float LifeTime { get; set; } = 5.0f;
 
-		public bool IsMovementEnabled { get; set; }
-		private Vector3 Direction { get; set; }
-		private bool IsLaunched { get; set; }
-		private float TimeSinceLaunching { get; set; }
+		public bool isMovementEnabled;
+		private Vector3 cachedDirection;
+		private bool isLaunched;
+		private float timeSinceLaunching;
 
 		public virtual void Initialize ()
 		{
-			IsMovementEnabled = true;
+			isMovementEnabled = true;
 		}
 
 		public virtual void Launch (Vector3 position, Vector3 direction)
 		{
 			transform.position = position;
-			Direction = direction;
-			IsLaunched = true;
+			cachedDirection = direction;
+			isLaunched = true;
 		}
 
 		public virtual void DeInitialize ()
 		{
-			IsLaunched = false;
-			TimeSinceLaunching = 0.0f;
+			isLaunched = false;
+			timeSinceLaunching = 0.0f;
 		}
 
 		protected virtual void Update ()
 		{
-			if (IsLaunched && IsMovementEnabled)
+			if (isLaunched && isMovementEnabled)
 			{
 				UpdatePosition();
 				UpdateTimeSinceLaunching();
@@ -51,18 +51,18 @@ namespace VoidChase.MovingObjects
 		private void UpdatePosition ()
 		{
 			Vector3 currentPosition = transform.position;
-			Vector3 newPosition = currentPosition + Direction * (Speed * Time.deltaTime);
+			Vector3 newPosition = currentPosition + cachedDirection * (Speed * Time.deltaTime);
 
 			transform.position = newPosition;
 		}
 
 		private void UpdateTimeSinceLaunching ()
 		{
-			TimeSinceLaunching += Time.deltaTime;
+			timeSinceLaunching += Time.deltaTime;
 
-			if (TimeSinceLaunching > LifeTime)
+			if (timeSinceLaunching > LifeTime)
 			{
-				ReachLifeTime.Invoke();
+				LifeTimeReached.Invoke();
 			}
 		}
 	}

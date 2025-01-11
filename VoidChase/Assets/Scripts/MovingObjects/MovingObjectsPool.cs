@@ -19,23 +19,23 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private List<MovingObjectController> PrefabCollection { get; set; }
 
-		protected ObjectPool<MovingObjectController> CurrentPool { get; private set; }
+		private ObjectPool<MovingObjectController> currentPool;
 		private Transform cachedParent;
 
 		public void Initialize (Transform objectsParent)
 		{
 			cachedParent = objectsParent;
-			CurrentPool = new ObjectPool<MovingObjectController>(CreateObject, GetObject, ReleaseObject, null, true, PoolSize, PoolMaxSize);
+			currentPool = new ObjectPool<MovingObjectController>(CreateObject, GetObject, ReleaseObject, null, true, PoolSize, PoolMaxSize);
 		}
 
 		public MovingObjectController Get ()
 		{
-			return CurrentPool.Get();
+			return currentPool.Get();
 		}
 
 		public void Release (MovingObjectController movingObject)
 		{
-			CurrentPool.Release(movingObject);
+			currentPool.Release(movingObject);
 		}
 
 		private MovingObjectController CreateObject ()

@@ -127,7 +127,7 @@ MonoBehaviour:
       - m_Target: {fileID: 777599100077528062}
         m_TargetAssemblyTypeName: VoidChase.MovingObjects.MovingObjectController,
           Assembly-CSharp
-        m_MethodName: InvokeRequestDestroying
+        m_MethodName: RequestDestroying
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

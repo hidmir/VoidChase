@@ -32,7 +32,7 @@ namespace VoidChase.MovingObjects
 			CurrentMovementBehaviour.Launch(position, direction);
 		}
 
-		public void InvokeRequestDestroying ()
+		public void RequestDestroying ()
 		{
 			DestroyingRequested.Invoke(this);
 		}
@@ -59,7 +59,7 @@ namespace VoidChase.MovingObjects
 
 		private void OnIsGamePausedValueChanged (bool isGamePaused)
 		{
-			CurrentMovementBehaviour.IsMovementEnabled = !isGamePaused;
+			CurrentMovementBehaviour.isMovementEnabled = !isGamePaused;
 		}
 	}
 }

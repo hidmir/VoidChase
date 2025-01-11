@@ -1,8 +1,6 @@
-using System;
 using UnityEngine;
 using VoidChase.GameManagement;
 using VoidChase.Utilities;
-using Random = UnityEngine.Random;
 
 namespace VoidChase.MovingObjects
 {
@@ -30,14 +28,12 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private float VisualizationWidth { get; set; } = 0.5f;
 
-		private float TimeSinceLastSpawning { get; set; }
-		private bool IsSpawningEnabled { get; set; } = true;
-
-		private const string INCORRECT_SPAWNING_RANGE_AXIS_VALUE = "SpawningRangeAxis value is incorrect ({0}).";
+		private float timeSinceLastSpawning;
+		private bool isSpawningEnabled = true;
 
 		protected virtual void Update ()
 		{
-			if (IsSpawningEnabled)
+			if (isSpawningEnabled)
 			{
 				SpawnMovingObjects();
 			}
@@ -60,25 +56,26 @@ namespace VoidChase.MovingObjects
 
 		private void SpawnMovingObjects ()
 		{
-			TimeSinceLastSpawning += Time.deltaTime;
+			timeSinceLastSpawning += Time.deltaTime;
 
 			if (CanSpawnMovingObject())
 			{
 				Vector3 position = GetRandomPosition();
 				Spawner.Spawn(position, SpawningDirection);
 
-				TimeSinceLastSpawning = 0.0f;
+				timeSinceLastSpawning = 0.0f;
 			}
 		}
 
 		private bool CanSpawnMovingObject ()
 		{
 			float frequency = IsAffectedByGameSpeed ? SpawningFrequency * GetCurrentGameSpeed() : SpawningFrequency;
-			return TimeSinceLastSpawning > 1.0f / frequency;
+			return timeSinceLastSpawning > 1.0f / frequency;
 		}
 
 		private float GetCurrentGameSpeed ()
 		{
+			//TODO: Refactor 💀💀💀
 			return GameManager.Instance.CurrentGameSpeedController.CurrentSpeed;
 		}
 
@@ -99,17 +96,17 @@ namespace VoidChase.MovingObjects
 		private (float minPositionValue, float maxPositionValue) GetSpawnPositionMinMaxValue ()
 		{
 			Vector3 currentPosition = transform.position;
+			float halfSpawningAreaSize = SpawningAreaSize / 2.0f;
 
 			float currentPositionOnSpawningAxisValue = SpawningRangeAxis switch
 			{
 				Axis.X => currentPosition.x,
 				Axis.Y => currentPosition.y,
-				Axis.Z => currentPosition.z,
-				_ => throw new ArgumentException(String.Format(INCORRECT_SPAWNING_RANGE_AXIS_VALUE, SpawningRangeAxis))
+				Axis.Z => currentPosition.z
 			};
 
-			float minPositionValue = currentPositionOnSpawningAxisValue - (SpawningAreaSize / 2.0f);
-			float maxPositionValue = currentPositionOnSpawningAxisValue + (SpawningAreaSize / 2.0f);
+			float minPositionValue = currentPositionOnSpawningAxisValue - halfSpawningAreaSize;
+			float maxPositionValue = currentPositionOnSpawningAxisValue + halfSpawningAreaSize;
 
 			return (minPositionValue, maxPositionValue);
 		}
@@ -122,8 +119,7 @@ namespace VoidChase.MovingObjects
 			{
 				Axis.X => new Vector3(positionOnSpawningAxisValue, currentPosition.y, currentPosition.z),
 				Axis.Y => new Vector3(currentPosition.x, positionOnSpawningAxisValue, currentPosition.z),
-				Axis.Z => new Vector3(currentPosition.x, currentPosition.y, positionOnSpawningAxisValue),
-				_ => throw new ArgumentException(String.Format(INCORRECT_SPAWNING_RANGE_AXIS_VALUE, SpawningRangeAxis))
+				Axis.Z => new Vector3(currentPosition.x, currentPosition.y, positionOnSpawningAxisValue)
 			};
 		}
 
@@ -153,7 +149,7 @@ namespace VoidChase.MovingObjects
 
 		private void OnIsGamePausedValueChanged (bool isGamePaused)
 		{
-			IsSpawningEnabled = !isGamePaused;
+			isSpawningEnabled = !isGamePaused;
 		}
 
 		private enum Axis
