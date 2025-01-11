@@ -5,28 +5,18 @@ namespace VoidChase.MovingObjects
 {
 	public class MovingObjectsSpawner : BaseMovingObjectsSpawner
 	{
-		[field: Header(InspectorNames.SETTINGS_NAME)]
-		[field: SerializeField, Dropdown(StringCollectionNames.MOVING_OBJECTS_COLLECTION_NAME)]
-		private string MovingObjectName { get; set; }
-
-		protected MovingObjectsPool CurrentPool
-		{
-			get
-			{
-				if (cachedPool == null)
-				{
-					cachedPool = GetPoolByName();
-				}
-				
-				return cachedPool;
-			}
-		}
-
-		private MovingObjectsPool cachedPool;
+		[field: Header(InspectorNames.REFERENCES_NAME)]
+		[field: SerializeField]
+		private MovingObjectsPool BoundPool { get; set; }
 
 		public override void Spawn (Vector3 position, Vector3 direction)
 		{
-			MovingObjectController movingObject = CurrentPool.Get();
+			if (BoundPool == null)
+			{
+				return;
+			}
+			
+			MovingObjectController movingObject = BoundPool.Get();
 			AttachToEvents(movingObject);
 			movingObject.Launch(position, direction);
 		}
@@ -49,13 +39,7 @@ namespace VoidChase.MovingObjects
 		private void DeSpawn (MovingObjectController movingObject)
 		{
 			DetachFromEvents(movingObject);
-			CurrentPool.Release(movingObject);
-		}
-
-		private MovingObjectsPool GetPoolByName ()
-		{
-			MovingObjectsPoolProvider.Instance.TryGetObject(MovingObjectName, out MovingObjectsPool pool);
-			return pool;
+			BoundPool.Release(movingObject);
 		}
 	}
 }
