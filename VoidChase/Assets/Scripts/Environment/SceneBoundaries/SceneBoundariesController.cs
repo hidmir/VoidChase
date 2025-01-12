@@ -1,10 +1,14 @@
 using UnityEngine;
 using VoidChase.Utilities;
 
-namespace VoidChase.GameManagement
+namespace VoidChase.Environment.SceneBoundaries
 {
 	public class SceneBoundariesController : MonoBehaviour
 	{
+		[field: Header(InspectorNames.REFERENCES_NAME)]
+		[field: SerializeField]
+		private SceneBoundariesSO SceneBoundariesSO { get; set; }
+
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
 		private Vector3 CentralPoint { get; set; }
@@ -15,64 +19,65 @@ namespace VoidChase.GameManagement
 		[field: SerializeField]
 		private Color VisualizationColor { get; set; } = Color.yellow;
 
-		public (float maxX, float minX, float maxY, float minY) GetMaxMinPositions ()
+		private void Awake ()
 		{
-			return (GetMaxXPosition(), GetMinXPosition(), GetMaxYPosition(), GetMinYPosition());
-		}
-		
-		public (Vector3 maxX, Vector3 minX, Vector3 maxY, Vector3 minY) GetBoundariesCorners ()
-		{
-			return (GetTopLeftCorner(), GetBottomLeftCorner(), GetTopRightCorner(), GetBottomRightCorner());
+			SceneBoundariesSO.SetPositionLimits(GetMaxXPosition(), GetMinXPosition(), GetMaxYPosition(), GetMinYPosition());
+			SceneBoundariesSO.SetBoundariesCorners(GetTopLeftCorner(), GetBottomLeftCorner(), GetTopRightCorner(), GetBottomRightCorner());
 		}
 
-		public float GetMaxXPosition ()
+		private float GetMaxXPosition ()
 		{
 			return CentralPoint.x + BoundariesSize.x;
 		}
 
-		public float GetMinXPosition ()
+		private float GetMinXPosition ()
 		{
 			return CentralPoint.x - BoundariesSize.x;
 		}
 
-		public float GetMaxYPosition ()
+		private float GetMaxYPosition ()
 		{
 			return CentralPoint.y + BoundariesSize.y;
 		}
 
-		public float GetMinYPosition ()
+		private float GetMinYPosition ()
 		{
 			return CentralPoint.y - BoundariesSize.y;
 		}
 
-		public Vector3 GetTopLeftCorner ()
+		private Vector3 GetTopLeftCorner ()
 		{
 			return CentralPoint + new Vector3(-1.0f * BoundariesSize.x, BoundariesSize.y, 0.0f);
 		}
 
-		public Vector3 GetBottomLeftCorner ()
+		private Vector3 GetBottomLeftCorner ()
 		{
-			return CentralPoint + new Vector3(-1.0f * BoundariesSize.x, -1.0f * BoundariesSize.y, 0.0f);;
+			return CentralPoint + new Vector3(-1.0f * BoundariesSize.x, -1.0f * BoundariesSize.y, 0.0f);
 		}
 
-		public Vector3 GetTopRightCorner ()
+		private Vector3 GetTopRightCorner ()
 		{
 			return CentralPoint + new Vector3(BoundariesSize.x, BoundariesSize.y, 0.0f);
 		}
 
-		public Vector3 GetBottomRightCorner ()
+		private Vector3 GetBottomRightCorner ()
 		{
 			return CentralPoint + new Vector3(BoundariesSize.x, -1.0f * BoundariesSize.y, 0.0f);
 		}
 
-		protected virtual void OnDrawGizmos ()
+		private void OnDrawGizmos ()
 		{
+#if UNITY_EDITOR
 			DrawBoundaries();
+#endif
 		}
 
 		private void DrawBoundaries ()
 		{
-			(Vector3 topLeftCorner, Vector3 bottomLeftCorner, Vector3 topRightCorner, Vector3 bottomRightCorner) = GetBoundariesCorners();
+			(Vector3 topLeftCorner, Vector3 bottomLeftCorner, Vector3 topRightCorner, Vector3 bottomRightCorner) =
+				Application.isPlaying
+					? SceneBoundariesSO.GetBoundariesCorners()
+					: (GetTopLeftCorner(), GetBottomLeftCorner(), GetTopRightCorner(), GetBottomRightCorner());
 
 			Gizmos.color = VisualizationColor;
 			Gizmos.DrawLine(topLeftCorner, bottomLeftCorner);

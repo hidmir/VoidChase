@@ -1,5 +1,5 @@
 using UnityEngine;
-using VoidChase.GameManagement;
+using VoidChase.Environment.SceneBoundaries;
 using VoidChase.Spaceship.Input;
 using VoidChase.Utilities;
 
@@ -10,6 +10,8 @@ namespace VoidChase.Spaceship
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
 		private Rigidbody CurrentRigidbody { get; set; }
+		[field: SerializeField]
+		private SceneBoundariesSO SceneBoundariesSO { get; set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
@@ -65,8 +67,7 @@ namespace VoidChase.Spaceship
 
 		private Vector2 ClampVelocityToSceneBoundaries (Vector2 velocity)
 		{
-			//TODO: Refactor referencing to singleton?
-			(float maxX, float minX, float maxY, float minY) = GameManager.Instance.CurrentSceneBoundariesController.GetMaxMinPositions();
+			(float maxX, float minX, float maxY, float minY) = SceneBoundariesSO.GetMaxMinPositions();
 			Vector3 currentPosition = CurrentRigidbody.transform.position;
 
 			bool isMaxXReached = currentPosition.x >= maxX;

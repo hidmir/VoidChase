@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <CurrentRigidbody>k__BackingField: {fileID: 1112339697371281313}
+  <SceneBoundariesSO>k__BackingField: {fileID: 11400000, guid: 3823740832498db47a329bd8fdd3300c, type: 2}
   <MovementSpeed>k__BackingField: 5
   <BrakingSpeed>k__BackingField: 5
 --- !u!114 &6736650881678472343
