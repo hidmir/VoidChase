@@ -5,18 +5,19 @@ namespace VoidChase.UI
 {
 	public class ShowPanel : MonoBehaviour
 	{
-		[Dropdown(StringCollectionNames.PANELS_COLLECTION_NAME)] 
-		[SerializeField] private string panelName;
-		[SerializeField] private bool showAtStart;
+		[field: SerializeField, Dropdown(StringCollectionNames.PANELS_COLLECTION_NAME)]
+		private string PanelName { get; set; }
+		[field: SerializeField]
+		private bool ShowAtStart { get; set; }
 
 		public void Show ()
 		{
-			UIManager.Instance.ShowPanel(panelName);
+			UIManager.Instance.ShowPanel(PanelName);
 		}
 
 		private void Start ()
 		{
-			if (showAtStart)
+			if (ShowAtStart)
 			{
 				Show();
 			}

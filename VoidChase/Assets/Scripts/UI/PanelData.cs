@@ -8,8 +8,8 @@ namespace VoidChase.UI
 	public class PanelData
 	{
 		[field: SerializeField, Dropdown(StringCollectionNames.PANELS_COLLECTION_NAME)]
-		public string Name { get; set; }
+		public string Name { get; private set; }
 		[field: SerializeField]
-		public PanelController ObjectReference { get; private set; }
+		public BasePanelController ObjectReference { get; private set; }
 	}
 }

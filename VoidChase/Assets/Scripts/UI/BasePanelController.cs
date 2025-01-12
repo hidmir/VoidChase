@@ -2,14 +2,14 @@ using UnityEngine;
 
 namespace VoidChase.UI
 {
-	public class View : MonoBehaviour
+	public class BasePanelController : MonoBehaviour
 	{
 		[field: SerializeField]
 		protected GameObject Content { get; private set; }
 
-		public void SetContentState (bool isEnabled)
+		public void SetVisibility (bool isVisible)
 		{
-			Content.SetActive(isEnabled);
+			Content.SetActive(isVisible);
 		}
 	}
 }

@@ -11,7 +11,7 @@ namespace VoidChase.UI
 		[field: SerializeField]
 		private List<PanelData> PanelDataCollection { get; set; }
 
-		public bool TryGetPanel (string panelName, out PanelController panel)
+		public bool TryGetPanel (string panelName, out BasePanelController panel)
 		{
 			panel = PanelDataCollection.FirstOrDefault(panelData => panelData.Name == panelName)?.ObjectReference;
 
@@ -23,7 +23,7 @@ namespace VoidChase.UI
 			return panel != null;
 		}
 
-		public IEnumerable<PanelController> GetAllPanels ()
+		public IEnumerable<BasePanelController> GetAllPanels ()
 		{
 			return PanelDataCollection.Select(panelData => panelData.ObjectReference);
 		}
