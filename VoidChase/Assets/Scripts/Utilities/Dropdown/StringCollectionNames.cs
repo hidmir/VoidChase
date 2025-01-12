@@ -1,4 +1,4 @@
-namespace VoidChase.Utilities
+namespace VoidChase.Utilities.Dropdown
 {
 	public static class StringCollectionNames
 	{

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using VoidChase.Modules;
 using VoidChase.Utilities;
+using VoidChase.Utilities.Dropdown;
 
 namespace VoidChase.Spaceship.PowerUps
 {
