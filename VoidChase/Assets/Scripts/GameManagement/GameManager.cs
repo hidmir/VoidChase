@@ -1,4 +1,3 @@
-using UnityEngine;
 using VoidChase.SceneManagement;
 using VoidChase.Utilities;
 
@@ -6,10 +5,6 @@ namespace VoidChase.GameManagement
 {
 	public class GameManager : SingletonMonoBehaviour<GameManager>
 	{
-		[field: Header(InspectorNames.REFERENCES_NAME)]
-		[field: SerializeField]
-		public GameSpeedController CurrentGameSpeedController { get; private set; }
-
 		public void EndGame ()
 		{
 			PauseGame();

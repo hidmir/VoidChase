@@ -1,4 +1,5 @@
 using UnityEngine;
+using VoidChase.Environment.GameSpeed;
 using VoidChase.GameManagement;
 using VoidChase.Utilities;
 
@@ -9,6 +10,8 @@ namespace VoidChase.MovingObjects
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
 		private BaseMovingObjectsSpawner Spawner { get; set; }
+		[field: SerializeField]
+		private GameSpeedSO GameSpeedSO { get; set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
@@ -69,14 +72,8 @@ namespace VoidChase.MovingObjects
 
 		private bool CanSpawnMovingObject ()
 		{
-			float frequency = IsAffectedByGameSpeed ? SpawningFrequency * GetCurrentGameSpeed() : SpawningFrequency;
+			float frequency = IsAffectedByGameSpeed ? SpawningFrequency * GameSpeedSO.CurrentSpeed : SpawningFrequency;
 			return timeSinceLastSpawning > 1.0f / frequency;
-		}
-
-		private float GetCurrentGameSpeed ()
-		{
-			//TODO: Refactor 💀💀💀
-			return GameManager.Instance.CurrentGameSpeedController.CurrentSpeed;
 		}
 
 		private Vector3 GetRandomPosition ()
