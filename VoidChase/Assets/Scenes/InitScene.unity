@@ -389,6 +389,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
+    - target: {fileID: 2205452694009860268, guid: 06ddb04a538d8b2408afb5c2e3e77b59, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205452694009860268, guid: 06ddb04a538d8b2408afb5c2e3e77b59, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205452694009860268, guid: 06ddb04a538d8b2408afb5c2e3e77b59, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2205452694009860268, guid: 06ddb04a538d8b2408afb5c2e3e77b59, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8573886343791824135, guid: 06ddb04a538d8b2408afb5c2e3e77b59, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8573886343791824135, guid: 06ddb04a538d8b2408afb5c2e3e77b59, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8573886343791824135, guid: 06ddb04a538d8b2408afb5c2e3e77b59, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8573886343791824135, guid: 06ddb04a538d8b2408afb5c2e3e77b59, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9036929241178161947, guid: 06ddb04a538d8b2408afb5c2e3e77b59, type: 3}
       propertyPath: m_Pivot.x
       value: 0
