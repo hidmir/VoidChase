@@ -1,8 +1,7 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
+using VoidChase.GameLoop;
 using VoidChase.GameLoop.Pause;
-using VoidChase.GameManagement;
 
 namespace VoidChase.UI.GameView
 {
@@ -49,22 +48,22 @@ namespace VoidChase.UI.GameView
 
 		private void AttachToEvents ()
 		{
-			GameGlobalActions.EndGame += OnEndGame;
-			GameGlobalActions.ExitLevel += OnExitLevel;
+			GameLoopManager.GameEnded += OnGameEnded;
+			GameLoopManager.LevelExited += OnLevelExited;
 		}
 
 		private void DetachFromEvents ()
 		{
-			GameGlobalActions.EndGame -= OnEndGame;
-			GameGlobalActions.ExitLevel -= OnExitLevel;
+			GameLoopManager.GameEnded -= OnGameEnded;
+			GameLoopManager.LevelExited -= OnLevelExited;
 		}
 
-		private void OnEndGame ()
+		private void OnGameEnded ()
 		{
 			SetVisibility(false);
 		}
 
-		private void OnExitLevel ()
+		private void OnLevelExited ()
 		{
 			SetVisibility(false);
 		}

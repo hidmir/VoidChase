@@ -1,4 +1,4 @@
-using VoidChase.GameManagement;
+using VoidChase.GameLoop;
 
 namespace VoidChase.UI.GameOver
 {
@@ -7,7 +7,7 @@ namespace VoidChase.UI.GameOver
 		public void ExitLevel ()
 		{
 			SetVisibility(false);
-			GameManager.Instance.ExitLevel();
+			GameLoopManager.Instance.ExitLevel();
 		}
 
 		private void OnEnable ()
@@ -22,15 +22,15 @@ namespace VoidChase.UI.GameOver
 
 		private void AttachToEvents ()
 		{
-			GameGlobalActions.EndGame += OnEndGame;
+			GameLoopManager.GameEnded += OnGameEnded;
 		}
 
 		private void DetachFromEvents ()
 		{
-			GameGlobalActions.EndGame -= OnEndGame;
+			GameLoopManager.GameEnded -= OnGameEnded;
 		}
 
-		private void OnEndGame ()
+		private void OnGameEnded ()
 		{
 			SetVisibility(true);
 		}

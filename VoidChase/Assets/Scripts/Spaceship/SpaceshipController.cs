@@ -1,6 +1,6 @@
 using UnityEngine;
+using VoidChase.GameLoop;
 using VoidChase.GameLoop.Pause;
-using VoidChase.GameManagement;
 using VoidChase.Modules;
 
 namespace VoidChase.Spaceship
@@ -16,8 +16,7 @@ namespace VoidChase.Spaceship
 
 		public void KillPlayer ()
 		{
-			//TODO: Refactor?
-			GameManager.Instance.EndGame();
+			GameLoopManager.Instance.EndGame();
 		}
 
 		public void OnPause ()
