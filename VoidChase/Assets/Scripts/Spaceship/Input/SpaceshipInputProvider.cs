@@ -16,6 +16,12 @@ namespace VoidChase.Spaceship.Input
 			InitializeInput();
 		}
 
+		protected override void Shutdown ()
+		{
+			base.Shutdown();
+			CurrentSpaceshipInput.Disable();
+		}
+
 		private void InitializeInput ()
 		{
 			CurrentSpaceshipInput = new SpaceshipInput();
