@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using VoidChase.Spaceship.Input;
 using VoidChase.Spaceship.Weapons;
 using VoidChase.Utilities;
+using VoidChase.Utilities.Dropdown;
 
 namespace VoidChase.Spaceship
 {
@@ -12,47 +14,54 @@ namespace VoidChase.Spaceship
 		[field: SerializeField, Dropdown(StringCollectionNames.WEAPONS_COLLECTION_NAME)]
 		private string InitialWeapon { get; set; }
 
-		public bool IsShootingEnabled { get; set; }
-		private BaseWeapon CurrentWeapon { get; set; }
+		[NonSerialized]
+		public bool isShootingEnabled;
+		private BaseWeapon currentWeapon;
 
 		public void SelectWeapon (string weaponName)
 		{
-			WeaponsProvider.Instance.TryGetObject(weaponName, out BaseWeapon weapon);
-			CurrentWeapon = weapon;
+			if (WeaponsProvider.Instance.TryGetWeapon(weaponName, out BaseWeapon weapon))
+			{
+				currentWeapon = weapon;
+			}
+			else
+			{
+				Debug.LogError($"Cannot find weapon with name: {weaponName}. Weapon won't be changed.");
+			}
 		}
 
-		protected virtual void Start ()
+		private void Start ()
 		{
 			SelectWeapon(InitialWeapon);
 			AttachToEvents();
 		}
 
-		protected virtual void OnDestroy ()
+		private void OnDestroy ()
 		{
 			DetachFromEvents();
 		}
 
 		private void AttachToEvents ()
 		{
-			SpaceshipInputProvider.Instance.ShootInputAction.performed += OnShoot;
+			SpaceshipInputProvider.Instance.ShootingInputAction.performed += OnShoot;
 		}
 
 		private void DetachFromEvents ()
 		{
 			if (SpaceshipInputProvider.Instance != null)
 			{
-				SpaceshipInputProvider.Instance.ShootInputAction.performed -= OnShoot;
+				SpaceshipInputProvider.Instance.ShootingInputAction.performed -= OnShoot;
 			}
 		}
 
 		private void OnShoot (InputAction.CallbackContext obj)
 		{
-			if (!IsShootingEnabled)
+			if (!isShootingEnabled)
 			{
 				return;
 			}
 
-			CurrentWeapon.Shoot(transform.position);
+			currentWeapon.Shoot(transform.position);
 		}
 	}
 }

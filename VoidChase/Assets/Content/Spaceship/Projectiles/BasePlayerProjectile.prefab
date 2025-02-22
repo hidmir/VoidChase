@@ -121,13 +121,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031ac09bf6601374e962c837d7c596c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Hit>k__BackingField:
+  <DamageableHit>k__BackingField:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 777599100077528062}
         m_TargetAssemblyTypeName: VoidChase.MovingObjects.MovingObjectController,
           Assembly-CSharp
-        m_MethodName: InvokeRequestDestroying
+        m_MethodName: RequestDestroying
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1,15 +1,19 @@
+using VoidChase.SceneManagement;
+
 namespace VoidChase.UI.LevelSelection
 {
-	public class LevelSelectionController : Controller<LevelSelectionModel, LevelSelectionView>
+	public class LevelSelectionController : BasePanelController
 	{
-		public void HandleSelectLevel (int levelNumber)
+		public void SelectLevel (int number)
 		{
-			CurrentModel.SelectLevel(levelNumber);
+			SetVisibility(false);
+			SceneLoader.Instance.LoadLevelScene(number);
 		}
 
-		public void HandleBack ()
+		public void ShowMainMenu ()
 		{
-			CurrentModel.ShowMainMenu();
+			SetVisibility(false);
+			UIManager.Instance.ShowPanel(PanelsNames.MainMenu);
 		}
 	}
 }

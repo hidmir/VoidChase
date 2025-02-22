@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6478747374340559448
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 31642375180225785, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: m_Name
+      value: GreenSmallAsteroidsSpawner Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: <MovingObjectName>k__BackingField
+      value: GreenSmallAsteroid
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: <Pool>k__BackingField.<PrefabCollection>k__BackingField.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: <Pool>k__BackingField.<PrefabCollection>k__BackingField.Array.data[0]
+      value: 
+      objectReference: {fileID: 5781118105848510871, guid: 4338ea27777cd794bb4bc65c7fbb7377, type: 3}
+    - target: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: <Pool>k__BackingField.<PrefabCollection>k__BackingField.Array.data[1]
+      value: 
+      objectReference: {fileID: 504658535350527989, guid: e723822bea296b842893a047b22d56c6, type: 3}
+    - target: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: <Pool>k__BackingField.<PrefabCollection>k__BackingField.Array.data[2]
+      value: 
+      objectReference: {fileID: 814732592070557708, guid: d2db38df013f35947beec21d4131a4e1, type: 3}
+    - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455831810929538246, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}

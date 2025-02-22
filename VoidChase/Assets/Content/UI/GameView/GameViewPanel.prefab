@@ -272,7 +272,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3105548359290248901}
         m_TargetAssemblyTypeName: VoidChase.UI.GameView.GameViewController, Assembly-CSharp
-        m_MethodName: HandlePauseGame
+        m_MethodName: PauseGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -294,10 +294,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameViewPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 7965559323598355490, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
-      propertyPath: currentView
-      value: 
-      objectReference: {fileID: 6426927965198728181}
     - target: {fileID: 7993946567417211413, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -394,12 +390,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2651875145020157756, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3105548359290248901}
-    - targetCorrespondingSourceObject: {fileID: 2651875145020157756, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4332244007815011763}
-    - targetCorrespondingSourceObject: {fileID: 2651875145020157756, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6426927965198728181}
   m_SourcePrefab: {fileID: 100100000, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
 --- !u!1 &2316651567032100209 stripped
 GameObject:
@@ -423,36 +413,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51cc5770bea44ab43a1db9db2d620023, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <CurrentView>k__BackingField: {fileID: 6426927965198728181}
-  <CurrentModel>k__BackingField: {fileID: 4332244007815011763}
---- !u!114 &4332244007815011763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4236258175557136002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e91b044ed7d6b64099dc30072f57f90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <CurrentView>k__BackingField: {fileID: 6426927965198728181}
-  pauseMenuPanelName: PauseMenu
---- !u!114 &6426927965198728181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4236258175557136002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a56e057f77c7891429620bf90ab44577, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   <Content>k__BackingField: {fileID: 2316651567032100209}
-  pauseButton: {fileID: 873869562722904198}
+  <PauseButton>k__BackingField: {fileID: 873869562722904198}
 --- !u!224 &7260354769858739112 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8846927891893484054, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}

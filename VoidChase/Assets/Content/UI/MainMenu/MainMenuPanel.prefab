@@ -183,7 +183,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8900793429874309983, guid: 3463514dd738b1a439455494bd972849, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HandleStart
+      value: ShowLevelSelection
       objectReference: {fileID: 0}
     - target: {fileID: 8900793429874309983, guid: 3463514dd738b1a439455494bd972849, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -321,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8900793429874309983, guid: 3463514dd738b1a439455494bd972849, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HandleOptions
+      value: ShowOptions
       objectReference: {fileID: 0}
     - target: {fileID: 8900793429874309983, guid: 3463514dd738b1a439455494bd972849, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -351,12 +351,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2651875145020157756, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
       propertyPath: m_Name
-      value: MainMenuPanel Variant
+      value: MainMenuPanel
       objectReference: {fileID: 0}
-    - target: {fileID: 7965559323598355490, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
-      propertyPath: currentView
-      value: 
-      objectReference: {fileID: 4533844488883865066}
     - target: {fileID: 7993946567417211413, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -450,12 +446,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2651875145020157756, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1815605773253095021}
-    - targetCorrespondingSourceObject: {fileID: 2651875145020157756, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2345508166514729310}
-    - targetCorrespondingSourceObject: {fileID: 2651875145020157756, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4533844488883865066}
   m_SourcePrefab: {fileID: 100100000, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
 --- !u!1 &1038462673964488357 stripped
 GameObject:
@@ -477,35 +467,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00334c1e8027a4242aedcadda8c8aba1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <CurrentView>k__BackingField: {fileID: 4533844488883865066}
-  <CurrentModel>k__BackingField: {fileID: 2345508166514729310}
---- !u!114 &2345508166514729310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1478601530294033750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3268b58d066000a459e8248285749e34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <CurrentView>k__BackingField: {fileID: 4533844488883865066}
-  levelSelectionPanelName: LevelSelection
-  optionsPanelName: Options
---- !u!114 &4533844488883865066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1478601530294033750}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66ee434d3e2c6ac4cb844e7749921367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   <Content>k__BackingField: {fileID: 1038462673964488357}
@@ -746,7 +707,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8900793429874309983, guid: 3463514dd738b1a439455494bd972849, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: HandleQuit
+      value: QuitGame
       objectReference: {fileID: 0}
     - target: {fileID: 8900793429874309983, guid: 3463514dd738b1a439455494bd972849, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

@@ -57,7 +57,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 31642375180225785, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
       propertyPath: m_Name
-      value: MovingObjectsSpawner
+      value: ProjectilesSpawner
       objectReference: {fileID: 0}
     - target: {fileID: 3094832411637281453, guid: c52605dd8e88b04449881d9f4baa17f4, type: 3}
       propertyPath: <MovingObjectName>k__BackingField

@@ -6,7 +6,7 @@ namespace VoidChase.Spaceship.Input
 	public class SpaceshipInputProvider : SingletonMonoBehaviour<SpaceshipInputProvider>
 	{
 		public InputAction MovementInputAction => CurrentSpaceshipInput.Controlls.Movement;
-		public InputAction ShootInputAction => CurrentSpaceshipInput.Controlls.Shoot;
+		public InputAction ShootingInputAction => CurrentSpaceshipInput.Controlls.Shoot;
 
 		private SpaceshipInput CurrentSpaceshipInput { get; set; }
 
@@ -14,6 +14,12 @@ namespace VoidChase.Spaceship.Input
 		{
 			base.Initialize();
 			InitializeInput();
+		}
+
+		protected override void Shutdown ()
+		{
+			base.Shutdown();
+			CurrentSpaceshipInput.Disable();
 		}
 
 		private void InitializeInput ()

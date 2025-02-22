@@ -11,20 +11,25 @@ namespace VoidChase.Utilities
 			if (Instance == null)
 			{
 				Instance = (T) this;
+				Initialize();
 			}
 			else
 			{
 				Destroy(this);
 			}
-
-			Initialize();
 		}
 
 		protected virtual void Initialize () { }
 
+		protected virtual void Shutdown () { }
+
 		private void OnDestroy ()
 		{
-			Instance = null;
+			if (Instance == this)
+			{
+				Shutdown();
+				Instance = null;
+			}
 		}
 	}
 }
