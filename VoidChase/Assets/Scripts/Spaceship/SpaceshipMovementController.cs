@@ -24,6 +24,11 @@ namespace VoidChase.Spaceship
 
 		public void SetMovementState (bool isEnabled)
 		{
+			if (isEnabled == isMovementEnabled)
+			{
+				return;
+			}
+
 			isMovementEnabled = isEnabled;
 
 			//TODO: Check if it works correctly.

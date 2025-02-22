@@ -1,10 +1,11 @@
 using UnityEngine;
+using VoidChase.GameLoop.Pause;
 using VoidChase.GameManagement;
 using VoidChase.Modules;
 
 namespace VoidChase.Spaceship
 {
-	public class SpaceshipController : MonoBehaviour
+	public class SpaceshipController : MonoBehaviour, IPausable
 	{
 		[field: SerializeField]
 		private SpaceshipMovementController MovementController { get; set; }
@@ -19,6 +20,16 @@ namespace VoidChase.Spaceship
 			GameManager.Instance.EndGame();
 		}
 
+		public void OnPause ()
+		{
+			SetSpaceshipPauseState(true);
+		}
+
+		public void OnResume ()
+		{
+			SetSpaceshipPauseState(false);
+		}
+
 		private void Start ()
 		{
 			Initialize();
@@ -26,12 +37,12 @@ namespace VoidChase.Spaceship
 
 		private void OnEnable ()
 		{
-			AttachToEvents();
+			((IPausable) this).RegisterPausable();
 		}
 
 		private void OnDisable ()
 		{
-			DetachFromEvents();
+			((IPausable) this).UnregisterPausable();
 		}
 
 		private void Reset ()
@@ -48,17 +59,7 @@ namespace VoidChase.Spaceship
 			ShootingController.isShootingEnabled = true;
 		}
 
-		private void AttachToEvents ()
-		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged += OnIsGamePausedValueChanged;
-		}
-
-		private void DetachFromEvents ()
-		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged -= OnIsGamePausedValueChanged;
-		}
-
-		private void OnIsGamePausedValueChanged (bool isPaused)
+		private void SetSpaceshipPauseState (bool isPaused)
 		{
 			MovementController.SetMovementState(!isPaused);
 			ShootingController.isShootingEnabled = !isPaused;

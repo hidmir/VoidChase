@@ -1,3 +1,4 @@
+using VoidChase.GameLoop.Pause;
 using VoidChase.GameManagement;
 
 namespace VoidChase.UI.PauseMenu
@@ -7,13 +8,14 @@ namespace VoidChase.UI.PauseMenu
 		public void UnPauseGame ()
 		{
 			SetVisibility(false);
-			GameManager.Instance.UnPauseGame();
+			PauseManager.Instance.Resume();
 		}
 
 		public void ExitLevel ()
 		{
 			SetVisibility(false);
 			GameManager.Instance.ExitLevel();
+			PauseManager.Instance.Resume();
 		}
 	}
 }

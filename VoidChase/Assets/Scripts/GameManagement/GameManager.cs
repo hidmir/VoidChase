@@ -7,7 +7,6 @@ namespace VoidChase.GameManagement
 	{
 		public void EndGame ()
 		{
-			PauseGame();
 			GameGlobalActions.InvokeEndGame();
 		}
 
@@ -15,22 +14,6 @@ namespace VoidChase.GameManagement
 		{
 			GameGlobalActions.InvokeExitLevel();
 			SceneLoader.Instance.LoadMainMenuScene();
-		}
-
-		public void PauseGame ()
-		{
-			GameGlobalVariables.IsGamePaused.Value = true;
-		}
-
-		public void UnPauseGame ()
-		{
-			GameGlobalVariables.IsGamePaused.Value = false;
-		}
-
-		protected override void Initialize ()
-		{
-			base.Initialize();
-			GameGlobalVariables.IsGamePaused.Value = false;
 		}
 	}
 }

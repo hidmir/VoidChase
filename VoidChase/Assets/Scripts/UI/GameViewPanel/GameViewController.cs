@@ -1,18 +1,30 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
+using VoidChase.GameLoop.Pause;
 using VoidChase.GameManagement;
 
 namespace VoidChase.UI.GameView
 {
-	public class GameViewController : BasePanelController
+	public class GameViewController : BasePanelController, IPausable
 	{
 		[field: SerializeField]
 		private Button PauseButton { get; set; }
 
 		public void PauseGame ()
 		{
-			GameManager.Instance.PauseGame();
+			PauseManager.Instance.Pause();
 			UIManager.Instance.ShowPanel(PanelsNames.PauseMenu);
+		}
+
+		public void OnPause ()
+		{
+			PauseButton.interactable = false;
+		}
+
+		public void OnResume ()
+		{
+			PauseButton.interactable = true;
 		}
 
 		private void OnEnable ()
@@ -20,28 +32,31 @@ namespace VoidChase.UI.GameView
 			AttachToEvents();
 		}
 
+		private void Start ()
+		{
+			((IPausable) this).RegisterPausable();
+		}
+
 		private void OnDisable ()
 		{
 			DetachFromEvents();
 		}
 
+		private void OnDestroy ()
+		{
+			((IPausable) this).UnregisterPausable();
+		}
+
 		private void AttachToEvents ()
 		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged += OnIsGamePausedValueChanged;
 			GameGlobalActions.EndGame += OnEndGame;
 			GameGlobalActions.ExitLevel += OnExitLevel;
 		}
 
 		private void DetachFromEvents ()
 		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged -= OnIsGamePausedValueChanged;
 			GameGlobalActions.EndGame -= OnEndGame;
 			GameGlobalActions.ExitLevel -= OnExitLevel;
-		}
-
-		private void OnIsGamePausedValueChanged (bool isPaused)
-		{
-			SetPauseButtonInteractionsState(!isPaused);
 		}
 
 		private void OnEndGame ()
@@ -52,11 +67,6 @@ namespace VoidChase.UI.GameView
 		private void OnExitLevel ()
 		{
 			SetVisibility(false);
-		}
-
-		private void SetPauseButtonInteractionsState (bool isEnabled)
-		{
-			PauseButton.interactable = isEnabled;
 		}
 	}
 }

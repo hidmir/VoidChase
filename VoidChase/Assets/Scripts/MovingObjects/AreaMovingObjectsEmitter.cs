@@ -1,11 +1,11 @@
 using UnityEngine;
 using VoidChase.Environment.GameSpeed;
-using VoidChase.GameManagement;
+using VoidChase.GameLoop.Pause;
 using VoidChase.Utilities;
 
 namespace VoidChase.MovingObjects
 {
-	public class AreaMovingObjectsEmitter : MonoBehaviour
+	public class AreaMovingObjectsEmitter : MonoBehaviour, IPausable
 	{
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
@@ -34,6 +34,16 @@ namespace VoidChase.MovingObjects
 		private float timeSinceLastSpawning;
 		private bool isSpawningEnabled = true;
 
+		public void OnPause ()
+		{
+			isSpawningEnabled = false;
+		}
+
+		public void OnResume ()
+		{
+			isSpawningEnabled = true;
+		}
+
 		protected virtual void Update ()
 		{
 			if (isSpawningEnabled)
@@ -49,12 +59,12 @@ namespace VoidChase.MovingObjects
 
 		private void OnEnable ()
 		{
-			AttachToEvents();
+			((IPausable)this).RegisterPausable();
 		}
 
 		private void OnDisable ()
 		{
-			DetachFromEvents();
+			((IPausable) this).UnregisterPausable();
 		}
 
 		private void SpawnMovingObjects ()
@@ -136,21 +146,6 @@ namespace VoidChase.MovingObjects
 		{
 			(float minPositionValue, float maxPositionValue) = GetSpawnPositionMinMaxValue();
 			return (GetPositionOnSpawningAxis(minPositionValue), GetPositionOnSpawningAxis(maxPositionValue));
-		}
-
-		private void AttachToEvents ()
-		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged += OnIsGamePausedValueChanged;
-		}
-
-		private void DetachFromEvents ()
-		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged -= OnIsGamePausedValueChanged;
-		}
-
-		private void OnIsGamePausedValueChanged (bool isGamePaused)
-		{
-			isSpawningEnabled = !isGamePaused;
 		}
 
 		private enum Axis

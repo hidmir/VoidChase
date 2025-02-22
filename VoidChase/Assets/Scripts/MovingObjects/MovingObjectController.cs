@@ -1,12 +1,12 @@
 using System;
 using UnityEngine;
-using VoidChase.GameManagement;
+using VoidChase.GameLoop.Pause;
 using VoidChase.Modules;
 using VoidChase.Utilities;
 
 namespace VoidChase.MovingObjects
 {
-	public class MovingObjectController : MonoBehaviour
+	public class MovingObjectController : MonoBehaviour, IPausable
 	{
 		public event Action<MovingObjectController> DestroyingRequested = delegate { };
 
@@ -37,29 +37,24 @@ namespace VoidChase.MovingObjects
 			DestroyingRequested.Invoke(this);
 		}
 
+		public void OnPause ()
+		{
+			CurrentMovementBehaviour.isMovementEnabled = false;
+		}
+
+		public void OnResume ()
+		{
+			CurrentMovementBehaviour.isMovementEnabled = true;
+		}
+
 		private void OnEnable ()
 		{
-			AttachToEvents();
+			((IPausable) this).RegisterPausable();
 		}
 
 		private void OnDisable ()
 		{
-			DetachFromEvents();
-		}
-
-		private void AttachToEvents ()
-		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged += OnIsGamePausedValueChanged;
-		}
-
-		private void DetachFromEvents ()
-		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged -= OnIsGamePausedValueChanged;
-		}
-
-		private void OnIsGamePausedValueChanged (bool isGamePaused)
-		{
-			CurrentMovementBehaviour.isMovementEnabled = !isGamePaused;
+			((IPausable) this).UnregisterPausable();
 		}
 	}
 }
