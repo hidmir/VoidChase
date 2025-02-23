@@ -550,9 +550,9 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8846927891893484054, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
   m_PrefabInstance: {fileID: 6018305417863879975}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7900539212408650216 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4476870955707966671, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
+--- !u!225 &5826234750309946158 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 243090230609382921, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
   m_PrefabInstance: {fileID: 6018305417863879975}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8595131436964049435 stripped
@@ -572,4 +572,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df12e478f35419c498208548ca2d5c2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Content>k__BackingField: {fileID: 7900539212408650216}
+  <Content>k__BackingField: {fileID: 5826234750309946158}

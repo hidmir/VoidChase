@@ -855,7 +855,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2651875145020157756, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
       propertyPath: m_Name
-      value: PauseMenuPanel Variant
+      value: PauseMenuPanel
       objectReference: {fileID: 0}
     - target: {fileID: 7993946567417211413, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
       propertyPath: m_Pivot.x
@@ -953,6 +953,11 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8846927891893484054, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
   m_PrefabInstance: {fileID: 5409615416113057839}
   m_PrefabAsset: {fileID: 0}
+--- !u!225 &5209945454643666470 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 243090230609382921, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
+  m_PrefabInstance: {fileID: 5409615416113057839}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8061314602748116755 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2651875145020157756, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
@@ -970,9 +975,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45dbc10367ab21f47ab55f7a30404cdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Content>k__BackingField: {fileID: 8445334405158401248}
---- !u!1 &8445334405158401248 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4476870955707966671, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
-  m_PrefabInstance: {fileID: 5409615416113057839}
-  m_PrefabAsset: {fileID: 0}
+  <Content>k__BackingField: {fileID: 5209945454643666470}
