@@ -9,6 +9,13 @@ namespace VoidChase.UI.GameView
 		[field: SerializeField]
 		private TMP_Text ScoreText { get; set; }
 
+		private const string MissingScoreValue = "0";
+
+		private void OnEnable ()
+		{
+			InitializeScore();
+		}
+
 		private void Start ()
 		{
 			ScoreManager.ScoreChanged += OnScoreChanged;
@@ -22,6 +29,12 @@ namespace VoidChase.UI.GameView
 		private void OnScoreChanged (int newScore)
 		{
 			ScoreText.text = newScore.ToString();
+		}
+
+		private void InitializeScore ()
+		{
+			ScoreManager scoreManager = ScoreManager.Instance;
+			ScoreText.text = scoreManager != null ? scoreManager.CurrentScore.ToString() : MissingScoreValue;
 		}
 	}
 }
