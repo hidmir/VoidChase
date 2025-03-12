@@ -2,6 +2,6 @@ namespace VoidChase.Modules
 {
 	public interface IDamageable
 	{
-		public void InflictDamage (float damage);
+		public void InflictDamage (int damage);
 	}
 }

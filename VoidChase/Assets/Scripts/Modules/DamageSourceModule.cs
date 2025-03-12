@@ -12,7 +12,7 @@ namespace VoidChase.Modules
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
-		private float Damage { get; set; } = 1.0f;
+		private int Damage { get; set; } = 1;
 
 		private void OnTriggerEnter (Collider other)
 		{
