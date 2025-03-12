@@ -11,7 +11,7 @@ namespace VoidChase.Score
 		[field: SerializeField]
 		private bool CanBeNegative { get; set; }
 
-		private int CurrentScore { get; set; }
+		public int CurrentScore { get; private set; }
 
 		public void UpdateScore (int pointsDifference)
 		{
