@@ -14,9 +14,9 @@ namespace VoidChase.Modules
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
-		private int InitialHealth { get; set; } = 1;
+		public int InitialHealth { get; private set; } = 1;
 
-		private int Health { get; set; }
+		public int Health { get; private set; }
 
 		public override void Initialize ()
 		{
