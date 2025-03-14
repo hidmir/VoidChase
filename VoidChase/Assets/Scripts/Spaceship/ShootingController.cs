@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using VoidChase.Spaceship.Input;
 using VoidChase.Spaceship.Weapons;
@@ -10,19 +11,29 @@ namespace VoidChase.Spaceship
 {
 	public class ShootingController : MonoBehaviour
 	{
+		[field: Header(InspectorNames.EVENTS_NAME)]
+		[field: SerializeField]
+		public UnityEvent<string> WeaponChanged { get; set; }
+
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField, Dropdown(StringCollectionNames.WEAPONS_COLLECTION_NAME)]
-		private string InitialWeapon { get; set; }
+		public string InitialWeapon { get; private set; }
+
+		public string CurrentWeaponName { get; private set; }
+
+		private BaseWeapon currentWeapon;
 
 		[NonSerialized]
 		public bool isShootingEnabled;
-		private BaseWeapon currentWeapon;
 
 		public void SelectWeapon (string weaponName)
 		{
 			if (WeaponsProvider.Instance.TryGetWeapon(weaponName, out BaseWeapon weapon))
 			{
+				CurrentWeaponName = weaponName;
 				currentWeapon = weapon;
+
+				WeaponChanged.Invoke(weaponName);
 			}
 			else
 			{

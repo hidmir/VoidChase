@@ -894,6 +894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5339208956330210287}
+  - component: {fileID: 6763985675365650385}
   m_Layer: 5
   m_Name: CurrentWeapon
   m_TagString: Untagged
@@ -922,6 +923,27 @@ RectTransform:
   m_AnchoredPosition: {x: -13, y: 148}
   m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &6763985675365650385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2363250118775930849}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8077049ee4823114a82c02179ca9b25f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <WeaponDisplayCollection>k__BackingField:
+  - <WeaponName>k__BackingField: Single Projectile
+    <BoundObject>k__BackingField: {fileID: 3409866253325765162}
+  - <WeaponName>k__BackingField: Double Projectile
+    <BoundObject>k__BackingField: {fileID: 5759706476394265573}
+  - <WeaponName>k__BackingField: Triple Projectile
+    <BoundObject>k__BackingField: {fileID: 8075448184462594458}
+  - <WeaponName>k__BackingField: Triple Spread Projectile
+    <BoundObject>k__BackingField: {fileID: 6691296587932829196}
 --- !u!1 &2660482073356345875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +1034,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2616806295694092721
 RectTransform:
   m_ObjectHideFlags: 0
