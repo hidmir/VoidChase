@@ -48,7 +48,7 @@ MonoBehaviour:
   <GameSpeedSO>k__BackingField: {fileID: 11400000, guid: b21a5150f0f0c46418faecd63ec57420, type: 2}
   <SpawningFrequency>k__BackingField: 1
   <SpawningDirection>k__BackingField: {x: 0, y: -1, z: 0}
-  <SpawningAreaSize>k__BackingField: 12
+  <SpawningAreaSize>k__BackingField: 10
   <SpawningRangeAxis>k__BackingField: 0
   <IsAffectedByGameSpeed>k__BackingField: 1
   <VisualizationColor>k__BackingField: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
