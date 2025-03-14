@@ -21,9 +21,10 @@ namespace VoidChase.UI.GameView
 
 		private void OnPlayerHealthUpdated (int health)
 		{
-			for (int i = 0; i < HearthIcons.Count; i++)
+			for (int index = 0; index < HearthIcons.Count; index++)
 			{
-				HearthIcons[i].SetActive(i < health);
+				bool isVisible = index < health;
+				HearthIcons[index].SetActive(isVisible);
 			}
 		}
 	}
