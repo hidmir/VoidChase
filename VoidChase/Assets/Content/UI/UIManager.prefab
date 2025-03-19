@@ -149,7 +149,7 @@ MonoBehaviour:
     <ObjectReference>k__BackingField: {fileID: 5567619460830128378}
   - <Name>k__BackingField: GameView
     <ObjectReference>k__BackingField: {fileID: 1952987828011594427}
-  - <Name>k__BackingField: GameOver
+  - <Name>k__BackingField: GameSummary
     <ObjectReference>k__BackingField: {fileID: 6684560466837467264}
   - <Name>k__BackingField: PauseMenu
     <ObjectReference>k__BackingField: {fileID: 1540835147694489411}
@@ -1052,7 +1052,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8595131436964049435, guid: bc52e724f3aad6c4abadbc94826c621b, type: 3}
       propertyPath: m_Name
-      value: GameOverPanel
+      value: GameSummaryPanel
       objectReference: {fileID: 0}
     - target: {fileID: 9108516594269288206, guid: bc52e724f3aad6c4abadbc94826c621b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

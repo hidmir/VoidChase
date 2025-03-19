@@ -446,7 +446,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2651875145020157756, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
       propertyPath: m_Name
-      value: GameOverPanel
+      value: GameSummaryPanel
       objectReference: {fileID: 0}
     - target: {fileID: 7993946567417211413, guid: 275a1121fee87f14ebd0e292cd2824ea, type: 3}
       propertyPath: m_Pivot.x

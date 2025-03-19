@@ -1,8 +1,8 @@
 using VoidChase.GameLoop;
 
-namespace VoidChase.UI.GameOver
+namespace VoidChase.UI.GameSummary
 {
-	public class GameOverController : BasePanelController
+	public class GameSummaryController : BasePanelController
 	{
 		public void ExitLevel ()
 		{
