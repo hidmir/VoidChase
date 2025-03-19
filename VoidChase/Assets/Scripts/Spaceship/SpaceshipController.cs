@@ -16,7 +16,7 @@ namespace VoidChase.Spaceship
 
 		public void KillPlayer ()
 		{
-			GameLoopManager.Instance.EndGame();
+			GameLoopManager.Instance.EndGameWithFailure();
 		}
 
 		public void OnPause ()

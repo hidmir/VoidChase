@@ -15,11 +15,18 @@ namespace VoidChase.GameLoop
 		private LevelProgressController BoundLevelProgressController { get; set; }
 
 		public float GetLevelProgress => BoundLevelProgressController.GetProgress();
+		public bool IsEndedWithSuccess { get; private set; }
 
-		public void EndGame ()
+		public void EndGameWithSuccess ()
 		{
-			PauseManager.Instance.Pause();
-			GameEnded.Invoke();
+			IsEndedWithSuccess = true;
+			EndGame();
+		}
+
+		public void EndGameWithFailure ()
+		{
+			IsEndedWithSuccess = false;
+			EndGame();
 		}
 
 		public void ExitLevel ()
@@ -41,14 +48,20 @@ namespace VoidChase.GameLoop
 			DetachFromEvents();
 		}
 
+		private void EndGame ()
+		{
+			PauseManager.Instance.Pause();
+			GameEnded.Invoke();
+		}
+
 		private void AttachToEvents ()
 		{
-			BoundLevelProgressController.MaxProgressReached += EndGame;
+			BoundLevelProgressController.MaxProgressReached += EndGameWithSuccess;
 		}
 
 		private void DetachFromEvents ()
 		{
-			BoundLevelProgressController.MaxProgressReached -= EndGame;
+			BoundLevelProgressController.MaxProgressReached -= EndGameWithSuccess;
 		}
 	}
 }

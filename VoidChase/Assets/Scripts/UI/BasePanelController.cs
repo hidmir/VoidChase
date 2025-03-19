@@ -12,6 +12,19 @@ namespace VoidChase.UI
 			Content.interactable = isVisible;
 			Content.blocksRaycasts = isVisible;
 			Content.alpha = isVisible ? 1.0f : 0.0f;
+
+			if (isVisible)
+			{
+				OnShowPanel();
+			}
+			else
+			{
+				OnHidePanel();
+			}
 		}
+
+		protected virtual void OnShowPanel () { }
+
+		protected virtual void OnHidePanel () { }
 	}
 }
