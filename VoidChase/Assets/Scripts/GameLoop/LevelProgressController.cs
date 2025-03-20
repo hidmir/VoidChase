@@ -12,6 +12,7 @@ namespace VoidChase.GameLoop
 		private float LevelDuration { get; set; } = 30.0f;
 
 		private bool isPaused;
+		private bool isMaxProgressReached;
 		private float elapsedTime;
 
 		public void OnPause ()
@@ -46,7 +47,7 @@ namespace VoidChase.GameLoop
 
 		private void UpdateProgress ()
 		{
-			if (isPaused)
+			if (isPaused || isMaxProgressReached)
 			{
 				return;
 			}
@@ -55,6 +56,7 @@ namespace VoidChase.GameLoop
 
 			if (elapsedTime > LevelDuration)
 			{
+				isMaxProgressReached = true;
 				MaxProgressReached.Invoke();
 			}
 		}
