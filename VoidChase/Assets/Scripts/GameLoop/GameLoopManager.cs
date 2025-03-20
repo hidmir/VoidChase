@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using VoidChase.GameLoop.Pause;
 using VoidChase.SceneManagement;
@@ -12,8 +13,11 @@ namespace VoidChase.GameLoop
 		public static event Action GameEnded = delegate { };
 		public static event Action LevelExited = delegate { };
 
+		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
 		private LevelProgressController BoundLevelProgressController { get; set; }
+		[field: SerializeField]
+		private List<GameObject> ObjectsToHideOnGameEnd { get; set; }
 
 		public float GetLevelProgress => BoundLevelProgressController.GetProgress();
 		public bool IsEndedWithSuccess { get; private set; }
@@ -53,6 +57,12 @@ namespace VoidChase.GameLoop
 		{
 			PauseManager.Instance.Pause();
 			ScoreManager.Instance.AttemptSaveScore();
+
+			foreach (GameObject @object in ObjectsToHideOnGameEnd)
+			{
+				@object.SetActive(false);
+			}
+
 			GameEnded.Invoke();
 		}
 
