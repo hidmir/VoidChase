@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using VoidChase.GameLoop.Pause;
 using VoidChase.SceneManagement;
+using VoidChase.Score;
 using VoidChase.Utilities;
 
 namespace VoidChase.GameLoop
@@ -51,6 +52,7 @@ namespace VoidChase.GameLoop
 		private void EndGame ()
 		{
 			PauseManager.Instance.Pause();
+			ScoreManager.Instance.AttemptSaveScore();
 			GameEnded.Invoke();
 		}
 

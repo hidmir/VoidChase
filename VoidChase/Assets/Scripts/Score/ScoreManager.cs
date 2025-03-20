@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using VoidChase.Utilities;
+using VoidChase.Utilities.Dropdown;
 
 namespace VoidChase.Score
 {
@@ -8,6 +9,9 @@ namespace VoidChase.Score
 	{
 		public static event Action<int> ScoreChanged = delegate { };
 
+		[field: Header(InspectorNames.SETTINGS_NAME)]
+		[field: SerializeField, Dropdown(StringCollectionNames.LEVELS_COLLECTION_NAME)]
+		private string LevelName { get; set; }
 		[field: SerializeField]
 		private bool CanBeNegative { get; set; }
 
@@ -24,6 +28,17 @@ namespace VoidChase.Score
 
 			CurrentScore = newScore;
 			ScoreChanged.Invoke(CurrentScore);
+		}
+
+		public void AttemptSaveScore ()
+		{
+			string key = PrefsKeysGenerator.GetLevelScoreKey(LevelName);
+			int bestScore = PlayerPrefs.GetInt(key);
+
+			if (CurrentScore > bestScore)
+			{
+				PlayerPrefs.SetInt(key, CurrentScore);
+			}
 		}
 
 		protected override void Initialize ()
