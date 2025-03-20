@@ -32,6 +32,7 @@ namespace VoidChase.Spaceship
 			{
 				CurrentWeaponName = weaponName;
 				currentWeapon = weapon;
+				currentWeapon.Initialize();
 
 				WeaponChanged.Invoke(weaponName);
 			}
@@ -72,7 +73,7 @@ namespace VoidChase.Spaceship
 				return;
 			}
 
-			currentWeapon.Shoot(transform.position);
+			currentWeapon.Fire(transform.position);
 		}
 	}
 }

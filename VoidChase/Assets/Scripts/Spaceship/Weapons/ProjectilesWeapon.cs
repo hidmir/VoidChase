@@ -7,15 +7,15 @@ namespace VoidChase.Spaceship.Weapons
 {
 	public class ProjectilesWeapon : BaseWeapon
 	{
+		[field: Header("Projectiles Settings")]
+		[field: SerializeField]
+		private List<ProjectileData> ProjectilesDataCollection { get; set; }
+
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
 		private BaseMovingObjectsSpawner CurrentMovingObjectsSpawner { get; set; }
 
-		[field: Header(InspectorNames.SETTINGS_NAME)]
-		[field: SerializeField]
-		private List<ProjectileData> ProjectilesDataCollection { get; set; }
-
-		public override void Shoot (Vector2 position)
+		protected override void OnFire (Vector2 position)
 		{
 			foreach (ProjectileData projectileData in ProjectilesDataCollection)
 			{

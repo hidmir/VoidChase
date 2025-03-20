@@ -45,8 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43be8d77f24c11f4c8186d82f974dd3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <CurrentMovingObjectsSpawner>k__BackingField: {fileID: 5194314731488788284}
+  <UsesFireRate>k__BackingField: 1
+  <FireRate>k__BackingField: 6
   <ProjectilesDataCollection>k__BackingField: []
+  <CurrentMovingObjectsSpawner>k__BackingField: {fileID: 5194314731488788284}
 --- !u!1001 &7126634235497467281
 PrefabInstance:
   m_ObjectHideFlags: 0
