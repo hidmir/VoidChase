@@ -4,6 +4,6 @@ namespace VoidChase.MovingObjects
 {
 	public abstract class BaseMovingObjectsSpawner : MonoBehaviour
 	{
-		public abstract void Spawn (Vector3 position, Vector3 direction);
+		public abstract void Spawn (Vector2 position, Vector2 direction);
 	}
 }

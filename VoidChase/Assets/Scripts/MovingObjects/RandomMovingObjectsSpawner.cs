@@ -11,7 +11,7 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private List<SpawnerData> SpawnersCollection { get; set; }
 
-		public override void Spawn (Vector3 position, Vector3 direction)
+		public override void Spawn (Vector2 position, Vector2 direction)
 		{
 			MovingObjectsSpawner spawner = GetRandomSpawner();
 			spawner.Spawn(position, direction);
