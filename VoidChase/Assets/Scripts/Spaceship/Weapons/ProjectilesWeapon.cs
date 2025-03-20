@@ -15,7 +15,7 @@ namespace VoidChase.Spaceship.Weapons
 		[field: SerializeField]
 		private List<ProjectileData> ProjectilesDataCollection { get; set; }
 
-		public override void Shoot (Vector3 position)
+		public override void Shoot (Vector2 position)
 		{
 			foreach (ProjectileData projectileData in ProjectilesDataCollection)
 			{

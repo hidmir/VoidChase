@@ -19,13 +19,13 @@ namespace VoidChase.Environment.SceneBoundaries
 
 		[field: Header("Corners")]
 		[field: SerializeField, ReadOnly]
-		public Vector3 TopLeftCorner { get; private set; }
+		public Vector2 TopLeftCorner { get; private set; }
 		[field: SerializeField, ReadOnly]
-		public Vector3 BottomLeftCorner { get; private set; }
+		public Vector2 BottomLeftCorner { get; private set; }
 		[field: SerializeField, ReadOnly]
-		public Vector3 TopRightCorner { get; private set; }
+		public Vector2 TopRightCorner { get; private set; }
 		[field: SerializeField, ReadOnly]
-		public Vector3 BottomRightCorner { get; private set; }
+		public Vector2 BottomRightCorner { get; private set; }
 
 		public void SetPositionLimits (float maxX, float minX, float maxY, float minY)
 		{
@@ -35,7 +35,7 @@ namespace VoidChase.Environment.SceneBoundaries
 			MinY = minY;
 		}
 
-		public void SetBoundariesCorners (Vector3 maxX, Vector3 minX, Vector3 maxY, Vector3 minY)
+		public void SetBoundariesCorners (Vector2 maxX, Vector2 minX, Vector2 maxY, Vector2 minY)
 		{
 			TopLeftCorner = maxX;
 			BottomLeftCorner = minX;
@@ -48,7 +48,7 @@ namespace VoidChase.Environment.SceneBoundaries
 			return (MaxX, MinX, MaxY, MinY);
 		}
 
-		public (Vector3 maxX, Vector3 minX, Vector3 maxY, Vector3 minY) GetBoundariesCorners ()
+		public (Vector2 maxX, Vector2 minX, Vector2 maxY, Vector2 minY) GetBoundariesCorners ()
 		{
 			return (TopLeftCorner, BottomLeftCorner, TopRightCorner, BottomRightCorner);
 		}

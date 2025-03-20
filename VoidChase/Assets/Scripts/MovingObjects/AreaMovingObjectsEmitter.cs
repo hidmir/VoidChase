@@ -17,7 +17,7 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private float SpawningFrequency { get; set; } = 1.0f;
 		[field: SerializeField]
-		private Vector3 SpawningDirection { get; set; } = Vector3.down;
+		private Vector2 SpawningDirection { get; set; } = Vector2.down;
 		[field: SerializeField]
 		private float SpawningAreaSize { get; set; } = 5.0f;
 		[field: SerializeField]
@@ -73,7 +73,7 @@ namespace VoidChase.MovingObjects
 
 			if (CanSpawnMovingObject())
 			{
-				Vector3 position = GetRandomPosition();
+				Vector2 position = GetRandomPosition();
 				Spawner.Spawn(position, SpawningDirection);
 
 				timeSinceLastSpawning = 0.0f;
@@ -86,10 +86,10 @@ namespace VoidChase.MovingObjects
 			return timeSinceLastSpawning > 1.0f / frequency;
 		}
 
-		private Vector3 GetRandomPosition ()
+		private Vector2 GetRandomPosition ()
 		{
 			float positionValue = GetRandomPositionOnSpawningAxisValue();
-			Vector3 position = GetPositionOnSpawningAxis(positionValue);
+			Vector2 position = GetPositionOnSpawningAxis(positionValue);
 
 			return position;
 		}
@@ -102,15 +102,14 @@ namespace VoidChase.MovingObjects
 
 		private (float minPositionValue, float maxPositionValue) GetSpawnPositionMinMaxValue ()
 		{
-			Vector3 currentPosition = transform.position;
+			Vector2 currentPosition = transform.position;
 			float halfSpawningAreaSize = SpawningAreaSize / 2.0f;
 
 #pragma warning disable CS8524
 			float currentPositionOnSpawningAxisValue = SpawningRangeAxis switch
 			{
 				Axis.X => currentPosition.x,
-				Axis.Y => currentPosition.y,
-				Axis.Z => currentPosition.z
+				Axis.Y => currentPosition.y
 			};
 #pragma warning restore CS8524
 
@@ -120,29 +119,28 @@ namespace VoidChase.MovingObjects
 			return (minPositionValue, maxPositionValue);
 		}
 
-		private Vector3 GetPositionOnSpawningAxis (float positionOnSpawningAxisValue)
+		private Vector2 GetPositionOnSpawningAxis (float positionOnSpawningAxisValue)
 		{
-			Vector3 currentPosition = transform.position;
+			Vector2 currentPosition = transform.position;
 
 #pragma warning disable CS8524
 			return SpawningRangeAxis switch
 			{
-				Axis.X => new Vector3(positionOnSpawningAxisValue, currentPosition.y, currentPosition.z),
-				Axis.Y => new Vector3(currentPosition.x, positionOnSpawningAxisValue, currentPosition.z),
-				Axis.Z => new Vector3(currentPosition.x, currentPosition.y, positionOnSpawningAxisValue)
+				Axis.X => new Vector2(positionOnSpawningAxisValue, currentPosition.y),
+				Axis.Y => new Vector2(currentPosition.x, positionOnSpawningAxisValue)
 			};
 #pragma warning restore CS8524
 		}
 
 		private void DrawSpawningRange ()
 		{
-			(Vector3 minPosition, Vector3 maxPosition) = GetSpawnMinMaxPosition();
+			(Vector2 minPosition, Vector2 maxPosition) = GetSpawnMinMaxPosition();
 
 			Gizmos.color = VisualizationColor;
 			GizmosExtensions.DrawWireCapsule(minPosition, maxPosition, VisualizationWidth);
 		}
 
-		private (Vector3 minPosition, Vector3 maxPosition) GetSpawnMinMaxPosition ()
+		private (Vector2 minPosition, Vector2 maxPosition) GetSpawnMinMaxPosition ()
 		{
 			(float minPositionValue, float maxPositionValue) = GetSpawnPositionMinMaxValue();
 			return (GetPositionOnSpawningAxis(minPositionValue), GetPositionOnSpawningAxis(maxPositionValue));
@@ -151,8 +149,7 @@ namespace VoidChase.MovingObjects
 		private enum Axis
 		{
 			X,
-			Y,
-			Z
+			Y
 		}
 	}
 }

@@ -14,12 +14,12 @@ namespace VoidChase.Modules
 		[field: SerializeField]
 		private int Damage { get; set; } = 1;
 
-		private void OnTriggerEnter (Collider other)
+		private void OnTriggerEnter2D (Collider2D other)
 		{
 			AttemptInflictDamage(other);
 		}
 
-		private void AttemptInflictDamage (Collider objectHit)
+		private void AttemptInflictDamage (Collider2D objectHit)
 		{
 			if (objectHit.TryGetComponent(out IDamageable damageableObject))
 			{

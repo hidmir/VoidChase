@@ -27,7 +27,7 @@ namespace VoidChase.MovingObjects
 			CurrentMovementBehaviour.DeInitialize();
 		}
 
-		public void Launch (Vector3 position, Vector3 direction)
+		public void Launch (Vector2 position, Vector2 direction)
 		{
 			CurrentMovementBehaviour.Launch(position, direction);
 		}

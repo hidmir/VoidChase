@@ -7,8 +7,8 @@ namespace VoidChase.Spaceship.Weapons
 	public class ProjectileData
 	{
 		[field: SerializeField]
-		public Vector3 PositionOffset { get; private set; }
+		public Vector2 PositionOffset { get; private set; }
 		[field: SerializeField]
-		public Vector3 Direction { get; private set; }
+		public Vector2 Direction { get; private set; }
 	}
 }

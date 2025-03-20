@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: <ModulesCollection>k__BackingField.Array.data[0]
       value: 
       objectReference: {fileID: 1858413991206573288}
+    - target: {fileID: 3238991574758447704, guid: dcd647f2e10b0c84f8c3cc60d6f41c37, type: 3}
+      propertyPath: m_Radius
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238991574758447704, guid: dcd647f2e10b0c84f8c3cc60d6f41c37, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 4884254473590583772, guid: dcd647f2e10b0c84f8c3cc60d6f41c37, type: 3}
       propertyPath: m_Name
       value: BasePlayerProjectile

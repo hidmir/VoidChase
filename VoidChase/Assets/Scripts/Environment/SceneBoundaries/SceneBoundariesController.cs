@@ -11,7 +11,7 @@ namespace VoidChase.Environment.SceneBoundaries
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
-		private Vector3 CentralPoint { get; set; }
+		private Vector2 CentralPoint { get; set; }
 		[field: SerializeField]
 		private Vector2 BoundariesSize { get; set; }
 
@@ -45,24 +45,24 @@ namespace VoidChase.Environment.SceneBoundaries
 			return CentralPoint.y - BoundariesSize.y;
 		}
 
-		private Vector3 GetTopLeftCorner ()
+		private Vector2 GetTopLeftCorner ()
 		{
-			return CentralPoint + new Vector3(-1.0f * BoundariesSize.x, BoundariesSize.y, 0.0f);
+			return CentralPoint + new Vector2(-1.0f * BoundariesSize.x, BoundariesSize.y);
 		}
 
-		private Vector3 GetBottomLeftCorner ()
+		private Vector2 GetBottomLeftCorner ()
 		{
-			return CentralPoint + new Vector3(-1.0f * BoundariesSize.x, -1.0f * BoundariesSize.y, 0.0f);
+			return CentralPoint + new Vector2(-1.0f * BoundariesSize.x, -1.0f * BoundariesSize.y);
 		}
 
-		private Vector3 GetTopRightCorner ()
+		private Vector2 GetTopRightCorner ()
 		{
-			return CentralPoint + new Vector3(BoundariesSize.x, BoundariesSize.y, 0.0f);
+			return CentralPoint + new Vector2(BoundariesSize.x, BoundariesSize.y);
 		}
 
-		private Vector3 GetBottomRightCorner ()
+		private Vector2 GetBottomRightCorner ()
 		{
-			return CentralPoint + new Vector3(BoundariesSize.x, -1.0f * BoundariesSize.y, 0.0f);
+			return CentralPoint + new Vector2(BoundariesSize.x, -1.0f * BoundariesSize.y);
 		}
 
 		private void OnDrawGizmos ()
@@ -74,7 +74,7 @@ namespace VoidChase.Environment.SceneBoundaries
 
 		private void DrawBoundaries ()
 		{
-			(Vector3 topLeftCorner, Vector3 bottomLeftCorner, Vector3 topRightCorner, Vector3 bottomRightCorner) =
+			(Vector2 topLeftCorner, Vector2 bottomLeftCorner, Vector2 topRightCorner, Vector2 bottomRightCorner) =
 				Application.isPlaying
 					? SceneBoundariesSO.GetBoundariesCorners()
 					: (GetTopLeftCorner(), GetBottomLeftCorner(), GetTopRightCorner(), GetBottomRightCorner());

@@ -9,7 +9,7 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private MovingObjectsPool Pool { get; set; }
 
-		public override void Spawn (Vector3 position, Vector3 direction)
+		public override void Spawn (Vector2 position, Vector2 direction)
 		{
 			MovingObjectController movingObject = Pool.Get();
 			AttachToEvents(movingObject);

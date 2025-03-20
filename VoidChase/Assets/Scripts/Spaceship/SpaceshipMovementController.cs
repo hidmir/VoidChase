@@ -9,7 +9,7 @@ namespace VoidChase.Spaceship
 	{
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
-		private Rigidbody CurrentRigidbody { get; set; }
+		private Rigidbody2D CurrentRigidbody { get; set; }
 		[field: SerializeField]
 		private SceneBoundariesSO SceneBoundariesSO { get; set; }
 
@@ -20,7 +20,7 @@ namespace VoidChase.Spaceship
 		private float BrakingSpeed { get; set; } = 5.0f;
 
 		private bool isMovementEnabled;
-		private Vector3 cachedVelocity;
+		private Vector2 cachedVelocity;
 
 		public void SetMovementState (bool isEnabled)
 		{
@@ -73,7 +73,7 @@ namespace VoidChase.Spaceship
 		private Vector2 ClampVelocityToSceneBoundaries (Vector2 velocity)
 		{
 			(float maxX, float minX, float maxY, float minY) = SceneBoundariesSO.GetMaxMinPositions();
-			Vector3 currentPosition = CurrentRigidbody.transform.position;
+			Vector2 currentPosition = CurrentRigidbody.transform.position;
 
 			bool isMaxXReached = currentPosition.x >= maxX;
 			bool isMinXReached = currentPosition.x <= minX;

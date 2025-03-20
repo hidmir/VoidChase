@@ -19,7 +19,7 @@ namespace VoidChase.MovingObjects
 
 		[NonSerialized]
 		public bool isMovementEnabled;
-		private Vector3 cachedDirection;
+		private Vector2 cachedDirection;
 		private bool isLaunched;
 		private float timeSinceLaunching;
 
@@ -28,7 +28,7 @@ namespace VoidChase.MovingObjects
 			isMovementEnabled = true;
 		}
 
-		public virtual void Launch (Vector3 position, Vector3 direction)
+		public virtual void Launch (Vector2 position, Vector2 direction)
 		{
 			transform.position = position;
 			cachedDirection = direction;
@@ -52,8 +52,8 @@ namespace VoidChase.MovingObjects
 
 		private void UpdatePosition ()
 		{
-			Vector3 currentPosition = transform.position;
-			Vector3 newPosition = currentPosition + cachedDirection * (Speed * Time.deltaTime);
+			Vector2 currentPosition = transform.position;
+			Vector2 newPosition = currentPosition + cachedDirection * (Speed * Time.deltaTime);
 
 			transform.position = newPosition;
 		}
