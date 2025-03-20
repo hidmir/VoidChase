@@ -1,14 +1,14 @@
 using System;
 using UnityEngine;
-using VoidChase.GameManagement;
+using VoidChase.GameLoop.Pause;
 using VoidChase.Modules;
 using VoidChase.Utilities;
 
 namespace VoidChase.MovingObjects
 {
-	public class MovingObjectController : MonoBehaviour
+	public class MovingObjectController : MonoBehaviour, IPausable
 	{
-		public event Action<MovingObjectController> RequestDestroying = delegate { };
+		public event Action<MovingObjectController> DestroyingRequested = delegate { };
 
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
@@ -27,39 +27,34 @@ namespace VoidChase.MovingObjects
 			CurrentMovementBehaviour.DeInitialize();
 		}
 
-		public void Launch (Vector3 position, Vector3 direction)
+		public void Launch (Vector2 position, Vector2 direction)
 		{
 			CurrentMovementBehaviour.Launch(position, direction);
 		}
 
-		public void InvokeRequestDestroying ()
+		public void RequestDestroying ()
 		{
-			RequestDestroying.Invoke(this);
+			DestroyingRequested.Invoke(this);
+		}
+
+		public void OnPause ()
+		{
+			CurrentMovementBehaviour.isMovementEnabled = false;
+		}
+
+		public void OnResume ()
+		{
+			CurrentMovementBehaviour.isMovementEnabled = true;
 		}
 
 		private void OnEnable ()
 		{
-			AttachToEvents();
+			((IPausable) this).RegisterPausable();
 		}
 
 		private void OnDisable ()
 		{
-			DetachFromEvents();
-		}
-
-		private void AttachToEvents ()
-		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged += OnIsGamePausedValueChanged;
-		}
-
-		private void DetachFromEvents ()
-		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged -= OnIsGamePausedValueChanged;
-		}
-
-		private void OnIsGamePausedValueChanged (bool isGamePaused)
-		{
-			CurrentMovementBehaviour.IsMovementEnabled = !isGamePaused;
+			((IPausable) this).UnregisterPausable();
 		}
 	}
 }

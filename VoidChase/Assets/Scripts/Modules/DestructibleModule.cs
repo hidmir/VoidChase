@@ -8,27 +8,35 @@ namespace VoidChase.Modules
 	{
 		[field: Header(InspectorNames.EVENTS_NAME)]
 		[field: SerializeField]
-		public UnityEvent Die { get; set; }
+		public UnityEvent ObjectDestroyed { get; set; }
+		[field: SerializeField]
+		public UnityEvent<int> DamageTaken { get; set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
-		private float InitialHealth { get; set; } = 1.0f;
-		
-		private float Health { get; set; }
+		public int InitialHealth { get; private set; } = 1;
+
+		public int Health { get; private set; }
 
 		public override void Initialize ()
 		{
 			base.Initialize();
 			Health = InitialHealth;
 		}
-		
-		public void InflictDamage (float damage)
+
+		public void InflictDamage (int damage)
 		{
+			if (damage <= 0)
+			{
+				return;
+			}
+
 			Health -= damage;
+			DamageTaken.Invoke(damage);
 
 			if (Health <= 0.0f)
 			{
-				Die.Invoke();
+				ObjectDestroyed.Invoke();
 			}
 		}
 	}

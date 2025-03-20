@@ -1,11 +1,15 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 using VoidChase.Utilities;
+using Object = UnityEngine.Object;
+using Random = UnityEngine.Random;
 
 namespace VoidChase.MovingObjects
 {
-	public class MovingObjectsPool : MonoBehaviour
+	[Serializable]
+	public class MovingObjectsPool
 	{
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
@@ -15,31 +19,28 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private List<MovingObjectController> PrefabCollection { get; set; }
 
-		protected ObjectPool<MovingObjectController> CurrentPool { get; private set; }
+		private ObjectPool<MovingObjectController> currentPool;
+		private Transform cachedParent;
+
+		public void Initialize (Transform objectsParent)
+		{
+			cachedParent = objectsParent;
+			currentPool = new ObjectPool<MovingObjectController>(CreateObject, GetObject, ReleaseObject, null, true, PoolSize, PoolMaxSize);
+		}
 
 		public MovingObjectController Get ()
 		{
-			return CurrentPool.Get();
+			return currentPool.Get();
 		}
 
 		public void Release (MovingObjectController movingObject)
 		{
-			CurrentPool.Release(movingObject);
-		}
-
-		protected virtual void Awake ()
-		{
-			Initialize();
-		}
-
-		protected virtual void Initialize ()
-		{
-			CurrentPool = new ObjectPool<MovingObjectController>(CreateObject, GetObject, ReleaseObject, null, true, PoolSize, PoolMaxSize);
+			currentPool.Release(movingObject);
 		}
 
 		private MovingObjectController CreateObject ()
 		{
-			MovingObjectController movingObject = Instantiate(GetRandomPrefab(), transform);
+			MovingObjectController movingObject = Object.Instantiate(GetRandomPrefab(), cachedParent);
 			movingObject.gameObject.SetActive(false);
 
 			return movingObject;
@@ -48,10 +49,12 @@ namespace VoidChase.MovingObjects
 		private void GetObject (MovingObjectController movingObject)
 		{
 			movingObject.Initialize();
+			movingObject.gameObject.SetActive(true);
 		}
 
 		private void ReleaseObject (MovingObjectController movingObject)
 		{
+			movingObject.gameObject.SetActive(false);
 			movingObject.DeInitialize();
 		}
 

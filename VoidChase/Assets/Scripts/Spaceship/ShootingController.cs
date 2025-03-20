@@ -1,58 +1,79 @@
+using System;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using VoidChase.Spaceship.Input;
 using VoidChase.Spaceship.Weapons;
 using VoidChase.Utilities;
+using VoidChase.Utilities.Dropdown;
 
 namespace VoidChase.Spaceship
 {
 	public class ShootingController : MonoBehaviour
 	{
+		[field: Header(InspectorNames.EVENTS_NAME)]
+		[field: SerializeField]
+		public UnityEvent<string> WeaponChanged { get; set; }
+
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField, Dropdown(StringCollectionNames.WEAPONS_COLLECTION_NAME)]
-		private string InitialWeapon { get; set; }
+		public string InitialWeapon { get; private set; }
 
-		public bool IsShootingEnabled { get; set; }
-		private BaseWeapon CurrentWeapon { get; set; }
+		public string CurrentWeaponName { get; private set; }
+
+		private BaseWeapon currentWeapon;
+
+		[NonSerialized]
+		public bool isShootingEnabled;
 
 		public void SelectWeapon (string weaponName)
 		{
-			WeaponsProvider.Instance.TryGetObject(weaponName, out BaseWeapon weapon);
-			CurrentWeapon = weapon;
+			if (WeaponsProvider.Instance.TryGetWeapon(weaponName, out BaseWeapon weapon))
+			{
+				CurrentWeaponName = weaponName;
+				currentWeapon = weapon;
+				currentWeapon.Initialize();
+
+				WeaponChanged.Invoke(weaponName);
+			}
+			else
+			{
+				Debug.LogError($"Cannot find weapon with name: {weaponName}. Weapon won't be changed.");
+			}
 		}
 
-		protected virtual void Start ()
+		private void Start ()
 		{
 			SelectWeapon(InitialWeapon);
 			AttachToEvents();
 		}
 
-		protected virtual void OnDestroy ()
+		private void OnDestroy ()
 		{
 			DetachFromEvents();
 		}
 
 		private void AttachToEvents ()
 		{
-			SpaceshipInputProvider.Instance.ShootInputAction.performed += OnShoot;
+			SpaceshipInputProvider.Instance.ShootingInputAction.performed += OnShoot;
 		}
 
 		private void DetachFromEvents ()
 		{
 			if (SpaceshipInputProvider.Instance != null)
 			{
-				SpaceshipInputProvider.Instance.ShootInputAction.performed -= OnShoot;
+				SpaceshipInputProvider.Instance.ShootingInputAction.performed -= OnShoot;
 			}
 		}
 
 		private void OnShoot (InputAction.CallbackContext obj)
 		{
-			if (!IsShootingEnabled)
+			if (!isShootingEnabled)
 			{
 				return;
 			}
 
-			CurrentWeapon.Shoot(transform.position);
+			currentWeapon.Fire(transform.position);
 		}
 	}
 }

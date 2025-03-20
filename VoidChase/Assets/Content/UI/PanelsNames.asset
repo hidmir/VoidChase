@@ -16,6 +16,6 @@ MonoBehaviour:
   - MainMenu
   - LevelSelection
   - Options
-  - GameOver
+  - GameSummary
   - GameView
   - PauseMenu

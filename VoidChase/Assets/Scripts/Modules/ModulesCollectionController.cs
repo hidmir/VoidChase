@@ -17,7 +17,7 @@ namespace VoidChase.Modules
 			}
 		}
 
-		protected virtual void Reset ()
+		private void Reset ()
 		{
 			ModulesCollection = GetComponents<BaseModule>().ToList();
 		}

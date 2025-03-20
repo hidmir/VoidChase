@@ -1,22 +1,23 @@
-using System;
 using UnityEngine;
-using VoidChase.GameManagement;
+using VoidChase.Environment.GameSpeed;
+using VoidChase.GameLoop.Pause;
 using VoidChase.Utilities;
-using Random = UnityEngine.Random;
 
 namespace VoidChase.MovingObjects
 {
-	public class AreaMovingObjectsEmitter : MonoBehaviour
+	public class AreaMovingObjectsEmitter : MonoBehaviour, IPausable
 	{
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
 		private BaseMovingObjectsSpawner Spawner { get; set; }
+		[field: SerializeField]
+		private GameSpeedSO GameSpeedSO { get; set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
 		private float SpawningFrequency { get; set; } = 1.0f;
 		[field: SerializeField]
-		private Vector3 SpawningDirection { get; set; } = Vector3.down;
+		private Vector2 SpawningDirection { get; set; } = Vector2.down;
 		[field: SerializeField]
 		private float SpawningAreaSize { get; set; } = 5.0f;
 		[field: SerializeField]
@@ -30,14 +31,22 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private float VisualizationWidth { get; set; } = 0.5f;
 
-		private float TimeSinceLastSpawning { get; set; }
-		private bool IsSpawningEnabled { get; set; } = true;
+		private float timeSinceLastSpawning;
+		private bool isSpawningEnabled = true;
 
-		private const string INCORRECT_SPAWNING_RANGE_AXIS_VALUE = "SpawningRangeAxis value is incorrect ({0}).";
+		public void OnPause ()
+		{
+			isSpawningEnabled = false;
+		}
+
+		public void OnResume ()
+		{
+			isSpawningEnabled = true;
+		}
 
 		protected virtual void Update ()
 		{
-			if (IsSpawningEnabled)
+			if (isSpawningEnabled)
 			{
 				SpawnMovingObjects();
 			}
@@ -50,42 +59,37 @@ namespace VoidChase.MovingObjects
 
 		private void OnEnable ()
 		{
-			AttachToEvents();
+			((IPausable)this).RegisterPausable();
 		}
 
 		private void OnDisable ()
 		{
-			DetachFromEvents();
+			((IPausable) this).UnregisterPausable();
 		}
 
 		private void SpawnMovingObjects ()
 		{
-			TimeSinceLastSpawning += Time.deltaTime;
+			timeSinceLastSpawning += Time.deltaTime;
 
 			if (CanSpawnMovingObject())
 			{
-				Vector3 position = GetRandomPosition();
+				Vector2 position = GetRandomPosition();
 				Spawner.Spawn(position, SpawningDirection);
 
-				TimeSinceLastSpawning = 0.0f;
+				timeSinceLastSpawning = 0.0f;
 			}
 		}
 
 		private bool CanSpawnMovingObject ()
 		{
-			float frequency = IsAffectedByGameSpeed ? SpawningFrequency * GetCurrentGameSpeed() : SpawningFrequency;
-			return TimeSinceLastSpawning > 1.0f / frequency;
+			float frequency = IsAffectedByGameSpeed ? SpawningFrequency * GameSpeedSO.CurrentSpeed : SpawningFrequency;
+			return timeSinceLastSpawning > 1.0f / frequency;
 		}
 
-		private float GetCurrentGameSpeed ()
-		{
-			return GameManager.Instance.CurrentGameSpeedController.CurrentSpeed;
-		}
-
-		private Vector3 GetRandomPosition ()
+		private Vector2 GetRandomPosition ()
 		{
 			float positionValue = GetRandomPositionOnSpawningAxisValue();
-			Vector3 position = GetPositionOnSpawningAxis(positionValue);
+			Vector2 position = GetPositionOnSpawningAxis(positionValue);
 
 			return position;
 		}
@@ -98,69 +102,54 @@ namespace VoidChase.MovingObjects
 
 		private (float minPositionValue, float maxPositionValue) GetSpawnPositionMinMaxValue ()
 		{
-			Vector3 currentPosition = transform.position;
+			Vector2 currentPosition = transform.position;
+			float halfSpawningAreaSize = SpawningAreaSize / 2.0f;
 
+#pragma warning disable CS8524
 			float currentPositionOnSpawningAxisValue = SpawningRangeAxis switch
 			{
 				Axis.X => currentPosition.x,
-				Axis.Y => currentPosition.y,
-				Axis.Z => currentPosition.z,
-				_ => throw new ArgumentException(String.Format(INCORRECT_SPAWNING_RANGE_AXIS_VALUE, SpawningRangeAxis))
+				Axis.Y => currentPosition.y
 			};
+#pragma warning restore CS8524
 
-			float minPositionValue = currentPositionOnSpawningAxisValue - (SpawningAreaSize / 2.0f);
-			float maxPositionValue = currentPositionOnSpawningAxisValue + (SpawningAreaSize / 2.0f);
+			float minPositionValue = currentPositionOnSpawningAxisValue - halfSpawningAreaSize;
+			float maxPositionValue = currentPositionOnSpawningAxisValue + halfSpawningAreaSize;
 
 			return (minPositionValue, maxPositionValue);
 		}
 
-		private Vector3 GetPositionOnSpawningAxis (float positionOnSpawningAxisValue)
+		private Vector2 GetPositionOnSpawningAxis (float positionOnSpawningAxisValue)
 		{
-			Vector3 currentPosition = transform.position;
+			Vector2 currentPosition = transform.position;
 
+#pragma warning disable CS8524
 			return SpawningRangeAxis switch
 			{
-				Axis.X => new Vector3(positionOnSpawningAxisValue, currentPosition.y, currentPosition.z),
-				Axis.Y => new Vector3(currentPosition.x, positionOnSpawningAxisValue, currentPosition.z),
-				Axis.Z => new Vector3(currentPosition.x, currentPosition.y, positionOnSpawningAxisValue),
-				_ => throw new ArgumentException(String.Format(INCORRECT_SPAWNING_RANGE_AXIS_VALUE, SpawningRangeAxis))
+				Axis.X => new Vector2(positionOnSpawningAxisValue, currentPosition.y),
+				Axis.Y => new Vector2(currentPosition.x, positionOnSpawningAxisValue)
 			};
+#pragma warning restore CS8524
 		}
 
 		private void DrawSpawningRange ()
 		{
-			(Vector3 minPosition, Vector3 maxPosition) = GetSpawnMinMaxPosition();
+			(Vector2 minPosition, Vector2 maxPosition) = GetSpawnMinMaxPosition();
 
 			Gizmos.color = VisualizationColor;
 			GizmosExtensions.DrawWireCapsule(minPosition, maxPosition, VisualizationWidth);
 		}
 
-		private (Vector3 minPosition, Vector3 maxPosition) GetSpawnMinMaxPosition ()
+		private (Vector2 minPosition, Vector2 maxPosition) GetSpawnMinMaxPosition ()
 		{
 			(float minPositionValue, float maxPositionValue) = GetSpawnPositionMinMaxValue();
 			return (GetPositionOnSpawningAxis(minPositionValue), GetPositionOnSpawningAxis(maxPositionValue));
 		}
 
-		private void AttachToEvents ()
-		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged += OnIsGamePausedValueChanged;
-		}
-
-		private void DetachFromEvents ()
-		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged -= OnIsGamePausedValueChanged;
-		}
-
-		private void OnIsGamePausedValueChanged (bool isGamePaused)
-		{
-			IsSpawningEnabled = !isGamePaused;
-		}
-
 		private enum Axis
 		{
 			X,
-			Y,
-			Z
+			Y
 		}
 	}
 }

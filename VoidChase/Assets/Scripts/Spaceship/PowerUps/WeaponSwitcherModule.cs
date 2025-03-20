@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using VoidChase.Modules;
 using VoidChase.Utilities;
+using VoidChase.Utilities.Dropdown;
 
 namespace VoidChase.Spaceship.PowerUps
 {
@@ -9,23 +10,23 @@ namespace VoidChase.Spaceship.PowerUps
 	{
 		[field: Header(InspectorNames.EVENTS_NAME)]
 		[field: SerializeField]
-		public UnityEvent SwitchWeapon { get; private set; }
+		public UnityEvent WeaponSwitched { get; private set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField, Dropdown(StringCollectionNames.WEAPONS_COLLECTION_NAME)]
 		private string WeaponName { get; set; }
 
-		protected virtual void OnTriggerEnter (Collider other)
+		protected virtual void OnTriggerEnter2D (Collider2D other)
 		{
 			AttemptSwitchWeapon(other);
 		}
 
-		private void AttemptSwitchWeapon (Collider objectHit)
+		private void AttemptSwitchWeapon (Collider2D objectHit)
 		{
 			if (objectHit.TryGetComponent(out ShootingController shootingController))
 			{
 				shootingController.SelectWeapon(WeaponName);
-				SwitchWeapon.Invoke();
+				WeaponSwitched.Invoke();
 			}
 		}
 	}

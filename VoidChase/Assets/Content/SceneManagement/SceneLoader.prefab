@@ -48,7 +48,7 @@ MonoBehaviour:
   mainMenuSceneData: {fileID: 11400000, guid: 239eeecb7c2af084c8daa88fd5a3a7aa, type: 2}
   levelDataCollection:
   - <SceneData>k__BackingField: {fileID: 11400000, guid: cf769a4b14ba30a42aa0ac2f84c51157, type: 2}
-    <Number>k__BackingField: 1
+    <LevelName>k__BackingField: Level1
 --- !u!114 &5356841326955020146
 MonoBehaviour:
   m_ObjectHideFlags: 0

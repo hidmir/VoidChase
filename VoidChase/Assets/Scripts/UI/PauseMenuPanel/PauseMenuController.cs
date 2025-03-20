@@ -1,15 +1,20 @@
+using VoidChase.GameLoop;
+using VoidChase.GameLoop.Pause;
+
 namespace VoidChase.UI.PauseMenu
 {
-	public class PauseMenuController : Controller<PauseMenuModel, PauseMenuView>
+	public class PauseMenuController : BasePanelController
 	{
-		public void HandleContinue ()
+		public void UnPauseGame ()
 		{
-			CurrentModel.UnPauseGame();
+			SetVisibility(false);
+			PauseManager.Instance.Resume();
 		}
 
-		public void HandleQuit ()
+		public void ExitLevel ()
 		{
-			CurrentModel.ExitLevel();
+			SetVisibility(false);
+			GameLoopManager.Instance.ExitLevel();
 		}
 	}
 }

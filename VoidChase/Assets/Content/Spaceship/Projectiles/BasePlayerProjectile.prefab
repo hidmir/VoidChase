@@ -24,6 +24,14 @@ PrefabInstance:
       propertyPath: <ModulesCollection>k__BackingField.Array.data[0]
       value: 
       objectReference: {fileID: 1858413991206573288}
+    - target: {fileID: 3238991574758447704, guid: dcd647f2e10b0c84f8c3cc60d6f41c37, type: 3}
+      propertyPath: m_Radius
+      value: 0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3238991574758447704, guid: dcd647f2e10b0c84f8c3cc60d6f41c37, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.33
+      objectReference: {fileID: 0}
     - target: {fileID: 4884254473590583772, guid: dcd647f2e10b0c84f8c3cc60d6f41c37, type: 3}
       propertyPath: m_Name
       value: BasePlayerProjectile
@@ -96,6 +104,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 8792019204040186685, guid: dcd647f2e10b0c84f8c3cc60d6f41c37, type: 3}
+      propertyPath: <SetRotationBasedOnDirection>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -121,13 +133,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 031ac09bf6601374e962c837d7c596c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Hit>k__BackingField:
+  <DamageableHit>k__BackingField:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 777599100077528062}
         m_TargetAssemblyTypeName: VoidChase.MovingObjects.MovingObjectController,
           Assembly-CSharp
-        m_MethodName: InvokeRequestDestroying
+        m_MethodName: RequestDestroying
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeaponsNames
   m_EditorClassIdentifier: 
   <Collection>k__BackingField:
-  - SingleProjectile
-  - DoubleProjectile
-  - TripleProjectile
-  - TripleSpreadProjectile
+  - Single Projectile
+  - Double Projectile
+  - Triple Projectile
+  - Triple Spread Projectile

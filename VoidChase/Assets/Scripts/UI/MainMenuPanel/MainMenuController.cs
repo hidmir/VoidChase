@@ -1,20 +1,24 @@
+using UnityEngine;
+
 namespace VoidChase.UI.MainMenu
 {
-	public class MainMenuController : Controller<MainMenuModel, MainMenuView>
+	public class MainMenuController : BasePanelController
 	{
-		public void HandleStart ()
+		public void ShowLevelSelection ()
 		{
-			CurrentModel.ShowLevelSelection();
+			SetVisibility(false);
+			UIManager.Instance.ShowPanel(PanelsNames.LevelSelection);
 		}
 
-		public void HandleOptions ()
+		public void ShowOptions ()
 		{
-			CurrentModel.ShowOptions();
+			SetVisibility(false);
+			UIManager.Instance.ShowPanel(PanelsNames.Options);
 		}
 
-		public void HandleQuit ()
+		public void QuitGame ()
 		{
-			CurrentModel.QuitGame();
+			Application.Quit();
 		}
 	}
 }

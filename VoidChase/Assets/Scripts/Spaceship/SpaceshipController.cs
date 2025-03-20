@@ -1,18 +1,32 @@
 using UnityEngine;
-using VoidChase.GameManagement;
+using VoidChase.GameLoop;
+using VoidChase.GameLoop.Pause;
 using VoidChase.Modules;
 
 namespace VoidChase.Spaceship
 {
-	public class SpaceshipController : MonoBehaviour
+	public class SpaceshipController : MonoBehaviour, IPausable
 	{
-		[SerializeField] private SpaceshipMovementController spaceshipMovementController;
-		[SerializeField] private ShootingController shootingController;
-		[SerializeField] private ModulesCollectionController modulesCollectionController;
+		[field: SerializeField]
+		private SpaceshipMovementController MovementController { get; set; }
+		[field: SerializeField]
+		private ShootingController ShootingController { get; set; }
+		[field: SerializeField]
+		private ModulesCollectionController ModulesCollectionController { get; set; }
 
 		public void KillPlayer ()
 		{
-			GameManager.Instance.EndGame();
+			GameLoopManager.Instance.EndGameWithFailure();
+		}
+
+		public void OnPause ()
+		{
+			SetSpaceshipPauseState(true);
+		}
+
+		public void OnResume ()
+		{
+			SetSpaceshipPauseState(false);
 		}
 
 		private void Start ()
@@ -22,42 +36,32 @@ namespace VoidChase.Spaceship
 
 		private void OnEnable ()
 		{
-			AttachToEvents();
+			((IPausable) this).RegisterPausable();
 		}
 
 		private void OnDisable ()
 		{
-			DetachFromEvents();
+			((IPausable) this).UnregisterPausable();
 		}
 
 		private void Reset ()
 		{
-			spaceshipMovementController = GetComponent<SpaceshipMovementController>();
-			shootingController = GetComponent<ShootingController>();
-			modulesCollectionController = GetComponent<ModulesCollectionController>();
+			MovementController = GetComponent<SpaceshipMovementController>();
+			ShootingController = GetComponent<ShootingController>();
+			ModulesCollectionController = GetComponent<ModulesCollectionController>();
 		}
 
 		private void Initialize ()
 		{
-			modulesCollectionController.InitializeModules();
-			spaceshipMovementController.SetMovementState(true);
-			shootingController.IsShootingEnabled = true;
+			ModulesCollectionController.InitializeModules();
+			MovementController.SetMovementState(true);
+			ShootingController.isShootingEnabled = true;
 		}
 
-		private void AttachToEvents ()
+		private void SetSpaceshipPauseState (bool isPaused)
 		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged += OnIsGamePausedValueChanged;
-		}
-
-		private void DetachFromEvents ()
-		{
-			GameGlobalVariables.IsGamePaused.CurrentValueChanged -= OnIsGamePausedValueChanged;
-		}
-
-		private void OnIsGamePausedValueChanged (bool isPaused)
-		{
-			spaceshipMovementController.SetMovementState(!isPaused);
-			shootingController.IsShootingEnabled = !isPaused;
+			MovementController.SetMovementState(!isPaused);
+			ShootingController.isShootingEnabled = !isPaused;
 		}
 	}
 }

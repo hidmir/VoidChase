@@ -1,15 +1,52 @@
+using System.Collections.Generic;
+using UnityEngine;
+using VoidChase.SceneManagement;
+
 namespace VoidChase.UI.LevelSelection
 {
-	public class LevelSelectionController : Controller<LevelSelectionModel, LevelSelectionView>
+	public class LevelSelectionController : BasePanelController
 	{
-		public void HandleSelectLevel (int levelNumber)
+		[field: SerializeField]
+		private List<LevelButtonController> LevelButtons { get; set; }
+
+		public void ShowMainMenu ()
 		{
-			CurrentModel.SelectLevel(levelNumber);
+			SetVisibility(false);
+			UIManager.Instance.ShowPanel(PanelsNames.MainMenu);
 		}
 
-		public void HandleBack ()
+		protected override void OnShowPanel ()
 		{
-			CurrentModel.ShowMainMenu();
+			base.OnShowPanel();
+
+			foreach (LevelButtonController levelButton in LevelButtons)
+			{
+				levelButton.UpdateDisplayedScore();
+			}
+		}
+
+		private void Start ()
+		{
+			for (int index = 0; index < LevelButtons.Count; index++)
+			{
+				LevelButtonController levelButton = LevelButtons[index];
+				levelButton.LevelStartRequested.AddListener(OnLevelStartRequested);
+			}
+		}
+
+		private void OnDestroy ()
+		{
+			for (int index = 0; index < LevelButtons.Count; index++)
+			{
+				LevelButtonController levelButton = LevelButtons[index];
+				levelButton.LevelStartRequested.RemoveListener(OnLevelStartRequested);
+			}
+		}
+
+		private void OnLevelStartRequested (string levelName)
+		{
+			SetVisibility(false);
+			SceneLoader.Instance.LoadLevelScene(levelName);
 		}
 	}
 }

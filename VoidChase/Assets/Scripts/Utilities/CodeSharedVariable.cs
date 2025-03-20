@@ -12,14 +12,16 @@ namespace VoidChase.Utilities
 			get => currentValue;
 			set
 			{
-				if (!Equals(currentValue, value))
+				if (Equals(currentValue, value))
 				{
-					TValue oldValue = currentValue;
-					currentValue = value;
-
-					CurrentValueChanged.Invoke(currentValue);
-					ValueChanged.Invoke(oldValue, currentValue);
+					return;
 				}
+
+				TValue oldValue = currentValue;
+				currentValue = value;
+
+				CurrentValueChanged.Invoke(currentValue);
+				ValueChanged.Invoke(oldValue, currentValue);
 			}
 		}
 

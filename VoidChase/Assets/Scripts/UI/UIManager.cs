@@ -18,14 +18,14 @@ namespace VoidChase.UI
 			SetPanelState(panelName, false);
 		}
 
-		protected virtual void Start ()
+		private void Start ()
 		{
 			SetAllPanelsState(false);
 		}
 
 		private void SetAllPanelsState (bool isEnabled)
 		{
-			foreach (PanelController panel in CurrentPanelsProvider.GetAllObjects())
+			foreach (BasePanelController panel in CurrentPanelsProvider.GetAllPanels())
 			{
 				panel.SetVisibility(isEnabled);
 			}
@@ -33,7 +33,7 @@ namespace VoidChase.UI
 
 		private void SetPanelState (string panelName, bool isEnabled)
 		{
-			if (CurrentPanelsProvider.TryGetObject(panelName, out PanelController objectReference))
+			if (CurrentPanelsProvider.TryGetPanel(panelName, out BasePanelController objectReference))
 			{
 				objectReference.SetVisibility(isEnabled);
 			}

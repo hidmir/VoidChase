@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -10,7 +11,7 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private List<SpawnerData> SpawnersCollection { get; set; }
 
-		public override void Spawn (Vector3 position, Vector3 direction)
+		public override void Spawn (Vector2 position, Vector2 direction)
 		{
 			MovingObjectsSpawner spawner = GetRandomSpawner();
 			spawner.Spawn(position, direction);
@@ -18,12 +19,7 @@ namespace VoidChase.MovingObjects
 
 		private MovingObjectsSpawner GetRandomSpawner ()
 		{
-			float totalProbability = 0.0f;
-
-			foreach (SpawnerData spawnerData in SpawnersCollection)
-			{
-				totalProbability += spawnerData.Probability;
-			}
+			float totalProbability = SpawnersCollection.Sum(spawnerData => spawnerData.Probability);
 
 			float randomValue = Random.Range(0.0f, totalProbability);
 			float currentSum = 0.0f;

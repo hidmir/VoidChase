@@ -18,7 +18,7 @@ PrefabInstance:
       objectReference: {fileID: 5232645902491599256}
     - target: {fileID: 5099182269008558109, guid: 727cadb7c23ccc54eb078eccd456ebc7, type: 3}
       propertyPath: m_Name
-      value: BaseWeaponSwitcher Variant
+      value: BaseWeaponSwitcher
       objectReference: {fileID: 0}
     - target: {fileID: 6424761801458590484, guid: 727cadb7c23ccc54eb078eccd456ebc7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -96,13 +96,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bae2c6d1558ac4e49b33a244d952acbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SwitchWeapon>k__BackingField:
+  <WeaponSwitched>k__BackingField:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4641512073943563540}
         m_TargetAssemblyTypeName: VoidChase.MovingObjects.MovingObjectController,
           Assembly-CSharp
-        m_MethodName: InvokeRequestDestroying
+        m_MethodName: RequestDestroying
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -112,4 +112,4 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  <WeaponName>k__BackingField: SingleProjectile
+  <WeaponName>k__BackingField: Single Projectile
