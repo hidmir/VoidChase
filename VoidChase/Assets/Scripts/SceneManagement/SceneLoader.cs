@@ -9,8 +9,10 @@ namespace VoidChase.SceneManagement
 {
 	public class SceneLoader : SingletonMonoBehaviour<SceneLoader>
 	{
-		[SerializeField] private SceneData mainMenuSceneData;
-		[SerializeField] private List<LevelData> levelDataCollection;
+		[SerializeField]
+		private SceneData mainMenuSceneData;
+		[SerializeField]
+		private List<LevelData> levelDataCollection;
 
 		public float LoadingProgress { get; private set; }
 
@@ -19,15 +21,15 @@ namespace VoidChase.SceneManagement
 			LoadSceneAsync(mainMenuSceneData.ScenePath);
 		}
 
-		public void LoadLevelScene (int levelNumber)
+		public void LoadLevelScene (string levelName)
 		{
-			if (TryGetLevelScenePath(out string scenePath, levelNumber))
+			if (TryGetLevelScenePath(out string scenePath, levelName))
 			{
 				LoadSceneAsync(scenePath);
 			}
 			else
 			{
-				Debug.LogError($"Level cannot be loaded because there is no scene data with number {levelNumber.ToString()}.");
+				Debug.LogError($"Level cannot be loaded because there is no scene data for level with name {levelName}.");
 			}
 		}
 
@@ -54,9 +56,9 @@ namespace VoidChase.SceneManagement
 			LoadingProgress = 1.0f;
 		}
 
-		private bool TryGetLevelScenePath (out string scenePath, int levelNumber)
+		private bool TryGetLevelScenePath (out string scenePath, string levelName)
 		{
-			scenePath = levelDataCollection.FirstOrDefault(levelData => levelData.Number == levelNumber)?.SceneData.ScenePath;
+			scenePath = levelDataCollection.FirstOrDefault(levelData => levelData.LevelName == levelName)?.SceneData.ScenePath;
 			return scenePath != string.Empty;
 		}
 	}

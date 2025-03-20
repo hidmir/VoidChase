@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using VoidChase.Utilities.Dropdown;
 
 namespace VoidChase.SceneManagement
 {
@@ -8,7 +9,7 @@ namespace VoidChase.SceneManagement
 	{
 		[field: SerializeField]
 		public SceneData SceneData { get; private set; }
-		[field: SerializeField, Min(1)]
-		public int Number { get; private set; } = 1;
+		[field: SerializeField, Dropdown(StringCollectionNames.LEVELS_COLLECTION_NAME)]
+		public string LevelName { get; private set; }
 	}
 }
