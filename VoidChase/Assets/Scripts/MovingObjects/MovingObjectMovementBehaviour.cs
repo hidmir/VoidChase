@@ -16,6 +16,8 @@ namespace VoidChase.MovingObjects
 		private float Speed { get; set; } = 5.0f;
 		[field: SerializeField]
 		private float LifeTime { get; set; } = 5.0f;
+		[field: SerializeField]
+		private bool SetRotationBasedOnDirection { get; set; }
 
 		[NonSerialized]
 		public bool isMovementEnabled;
@@ -31,6 +33,12 @@ namespace VoidChase.MovingObjects
 		public virtual void Launch (Vector2 position, Vector2 direction)
 		{
 			transform.position = position;
+
+			if (SetRotationBasedOnDirection)
+			{
+				transform.up = direction;
+			}
+
 			cachedDirection = direction;
 			isLaunched = true;
 		}
