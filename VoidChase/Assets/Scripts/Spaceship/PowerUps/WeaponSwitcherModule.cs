@@ -16,12 +16,12 @@ namespace VoidChase.Spaceship.PowerUps
 		[field: SerializeField, Dropdown(StringCollectionNames.WEAPONS_COLLECTION_NAME)]
 		private string WeaponName { get; set; }
 
-		protected virtual void OnTriggerEnter (Collider other)
+		protected virtual void OnTriggerEnter2D (Collider2D other)
 		{
 			AttemptSwitchWeapon(other);
 		}
 
-		private void AttemptSwitchWeapon (Collider objectHit)
+		private void AttemptSwitchWeapon (Collider2D objectHit)
 		{
 			if (objectHit.TryGetComponent(out ShootingController shootingController))
 			{
