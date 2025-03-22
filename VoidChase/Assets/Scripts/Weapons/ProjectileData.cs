@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace VoidChase.Spaceship.Weapons
+namespace VoidChase.Weapons
 {
 	[Serializable]
 	public class ProjectileData

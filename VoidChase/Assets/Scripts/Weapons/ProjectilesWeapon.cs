@@ -3,7 +3,7 @@ using UnityEngine;
 using VoidChase.MovingObjects;
 using VoidChase.Utilities;
 
-namespace VoidChase.Spaceship.Weapons
+namespace VoidChase.Weapons
 {
 	public class ProjectilesWeapon : BaseWeapon
 	{

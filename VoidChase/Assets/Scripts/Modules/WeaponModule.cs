@@ -1,6 +1,6 @@
 using UnityEngine;
-using VoidChase.Spaceship.Weapons;
 using VoidChase.Utilities;
+using VoidChase.Weapons;
 
 namespace VoidChase.Modules
 {
