@@ -59,7 +59,12 @@ namespace VoidChase.MovingObjects
 
 		private void OnEnable ()
 		{
-			((IPausable)this).RegisterPausable();
+			((IPausable) this).RegisterPausable();
+		}
+
+		private void Start ()
+		{
+			Spawner.Initialize();
 		}
 
 		private void OnDisable ()

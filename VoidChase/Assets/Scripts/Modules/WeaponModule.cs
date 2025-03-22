@@ -26,6 +26,11 @@ namespace VoidChase.Modules
 			AttachToEvents();
 		}
 
+		private void Start ()
+		{
+			BoundWeapon.Initialize();
+		}
+
 		private void OnDisable ()
 		{
 			DetachFromEvents();
@@ -41,7 +46,7 @@ namespace VoidChase.Modules
 				}
 				else
 				{
-					Debug.LogError(string.Format(IncorrectWeaponShootingModeMessage, nameof(BoundWeapon.UsesFireRate)), this);
+					Debug.LogWarning(string.Format(IncorrectWeaponShootingModeMessage, nameof(BoundWeapon.UsesFireRate)), this);
 				}
 			}
 		}

@@ -15,6 +15,12 @@ namespace VoidChase.Weapons
 		[field: SerializeField]
 		private BaseMovingObjectsSpawner CurrentMovingObjectsSpawner { get; set; }
 
+		public override void Initialize ()
+		{
+			CurrentMovingObjectsSpawner.Initialize();
+			base.Initialize();
+		}
+
 		protected override void OnFire (Vector2 position)
 		{
 			foreach (ProjectileData projectileData in ProjectilesDataCollection)

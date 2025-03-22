@@ -9,16 +9,16 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private MovingObjectsPool Pool { get; set; }
 
+		public override void Initialize ()
+		{
+			Pool.Initialize(MovingObjectsContainer.Instance.transform);
+		}
+
 		public override void Spawn (Vector2 position, Vector2 direction)
 		{
 			MovingObjectController movingObject = Pool.Get();
 			AttachToEvents(movingObject);
 			movingObject.Launch(position, direction);
-		}
-
-		private void Start ()
-		{
-			Pool.Initialize(MovingObjectsContainer.Instance.transform);
 		}
 
 		private void AttachToEvents (MovingObjectController movingObject)
