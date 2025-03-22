@@ -3,9 +3,9 @@ using System.Linq;
 using UnityEngine;
 using VoidChase.Utilities;
 
-namespace VoidChase.Spaceship.Weapons
+namespace VoidChase.Weapons
 {
-	public class WeaponsProvider : SingletonMonoBehaviour<WeaponsProvider>
+	public class WeaponsProvider : MonoBehaviour
 	{
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]

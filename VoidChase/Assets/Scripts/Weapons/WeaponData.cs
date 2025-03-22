@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using VoidChase.Utilities.Dropdown;
 
-namespace VoidChase.Spaceship.Weapons
+namespace VoidChase.Weapons
 {
 	[Serializable]
 	public class WeaponData

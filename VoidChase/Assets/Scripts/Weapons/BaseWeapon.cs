@@ -1,12 +1,15 @@
+using System;
 using UnityEngine;
 
-namespace VoidChase.Spaceship.Weapons
+namespace VoidChase.Weapons
 {
 	public abstract class BaseWeapon : MonoBehaviour
 	{
+		public event Action FiringReady = delegate { };
+
 		[field: Header("Firing Settings")]
 		[field: SerializeField]
-		private bool UsesFireRate { get; set; }
+		public bool UsesFireRate { get; private set; }
 		[field: SerializeField]
 		private float FireRate { get; set; }
 
@@ -15,6 +18,7 @@ namespace VoidChase.Spaceship.Weapons
 		public virtual void Initialize ()
 		{
 			FireCooldown = 0.0f;
+			FiringReady.Invoke();
 		}
 
 		public void Fire (Vector2 position)
@@ -45,6 +49,11 @@ namespace VoidChase.Spaceship.Weapons
 			if (UsesFireRate && FireCooldown > 0.0f)
 			{
 				FireCooldown -= Time.deltaTime;
+
+				if (FireCooldown <= 0.0f)
+				{
+					FiringReady.Invoke();
+				}
 			}
 		}
 	}

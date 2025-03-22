@@ -3,7 +3,7 @@ using UnityEngine;
 using VoidChase.MovingObjects;
 using VoidChase.Utilities;
 
-namespace VoidChase.Spaceship.Weapons
+namespace VoidChase.Weapons
 {
 	public class ProjectilesWeapon : BaseWeapon
 	{
@@ -14,6 +14,12 @@ namespace VoidChase.Spaceship.Weapons
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
 		private BaseMovingObjectsSpawner CurrentMovingObjectsSpawner { get; set; }
+
+		public override void Initialize ()
+		{
+			CurrentMovingObjectsSpawner.Initialize();
+			base.Initialize();
+		}
 
 		protected override void OnFire (Vector2 position)
 		{
