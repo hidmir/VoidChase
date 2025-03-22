@@ -16,9 +16,9 @@ namespace VoidChase.MovingObjects
 			movingObject.Launch(position, direction);
 		}
 
-		private void Awake ()
+		private void Start ()
 		{
-			Pool.Initialize(transform);
+			Pool.Initialize(MovingObjectsContainer.Instance.transform);
 		}
 
 		private void AttachToEvents (MovingObjectController movingObject)
