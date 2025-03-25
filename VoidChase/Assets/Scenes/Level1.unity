@@ -262,7 +262,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -360,6 +360,10 @@ PrefabInstance:
       propertyPath: <InitialWeapon>k__BackingField
       value: Single Projectile
       objectReference: {fileID: 0}
+    - target: {fileID: 7234503036437399120, guid: 01fddd66911952841906826124ba4f15, type: 3}
+      propertyPath: <InitialHealth>k__BackingField
+      value: 500
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -388,7 +392,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5299064487896346119, guid: feda5284a76f482498356ff9ac116dcd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5299064487896346119, guid: feda5284a76f482498356ff9ac116dcd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -584,7 +588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5299064487896346119, guid: feda5284a76f482498356ff9ac116dcd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5299064487896346119, guid: feda5284a76f482498356ff9ac116dcd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1170,7 +1174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5299064487896346119, guid: feda5284a76f482498356ff9ac116dcd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.5
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5299064487896346119, guid: feda5284a76f482498356ff9ac116dcd, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1208,6 +1212,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UfosEmitter
       objectReference: {fileID: 0}
+    - target: {fileID: 6531552754230835345, guid: feda5284a76f482498356ff9ac116dcd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7873285271235082918, guid: feda5284a76f482498356ff9ac116dcd, type: 3}
       propertyPath: <Spawner>k__BackingField
       value: 
@@ -1215,6 +1223,10 @@ PrefabInstance:
     - target: {fileID: 7873285271235082918, guid: feda5284a76f482498356ff9ac116dcd, type: 3}
       propertyPath: <SpawningFrequency>k__BackingField
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873285271235082918, guid: feda5284a76f482498356ff9ac116dcd, type: 3}
+      propertyPath: <IsAffectedByGameSpeed>k__BackingField
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1744,7 +1756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3322962610514821744, guid: 49b558a050d25864abd97d3d999b819e, type: 3}
       propertyPath: <LevelDuration>k__BackingField
-      value: 10
+      value: 90
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
