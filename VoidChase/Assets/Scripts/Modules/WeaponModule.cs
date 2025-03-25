@@ -14,6 +14,8 @@ namespace VoidChase.Modules
 		[field: SerializeField]
 		private bool IsFiringAutomatically { get; set; }
 
+		private bool isFiringEnabled;
+
 		private const string IncorrectWeaponShootingModeMessage = "The module will be inactive because the weapon has {0} mode disabled. Automatic firing every frame is disabled for optimisation purposes.";
 
 		public void Fire ()
@@ -21,19 +23,31 @@ namespace VoidChase.Modules
 			BoundWeapon.Fire(transform.position);
 		}
 
-		private void OnEnable ()
+		public override void Initialize ()
 		{
-			AttachToEvents();
-		}
-
-		private void Start ()
-		{
+			base.Initialize();
 			BoundWeapon.Initialize();
 		}
 
-		private void OnDisable ()
+		public override void DeInitialize ()
 		{
-			DetachFromEvents();
+			base.DeInitialize();
+			SetFiringState(false);
+		}
+
+		public void SetFiringState (bool isEnabled)
+		{
+			isFiringEnabled = isEnabled;
+
+			if (isEnabled)
+			{
+				AttachToEvents();
+				Fire();
+			}
+			else
+			{
+				DetachFromEvents();
+			}
 		}
 
 		private void AttachToEvents ()

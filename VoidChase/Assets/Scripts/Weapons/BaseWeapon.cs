@@ -1,9 +1,10 @@
 using System;
 using UnityEngine;
+using VoidChase.GameLoop.Pause;
 
 namespace VoidChase.Weapons
 {
-	public abstract class BaseWeapon : MonoBehaviour
+	public abstract class BaseWeapon : MonoBehaviour, IPausable
 	{
 		public event Action FiringReady = delegate { };
 
@@ -14,6 +15,7 @@ namespace VoidChase.Weapons
 		private float FireRate { get; set; }
 
 		private float FireCooldown { get; set; }
+		private bool isPaused;
 
 		public virtual void Initialize ()
 		{
@@ -32,6 +34,16 @@ namespace VoidChase.Weapons
 			FireCooldown = 1.0f / FireRate;
 		}
 
+		public void OnPause ()
+		{
+			isPaused = true;
+		}
+
+		public void OnResume ()
+		{
+			isPaused = false;
+		}
+
 		protected abstract void OnFire (Vector2 position);
 
 		protected virtual bool IsReadyToFire ()
@@ -44,9 +56,19 @@ namespace VoidChase.Weapons
 			UpdateFireCooldown();
 		}
 
+		private void OnEnable ()
+		{
+			((IPausable) this).RegisterPausable();
+		}
+
+		private void OnDisable ()
+		{
+			((IPausable) this).UnregisterPausable();
+		}
+
 		private void UpdateFireCooldown ()
 		{
-			if (UsesFireRate && FireCooldown > 0.0f)
+			if (UsesFireRate && !isPaused && FireCooldown > 0.0f)
 			{
 				FireCooldown -= Time.deltaTime;
 

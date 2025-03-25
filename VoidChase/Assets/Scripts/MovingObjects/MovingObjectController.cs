@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using VoidChase.GameLoop.Pause;
 using VoidChase.Modules;
 using VoidChase.Utilities;
@@ -10,6 +11,12 @@ namespace VoidChase.MovingObjects
 	public class MovingObjectController : MonoBehaviour, IPausable
 	{
 		public event Action<MovingObjectController> DestroyingRequested = delegate { };
+
+		[field: Header(InspectorNames.EVENTS_NAME)]
+		[field: SerializeField]
+		public UnityEvent ObjectLaunched { get; private set; }
+		[field: SerializeField]
+		public UnityEvent DestroyingProcessStarted { get; private set; }
 
 		[field: Header(InspectorNames.REFERENCES_NAME)]
 		[field: SerializeField]
@@ -39,11 +46,13 @@ namespace VoidChase.MovingObjects
 		public void DeInitialize ()
 		{
 			CurrentMovementBehaviour.DeInitialize();
+			CurrentModulesCollectionController.DeInitializeModules();
 		}
 
 		public void Launch (Vector2 position, Vector2 direction)
 		{
 			CurrentMovementBehaviour.Launch(position, direction);
+			ObjectLaunched.Invoke();
 		}
 
 		public void RequestDestroying ()
@@ -94,6 +103,7 @@ namespace VoidChase.MovingObjects
 		{
 			SetMainObjectState(false);
 			CurrentMovementBehaviour.DeInitialize();
+			DestroyingProcessStarted.Invoke();
 
 			ParticleSystem.MainModule mainModule = DestructionEffect.main;
 			float effectDuration = mainModule.duration;
