@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 40739859986701287, guid: 74dab5a1d32b63344ac65f36e6f4746a, type: 3}
+      propertyPath: <MainObjectCollider>k__BackingField
+      value: 
+      objectReference: {fileID: 4219501886562408306}
     - target: {fileID: 631767601728922035, guid: 74dab5a1d32b63344ac65f36e6f4746a, type: 3}
       propertyPath: m_Name
       value: BlackUfo1
@@ -56,6 +60,10 @@ PrefabInstance:
       propertyPath: <BoundWeapon>k__BackingField
       value: 
       objectReference: {fileID: 2712792611658090270}
+    - target: {fileID: 3071826205514070071, guid: 74dab5a1d32b63344ac65f36e6f4746a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 36972dc8c00b1e648b5c8d72f827b021, type: 2}
     - target: {fileID: 4480995377261170677, guid: 74dab5a1d32b63344ac65f36e6f4746a, type: 3}
       propertyPath: m_Size.x
       value: 5.12

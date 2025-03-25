@@ -111,8 +111,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9d40a3148b74d4cbfeda57522a25e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MainObjectRenderer>k__BackingField: {fileID: 8440756515375964058}
+  <MainObjectCollider>k__BackingField: {fileID: 3238991574758447704}
   <CurrentMovementBehaviour>k__BackingField: {fileID: 8792019204040186685}
   <CurrentModulesCollectionController>k__BackingField: {fileID: 2410657956378543663}
+  <HasDestroyingEffect>k__BackingField: 0
+  <DestroyingEffect>k__BackingField: {fileID: 0}
 --- !u!114 &8792019204040186685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +147,7 @@ MonoBehaviour:
         m_CallState: 2
   <Speed>k__BackingField: 5
   <LifeTime>k__BackingField: 5
+  <SetRotationBasedOnDirection>k__BackingField: 0
 --- !u!114 &2410657956378543663
 MonoBehaviour:
   m_ObjectHideFlags: 0
