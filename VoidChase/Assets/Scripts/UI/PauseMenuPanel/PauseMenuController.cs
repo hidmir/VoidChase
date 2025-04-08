@@ -1,5 +1,5 @@
 using VoidChase.GameLoop;
-using VoidChase.GameLoop.Pause;
+using VoidChase.PauseManagement;
 
 namespace VoidChase.UI.PauseMenu
 {

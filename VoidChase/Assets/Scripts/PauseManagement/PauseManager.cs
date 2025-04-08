@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using VoidChase.Utilities;
 
-namespace VoidChase.GameLoop.Pause
+namespace VoidChase.PauseManagement
 {
 	public class PauseManager : SingletonMonoBehaviour<PauseManager>
 	{

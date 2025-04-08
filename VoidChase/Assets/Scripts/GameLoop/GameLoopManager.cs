@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using VoidChase.GameLoop.Pause;
+using VoidChase.PauseManagement;
 using VoidChase.Player;
 using VoidChase.SceneManagement;
 using VoidChase.Score;

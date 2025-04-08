@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
-using VoidChase.GameLoop.Pause;
 using VoidChase.Modules;
+using VoidChase.PauseManagement;
 using VoidChase.Utilities;
 
 namespace VoidChase.MovingObjects

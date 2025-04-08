@@ -1,6 +1,6 @@
 using UnityEngine;
-using VoidChase.GameLoop.Pause;
 using VoidChase.Modules;
+using VoidChase.PauseManagement;
 
 namespace VoidChase.Spaceship
 {

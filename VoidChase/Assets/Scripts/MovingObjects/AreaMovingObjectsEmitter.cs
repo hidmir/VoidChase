@@ -1,6 +1,6 @@
 using UnityEngine;
 using VoidChase.Environment.GameSpeed;
-using VoidChase.GameLoop.Pause;
+using VoidChase.PauseManagement;
 using VoidChase.Utilities;
 
 namespace VoidChase.MovingObjects

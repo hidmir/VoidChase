@@ -1,4 +1,4 @@
-namespace VoidChase.GameLoop.Pause
+namespace VoidChase.PauseManagement
 {
 	public interface IPausable
 	{
