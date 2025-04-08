@@ -495,6 +495,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <DestructionEffect>k__BackingField: {fileID: 4195025209273548672}
   <PlayerModel>k__BackingField: {fileID: 4474105752538100447}
+  <ThrusterFlameImage>k__BackingField: {fileID: 5517762186810340375}
 --- !u!1 &5616180540441187085
 GameObject:
   m_ObjectHideFlags: 0

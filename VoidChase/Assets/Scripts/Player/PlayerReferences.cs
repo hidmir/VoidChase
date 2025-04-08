@@ -9,5 +9,7 @@ namespace VoidChase.Player
 		public ParticleSystem DestructionEffect { get; private set; }
 		[field: SerializeField]
 		public GameObject PlayerModel { get; private set; }
+		[field: SerializeField]
+		public SpriteRenderer ThrusterFlameImage { get; private set; }
 	}
 }

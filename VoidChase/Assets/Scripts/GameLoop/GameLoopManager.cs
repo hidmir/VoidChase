@@ -21,6 +21,12 @@ namespace VoidChase.GameLoop
 		[field: SerializeField]
 		private List<GameObject> ObjectsToHideOnGameEnd { get; set; }
 
+		[field: Header(InspectorNames.SETTINGS_NAME)]
+		[field: SerializeField]
+		private float PlayerVictoryAnimationTime { get; set; } = 3.0f;
+		[field: SerializeField]
+		private float PlayerVictoryAnimationSpeed { get; set; } = 0.004f;
+
 		public float GetLevelProgress => BoundLevelProgressController.GetProgress();
 		public bool IsEndedWithSuccess { get; private set; }
 		private PlayerReferences CurrentPlayerReferences => PlayerReferences.Instance;
@@ -47,8 +53,7 @@ namespace VoidChase.GameLoop
 		private void EndGameWithSuccess ()
 		{
 			PauseManager.Instance.Pause();
-			IsEndedWithSuccess = true;
-			EndGame();
+			StartCoroutine(PlayerVictoryProcess());
 		}
 
 		private void EndGameWithFailure ()
@@ -57,14 +62,32 @@ namespace VoidChase.GameLoop
 			StartCoroutine(PlayerDestructionProcess());
 		}
 
+		private IEnumerator PlayerVictoryProcess ()
+		{
+			Transform playerModel = CurrentPlayerReferences.PlayerModel.transform;
+			CurrentPlayerReferences.ThrusterFlameImage.forceRenderingOff = false;
+			float timeSinceAnimationStart = 0.0f;
+
+			while (timeSinceAnimationStart <= PlayerVictoryAnimationTime)
+			{
+				playerModel.Translate(Vector2.up * PlayerVictoryAnimationSpeed);
+				timeSinceAnimationStart += Time.deltaTime;
+
+				yield return null;
+			}
+
+			IsEndedWithSuccess = true;
+			EndGame();
+		}
+
 		private IEnumerator PlayerDestructionProcess ()
 		{
 			CurrentPlayerReferences.PlayerModel.SetActive(false);
 			ParticleSystem playerDestructionEffect = CurrentPlayerReferences.DestructionEffect;
 			playerDestructionEffect.Play();
-			
+
 			yield return new WaitWhile(IsDestructionEffectPlaying);
-			
+
 			IsEndedWithSuccess = false;
 			EndGame();
 
