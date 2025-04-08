@@ -12,6 +12,8 @@ namespace VoidChase.Spaceship
 		private Rigidbody2D CurrentRigidbody { get; set; }
 		[field: SerializeField]
 		private SceneBoundariesSO SceneBoundariesSO { get; set; }
+		[field: SerializeField]
+		private SpriteRenderer ThrusterFlameImage { get; set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
@@ -57,6 +59,7 @@ namespace VoidChase.Spaceship
 			Vector2 movementInputValue = SpaceshipInputProvider.Instance.MovementInputAction.ReadValue<Vector2>();
 			Vector2 velocity = movementInputValue != Vector2.zero ? GetMovementVelocity(movementInputValue) : GetBrakingVelocity();
 
+			ThrusterFlameImage.forceRenderingOff = Mathf.Approximately(movementInputValue.y, 0.0f) || movementInputValue.y < 0.0f;
 			CurrentRigidbody.velocity = ClampVelocityToSceneBoundaries(velocity);
 		}
 
