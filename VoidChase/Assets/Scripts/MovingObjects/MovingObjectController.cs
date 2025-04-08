@@ -69,7 +69,7 @@ namespace VoidChase.MovingObjects
 
 		public void OnPause ()
 		{
-			if (HasDestructionEffect)
+			if (HasDestructionEffect && DestructionEffect.isPlaying)
 			{
 				DestructionEffect.Pause();
 			}
