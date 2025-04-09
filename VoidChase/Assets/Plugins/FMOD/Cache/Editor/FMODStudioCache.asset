@@ -1,5 +1,92 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5765141645913465812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638798271216334659
+  FileSizes:
+  - Name: Desktop
+    Value: 1068
+  Exists: 1
+--- !u!114 &-4257408726721786970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/UI.bank
+  Name: UI
+  StudioPath: bank:/UI
+  lastModified: 638798271216394714
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1
+--- !u!114 &-1292391356449356964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/BackgroundMusic.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/BackgroundMusic.bank
+  Name: BackgroundMusic
+  StudioPath: bank:/BackgroundMusic
+  lastModified: 638798271216294627
+  FileSizes:
+  - Name: Desktop
+    Value: 1237408
+  Exists: 1
+--- !u!114 &-288806915604416474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BackgroundMusic/Level1Music
+  m_EditorClassIdentifier: 
+  Path: event:/BackgroundMusic/Level1Music
+  Guid:
+    Data1: -1799653540
+    Data2: 1123946651
+    Data3: 1955878039
+    Data4: -51236019
+  Banks:
+  - {fileID: -1292391356449356964}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 92568
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,18 +100,27 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 8987654588033043449}
-  - {fileID: 5957675834260521304}
-  EditorEvents: []
+  - {fileID: -5765141645913465812}
+  - {fileID: -1292391356449356964}
+  - {fileID: 972341072865248132}
+  - {fileID: 8414361909588890603}
+  - {fileID: -4257408726721786970}
+  EditorEvents:
+  - {fileID: -288806915604416474}
+  - {fileID: 7358479239466004992}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 5957675834260521304}
+  - {fileID: 972341072865248132}
   StringsBanks:
-  - {fileID: 8987654588033043449}
+  - {fileID: -5765141645913465812}
   cacheVersion: 131847
-  cacheTime: 638798246269657081
-  SerializableEventsDict: []
---- !u!114 &5957675834260521304
+  cacheTime: 638798271216394714
+  SerializableEventsDict:
+  - key: event:/BackgroundMusic/Level1Music
+    index: 0
+  - key: snapshot:/ReverbEffect
+    index: 1
+--- !u!114 &972341072865248132
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -36,15 +132,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
   m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: ../FMOD/VoidChase/Build/Desktop/Master.bank
+  Path: ../FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638798246269354511
+  lastModified: 638798271216334659
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 3272
   Exists: 1
---- !u!114 &8987654588033043449
+--- !u!114 &7358479239466004992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/ReverbEffect
+  m_EditorClassIdentifier: 
+  Path: snapshot:/ReverbEffect
+  Guid:
+    Data1: -415436712
+    Data2: 1283872037
+    Data3: -1136975430
+    Data4: 357256600
+  Banks:
+  - {fileID: 972341072865248132}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &8414361909588890603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -54,13 +177,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Name: bank:/SFX.bank
   m_EditorClassIdentifier: 
-  Path: ../FMOD/VoidChase/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638798246269657081
+  Path: ../FMOD/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638798271216374704
   FileSizes:
   - Name: Desktop
-    Value: 712
+    Value: 494
   Exists: 1
