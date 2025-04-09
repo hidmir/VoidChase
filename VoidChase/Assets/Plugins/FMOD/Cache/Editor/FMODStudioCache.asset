@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6346010651303400686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AsteroidDestruction1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AsteroidDestruction1
+  Guid:
+    Data1: 554871556
+    Data2: 1308550280
+    Data3: 366618252
+    Data4: 650272393
+  Banks:
+  - {fileID: 8414361909588890603}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 548
 --- !u!114 &-5765141645913465812
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,10 +42,10 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638798278240610167
+  lastModified: 638798283993005352
   FileSizes:
   - Name: Desktop
-    Value: 1128
+    Value: 1190
   Exists: 1
 --- !u!114 &-5084772058578297271
 MonoBehaviour:
@@ -136,13 +163,14 @@ MonoBehaviour:
   - {fileID: -288806915604416474}
   - {fileID: 7358479239466004992}
   - {fileID: -5084772058578297271}
+  - {fileID: -6346010651303400686}
   EditorParameters: []
   MasterBanks:
   - {fileID: 972341072865248132}
   StringsBanks:
   - {fileID: -5765141645913465812}
   cacheVersion: 131847
-  cacheTime: 638798278240860330
+  cacheTime: 638798290724681293
   SerializableEventsDict:
   - key: event:/BackgroundMusic/Level1Music
     index: 0
@@ -150,6 +178,8 @@ MonoBehaviour:
     index: 1
   - key: event:/SFX/SpaceshipFire
     index: 2
+  - key: event:/SFX/AsteroidDestruction1
+    index: 3
 --- !u!114 &972341072865248132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +195,7 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638798278240600157
+  lastModified: 638798283992995351
   FileSizes:
   - Name: Desktop
     Value: 3272
@@ -212,8 +242,8 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638798278240860330
+  lastModified: 638798290724681293
   FileSizes:
   - Name: Desktop
-    Value: 13344
+    Value: 22656
   Exists: 1
