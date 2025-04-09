@@ -1,12 +1,18 @@
 using System;
 using UnityEngine;
+using UnityEngine.Events;
 using VoidChase.PauseManagement;
+using VoidChase.Utilities;
 
 namespace VoidChase.Weapons
 {
 	public abstract class BaseWeapon : MonoBehaviour, IPausable
 	{
 		public event Action FiringReady = delegate { };
+
+		[field: Header(InspectorNames.EVENTS_NAME)]
+		[field: SerializeField]
+		public UnityEvent ShotFired { get; set; }
 
 		[field: Header("Firing Settings")]
 		[field: SerializeField]
@@ -31,6 +37,7 @@ namespace VoidChase.Weapons
 			}
 
 			OnFire(position);
+			ShotFired.Invoke();
 			FireCooldown = 1.0f / FireRate;
 		}
 

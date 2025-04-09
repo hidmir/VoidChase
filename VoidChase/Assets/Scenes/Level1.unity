@@ -1790,7 +1790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 746580168913941929, guid: 49b558a050d25864abd97d3d999b819e, type: 3}
       propertyPath: <PlayerVictoryAnimationSpeed>k__BackingField
-      value: 0.004
+      value: 0.005
       objectReference: {fileID: 0}
     - target: {fileID: 746580168913941929, guid: 49b558a050d25864abd97d3d999b819e, type: 3}
       propertyPath: <ObjectsToHideOnGameEnd>k__BackingField.Array.size
@@ -1858,7 +1858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3322962610514821744, guid: 49b558a050d25864abd97d3d999b819e, type: 3}
       propertyPath: <LevelDuration>k__BackingField
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
