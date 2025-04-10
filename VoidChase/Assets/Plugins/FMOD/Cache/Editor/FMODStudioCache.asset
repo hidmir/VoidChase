@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638799053670201252
+  lastModified: 638799068029277910
   FileSizes:
   - Name: Desktop
-    Value: 1284
+    Value: 1338
   Exists: 1
 --- !u!114 &-5084772058578297271
 MonoBehaviour:
@@ -193,13 +193,14 @@ MonoBehaviour:
   - {fileID: -6346010651303400686}
   - {fileID: 2924658561223167985}
   - {fileID: -3027090703551105723}
+  - {fileID: 5326785857412897915}
   EditorParameters: []
   MasterBanks:
   - {fileID: 972341072865248132}
   StringsBanks:
   - {fileID: -5765141645913465812}
   cacheVersion: 131847
-  cacheTime: 638799057972060275
+  cacheTime: 638799068029468083
   SerializableEventsDict:
   - key: event:/BackgroundMusic/Level1Music
     index: 0
@@ -213,6 +214,8 @@ MonoBehaviour:
     index: 4
   - key: event:/UI/ButtonPress1
     index: 5
+  - key: event:/SFX/SpaceshipDestruction1
+    index: 6
 --- !u!114 &972341072865248132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,7 +231,7 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638799053670191243
+  lastModified: 638799068029267902
   FileSizes:
   - Name: Desktop
     Value: 3272
@@ -260,6 +263,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 498
+--- !u!114 &5326785857412897915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/SpaceshipDestruction1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SpaceshipDestruction1
+  Guid:
+    Data1: -1633632841
+    Data2: 1086493064
+    Data3: -1940968821
+    Data4: 1242309356
+  Banks:
+  - {fileID: 8414361909588890603}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1507
 --- !u!114 &7358479239466004992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,8 +332,8 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638799051893358197
+  lastModified: 638799068029468083
   FileSizes:
   - Name: Desktop
-    Value: 30720
+    Value: 51392
   Exists: 1

@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 using VoidChase.Utilities;
 
@@ -7,6 +8,8 @@ namespace VoidChase.Player
 	{
 		[field: SerializeField]
 		public ParticleSystem DestructionEffect { get; private set; }
+		[field: SerializeField]
+		public StudioEventEmitter DestructionAudio { get; private set; }
 		[field: SerializeField]
 		public GameObject PlayerModel { get; private set; }
 		[field: SerializeField]

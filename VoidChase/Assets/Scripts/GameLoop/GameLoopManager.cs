@@ -85,6 +85,7 @@ namespace VoidChase.GameLoop
 			CurrentPlayerReferences.PlayerModel.SetActive(false);
 			ParticleSystem playerDestructionEffect = CurrentPlayerReferences.DestructionEffect;
 			playerDestructionEffect.Play();
+			CurrentPlayerReferences.DestructionAudio.Play();
 
 			yield return new WaitWhile(IsDestructionEffectPlaying);
 
