@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8327715726547506179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BackgroundMusic/MainMenuMusic2
+  m_EditorClassIdentifier: 
+  Path: event:/BackgroundMusic/MainMenuMusic2
+  Guid:
+    Data1: 1591777286
+    Data2: 1205871072
+    Data3: 978041769
+    Data4: -252511528
+  Banks:
+  - {fileID: -1292391356449356964}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 240048
 --- !u!114 &-6346010651303400686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,10 +69,10 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638799068029277910
+  lastModified: 638799098333736230
   FileSizes:
   - Name: Desktop
-    Value: 1338
+    Value: 1472
   Exists: 1
 --- !u!114 &-5084772058578297271
 MonoBehaviour:
@@ -136,10 +163,10 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/BackgroundMusic.bank
   Name: BackgroundMusic
   StudioPath: bank:/BackgroundMusic
-  lastModified: 638798271216294627
+  lastModified: 638799099721719030
   FileSizes:
   - Name: Desktop
-    Value: 1237408
+    Value: 7960384
   Exists: 1
 --- !u!114 &-288806915604416474
 MonoBehaviour:
@@ -194,13 +221,16 @@ MonoBehaviour:
   - {fileID: 2924658561223167985}
   - {fileID: -3027090703551105723}
   - {fileID: 5326785857412897915}
+  - {fileID: -8327715726547506179}
+  - {fileID: 3137055548729635598}
+  - {fileID: 3250049921649492624}
   EditorParameters: []
   MasterBanks:
   - {fileID: 972341072865248132}
   StringsBanks:
   - {fileID: -5765141645913465812}
   cacheVersion: 131847
-  cacheTime: 638799068029468083
+  cacheTime: 638799099721719030
   SerializableEventsDict:
   - key: event:/BackgroundMusic/Level1Music
     index: 0
@@ -216,6 +246,12 @@ MonoBehaviour:
     index: 5
   - key: event:/SFX/SpaceshipDestruction1
     index: 6
+  - key: event:/BackgroundMusic/MainMenuMusic2
+    index: 7
+  - key: event:/BackgroundMusic/MainMenuMusic1
+    index: 8
+  - key: event:/BackgroundMusic/MainMenuMusic3
+    index: 9
 --- !u!114 &972341072865248132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,7 +267,7 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638799068029267902
+  lastModified: 638799098333726223
   FileSizes:
   - Name: Desktop
     Value: 3272
@@ -263,6 +299,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 498
+--- !u!114 &3137055548729635598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BackgroundMusic/MainMenuMusic1
+  m_EditorClassIdentifier: 
+  Path: event:/BackgroundMusic/MainMenuMusic1
+  Guid:
+    Data1: -2113794979
+    Data2: 1309107757
+    Data3: 738608531
+    Data4: -1565287249
+  Banks:
+  - {fileID: -1292391356449356964}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 240048
+--- !u!114 &3250049921649492624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BackgroundMusic/MainMenuMusic3
+  m_EditorClassIdentifier: 
+  Path: event:/BackgroundMusic/MainMenuMusic3
+  Guid:
+    Data1: -731120610
+    Data2: 1228740182
+    Data3: 2084256412
+    Data4: 1969262444
+  Banks:
+  - {fileID: -1292391356449356964}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 173856
 --- !u!114 &5326785857412897915
 MonoBehaviour:
   m_ObjectHideFlags: 0

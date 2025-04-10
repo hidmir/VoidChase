@@ -368,7 +368,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7234503036437399120, guid: 01fddd66911952841906826124ba4f15, type: 3}
       propertyPath: <InitialHealth>k__BackingField
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
