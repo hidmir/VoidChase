@@ -69,11 +69,38 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638799098333736230
+  lastModified: 638811059077673840
   FileSizes:
   - Name: Desktop
-    Value: 1472
+    Value: 1574
   Exists: 1
+--- !u!114 &-5494488321429247850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UfoDestruction1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UfoDestruction1
+  Guid:
+    Data1: 118835771
+    Data2: 1083084840
+    Data3: 1186485396
+    Data4: 646062231
+  Banks:
+  - {fileID: 8414361909588890603}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 385
 --- !u!114 &-5084772058578297271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,6 +175,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 528
+--- !u!114 &-2170368670409659221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UfoProjectileHit1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UfoProjectileHit1
+  Guid:
+    Data1: 1699504801
+    Data2: 1164952003
+    Data3: 1074376107
+    Data4: -1791413551
+  Banks:
+  - {fileID: 8414361909588890603}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 405
 --- !u!114 &-1292391356449356964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,13 +278,15 @@ MonoBehaviour:
   - {fileID: -8327715726547506179}
   - {fileID: 3137055548729635598}
   - {fileID: 3250049921649492624}
+  - {fileID: -2170368670409659221}
+  - {fileID: -5494488321429247850}
   EditorParameters: []
   MasterBanks:
   - {fileID: 972341072865248132}
   StringsBanks:
   - {fileID: -5765141645913465812}
   cacheVersion: 131847
-  cacheTime: 638799099721719030
+  cacheTime: 638811059077884019
   SerializableEventsDict:
   - key: event:/BackgroundMusic/Level1Music
     index: 0
@@ -252,6 +308,10 @@ MonoBehaviour:
     index: 8
   - key: event:/BackgroundMusic/MainMenuMusic3
     index: 9
+  - key: event:/SFX/UfoProjectileHit1
+    index: 10
+  - key: event:/SFX/UfoDestruction1
+    index: 11
 --- !u!114 &972341072865248132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,7 +327,7 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638799098333726223
+  lastModified: 638811059077663832
   FileSizes:
   - Name: Desktop
     Value: 3272
@@ -422,8 +482,8 @@ MonoBehaviour:
   Path: ../FMOD/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638799068029468083
+  lastModified: 638811059077884019
   FileSizes:
   - Name: Desktop
-    Value: 51392
+    Value: 67104
   Exists: 1
