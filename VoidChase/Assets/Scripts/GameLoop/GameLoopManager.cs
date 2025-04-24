@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using FMODUnity;
 using UnityEngine;
 using VoidChase.PauseManagement;
 using VoidChase.Player;
@@ -21,6 +22,8 @@ namespace VoidChase.GameLoop
 		private LevelProgressController BoundLevelProgressController { get; set; }
 		[field: SerializeField]
 		private List<GameObject> ObjectsToHideOnGameEnd { get; set; }
+		[field: SerializeField]
+		private StudioEventEmitter VictorySound { get; set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField]
@@ -67,6 +70,8 @@ namespace VoidChase.GameLoop
 		{
 			Transform playerModel = CurrentPlayerReferences.PlayerModel.transform;
 			CurrentPlayerReferences.ThrusterFlameImage.forceRenderingOff = false;
+
+			VictorySound.Play();
 
 			Tween tween = playerModel
 				.DOMoveY(playerModel.position.y + PlayerVictoryAnimationDistance, PlayerVictoryAnimationTime)
