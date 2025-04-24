@@ -1,3 +1,4 @@
+using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
 using VoidChase.PauseManagement;
@@ -9,14 +10,18 @@ namespace VoidChase.Audio
 		[field: SerializeField]
 		private StudioEventEmitter BoundAudio { get; set; }
 
+		private EventInstance CurrentSound => BoundAudio.EventInstance;
+
 		public void OnPause ()
 		{
-			BoundAudio.EventInstance.setPaused(true);
+			CurrentSound.setVolume(0.0f);
+			CurrentSound.setPaused(true);
 		}
 
 		public void OnResume ()
 		{
-			BoundAudio.EventInstance.setPaused(false);
+			CurrentSound.setPaused(false);
+			CurrentSound.setVolume(1.0f);
 		}
 
 		private void OnEnable ()
