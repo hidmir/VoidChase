@@ -1,0 +1,489 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8327715726547506179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BackgroundMusic/MainMenuMusic2
+  m_EditorClassIdentifier: 
+  Path: event:/BackgroundMusic/MainMenuMusic2
+  Guid:
+    Data1: 1591777286
+    Data2: 1205871072
+    Data3: 978041769
+    Data4: -252511528
+  Banks:
+  - {fileID: -1292391356449356964}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 240048
+--- !u!114 &-6346010651303400686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/AsteroidDestruction1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/AsteroidDestruction1
+  Guid:
+    Data1: 554871556
+    Data2: 1308550280
+    Data3: 366618252
+    Data4: 650272393
+  Banks:
+  - {fileID: 8414361909588890603}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 548
+--- !u!114 &-5765141645913465812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638811059077673840
+  FileSizes:
+  - Name: Desktop
+    Value: 1574
+  Exists: 1
+--- !u!114 &-5494488321429247850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UfoDestruction1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UfoDestruction1
+  Guid:
+    Data1: 118835771
+    Data2: 1083084840
+    Data3: 1186485396
+    Data4: 646062231
+  Banks:
+  - {fileID: 8414361909588890603}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 385
+--- !u!114 &-5084772058578297271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/SpaceshipFire
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SpaceshipFire
+  Guid:
+    Data1: 641807649
+    Data2: 1085974229
+    Data3: 741745597
+    Data4: -2132434754
+  Banks:
+  - {fileID: 8414361909588890603}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 280
+--- !u!114 &-4257408726721786970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/UI.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/UI.bank
+  Name: UI
+  StudioPath: bank:/UI
+  lastModified: 638799057972060275
+  FileSizes:
+  - Name: Desktop
+    Value: 8608
+  Exists: 1
+--- !u!114 &-3027090703551105723
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/ButtonPress1
+  m_EditorClassIdentifier: 
+  Path: event:/UI/ButtonPress1
+  Guid:
+    Data1: 590673174
+    Data2: 1201491270
+    Data3: 1245031858
+    Data4: -1735389692
+  Banks:
+  - {fileID: -4257408726721786970}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 528
+--- !u!114 &-2170368670409659221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UfoProjectileHit1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UfoProjectileHit1
+  Guid:
+    Data1: 1699504801
+    Data2: 1164952003
+    Data3: 1074376107
+    Data4: -1791413551
+  Banks:
+  - {fileID: 8414361909588890603}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 405
+--- !u!114 &-1292391356449356964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/BackgroundMusic.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/BackgroundMusic.bank
+  Name: BackgroundMusic
+  StudioPath: bank:/BackgroundMusic
+  lastModified: 638799099721719030
+  FileSizes:
+  - Name: Desktop
+    Value: 7960384
+  Exists: 1
+--- !u!114 &-288806915604416474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BackgroundMusic/Level1Music
+  m_EditorClassIdentifier: 
+  Path: event:/BackgroundMusic/Level1Music
+  Guid:
+    Data1: -1799653540
+    Data2: 1123946651
+    Data3: 1955878039
+    Data4: -51236019
+  Banks:
+  - {fileID: -1292391356449356964}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 92568
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -5765141645913465812}
+  - {fileID: -1292391356449356964}
+  - {fileID: 972341072865248132}
+  - {fileID: 8414361909588890603}
+  - {fileID: -4257408726721786970}
+  EditorEvents:
+  - {fileID: -288806915604416474}
+  - {fileID: 7358479239466004992}
+  - {fileID: -5084772058578297271}
+  - {fileID: -6346010651303400686}
+  - {fileID: 2924658561223167985}
+  - {fileID: -3027090703551105723}
+  - {fileID: 5326785857412897915}
+  - {fileID: -8327715726547506179}
+  - {fileID: 3137055548729635598}
+  - {fileID: 3250049921649492624}
+  - {fileID: -2170368670409659221}
+  - {fileID: -5494488321429247850}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 972341072865248132}
+  StringsBanks:
+  - {fileID: -5765141645913465812}
+  cacheVersion: 131847
+  cacheTime: 638811059077884019
+  SerializableEventsDict:
+  - key: event:/BackgroundMusic/Level1Music
+    index: 0
+  - key: snapshot:/ReverbEffect
+    index: 1
+  - key: event:/SFX/SpaceshipFire
+    index: 2
+  - key: event:/SFX/AsteroidDestruction1
+    index: 3
+  - key: event:/SFX/WeaponSwitching1
+    index: 4
+  - key: event:/UI/ButtonPress1
+    index: 5
+  - key: event:/SFX/SpaceshipDestruction1
+    index: 6
+  - key: event:/BackgroundMusic/MainMenuMusic2
+    index: 7
+  - key: event:/BackgroundMusic/MainMenuMusic1
+    index: 8
+  - key: event:/BackgroundMusic/MainMenuMusic3
+    index: 9
+  - key: event:/SFX/UfoProjectileHit1
+    index: 10
+  - key: event:/SFX/UfoDestruction1
+    index: 11
+--- !u!114 &972341072865248132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638811059077663832
+  FileSizes:
+  - Name: Desktop
+    Value: 3272
+  Exists: 1
+--- !u!114 &2924658561223167985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/WeaponSwitching1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/WeaponSwitching1
+  Guid:
+    Data1: 1137066064
+    Data2: 1143434344
+    Data3: -1280457084
+    Data4: 789278027
+  Banks:
+  - {fileID: 8414361909588890603}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 498
+--- !u!114 &3137055548729635598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BackgroundMusic/MainMenuMusic1
+  m_EditorClassIdentifier: 
+  Path: event:/BackgroundMusic/MainMenuMusic1
+  Guid:
+    Data1: -2113794979
+    Data2: 1309107757
+    Data3: 738608531
+    Data4: -1565287249
+  Banks:
+  - {fileID: -1292391356449356964}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 240048
+--- !u!114 &3250049921649492624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/BackgroundMusic/MainMenuMusic3
+  m_EditorClassIdentifier: 
+  Path: event:/BackgroundMusic/MainMenuMusic3
+  Guid:
+    Data1: -731120610
+    Data2: 1228740182
+    Data3: 2084256412
+    Data4: 1969262444
+  Banks:
+  - {fileID: -1292391356449356964}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 173856
+--- !u!114 &5326785857412897915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/SpaceshipDestruction1
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/SpaceshipDestruction1
+  Guid:
+    Data1: -1633632841
+    Data2: 1086493064
+    Data3: -1940968821
+    Data4: 1242309356
+  Banks:
+  - {fileID: 8414361909588890603}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1507
+--- !u!114 &7358479239466004992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/ReverbEffect
+  m_EditorClassIdentifier: 
+  Path: snapshot:/ReverbEffect
+  Guid:
+    Data1: -415436712
+    Data2: 1283872037
+    Data3: -1136975430
+    Data4: 357256600
+  Banks:
+  - {fileID: 972341072865248132}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &8414361909588890603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: ../FMOD/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638811059077884019
+  FileSizes:
+  - Name: Desktop
+    Value: 67104
+  Exists: 1

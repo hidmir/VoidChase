@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using VoidChase.GameLoop.Pause;
+using VoidChase.PauseManagement;
 
 namespace VoidChase.GameLoop
 {

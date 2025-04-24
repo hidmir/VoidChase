@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using VoidChase.GameLoop;
-using VoidChase.GameLoop.Pause;
+using VoidChase.PauseManagement;
 
 namespace VoidChase.UI.GameView
 {

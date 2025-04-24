@@ -1,6 +1,6 @@
 using UnityEngine;
 using VoidChase.Environment.GameSpeed;
-using VoidChase.GameLoop.Pause;
+using VoidChase.PauseManagement;
 using VoidChase.Utilities;
 
 namespace VoidChase.MovingObjects
@@ -59,7 +59,12 @@ namespace VoidChase.MovingObjects
 
 		private void OnEnable ()
 		{
-			((IPausable)this).RegisterPausable();
+			((IPausable) this).RegisterPausable();
+		}
+
+		private void Start ()
+		{
+			Spawner.Initialize();
 		}
 
 		private void OnDisable ()

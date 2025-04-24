@@ -70,3 +70,18 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 [Aa]ssets/[Ss]treamingAssets/aa.meta
 [Aa]ssets/[Ss]treamingAssets/aa/*
+
+# FMOD UNITY
+!/VoidChase/Assets/Plugins/FMOD/**/lib/*
+!/VoidChase/Assets/Gizmos/FMOD/*
+!/VoidChase/Assets/Editor Default Resources/FMOD/*
+!/VoidChase/Assets/Plugins/FMOD/Cache/*
+!/VoidChase/Assets/StreamingAssets/**/*.bank
+!/VoidChase/Assets/StreamingAssets/**/*.bank.meta
+fmod_editor.log
+
+# FMOD STUDIO PROJECT
+!/FMOD/Build/
+/FMOD/.user
+/FMOD/.unsaved
+/FMOD/.cache

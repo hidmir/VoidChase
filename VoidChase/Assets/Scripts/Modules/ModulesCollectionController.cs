@@ -17,6 +17,14 @@ namespace VoidChase.Modules
 			}
 		}
 
+		public void DeInitializeModules ()
+		{
+			foreach (BaseModule module in ModulesCollection)
+			{
+				module.DeInitialize();
+			}
+		}
+
 		private void Reset ()
 		{
 			ModulesCollection = GetComponents<BaseModule>().ToList();

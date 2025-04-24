@@ -3,9 +3,9 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using VoidChase.Spaceship.Input;
-using VoidChase.Spaceship.Weapons;
 using VoidChase.Utilities;
 using VoidChase.Utilities.Dropdown;
+using VoidChase.Weapons;
 
 namespace VoidChase.Spaceship
 {
@@ -14,6 +14,10 @@ namespace VoidChase.Spaceship
 		[field: Header(InspectorNames.EVENTS_NAME)]
 		[field: SerializeField]
 		public UnityEvent<string> WeaponChanged { get; set; }
+
+		[field: Header(InspectorNames.REFERENCES_NAME)]
+		[field: SerializeField]
+		public WeaponsProvider BoundWeaponsProvider { get; set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
 		[field: SerializeField, Dropdown(StringCollectionNames.WEAPONS_COLLECTION_NAME)]
@@ -28,7 +32,7 @@ namespace VoidChase.Spaceship
 
 		public void SelectWeapon (string weaponName)
 		{
-			if (WeaponsProvider.Instance.TryGetWeapon(weaponName, out BaseWeapon weapon))
+			if (BoundWeaponsProvider.TryGetWeapon(weaponName, out BaseWeapon weapon))
 			{
 				CurrentWeaponName = weaponName;
 				currentWeapon = weapon;

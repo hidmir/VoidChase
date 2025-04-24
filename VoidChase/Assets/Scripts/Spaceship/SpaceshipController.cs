@@ -1,7 +1,6 @@
 using UnityEngine;
-using VoidChase.GameLoop;
-using VoidChase.GameLoop.Pause;
 using VoidChase.Modules;
+using VoidChase.PauseManagement;
 
 namespace VoidChase.Spaceship
 {
@@ -13,11 +12,6 @@ namespace VoidChase.Spaceship
 		private ShootingController ShootingController { get; set; }
 		[field: SerializeField]
 		private ModulesCollectionController ModulesCollectionController { get; set; }
-
-		public void KillPlayer ()
-		{
-			GameLoopManager.Instance.EndGameWithFailure();
-		}
 
 		public void OnPause ()
 		{

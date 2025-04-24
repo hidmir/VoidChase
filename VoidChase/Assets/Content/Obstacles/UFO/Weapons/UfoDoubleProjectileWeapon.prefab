@@ -1,0 +1,119 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4186131481550524368
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2008471163861305865, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <Pool>k__BackingField.<PrefabCollection>k__BackingField.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2008471163861305865, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <Pool>k__BackingField.<PrefabCollection>k__BackingField.Array.data[0]
+      value: 
+      objectReference: {fileID: 5286836937027937022, guid: 2b7926b6a6f8ca84291e187c43103bce, type: 3}
+    - target: {fileID: 2143136446315988171, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143136446315988171, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143136446315988171, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143136446315988171, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143136446315988171, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143136446315988171, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143136446315988171, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143136446315988171, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143136446315988171, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2143136446315988171, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254569115093372899, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <ProjectilesDataCollection>k__BackingField.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254569115093372899, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <ProjectilesDataCollection>k__BackingField.Array.data[0].<Direction>k__BackingField.x
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254569115093372899, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <ProjectilesDataCollection>k__BackingField.Array.data[0].<Direction>k__BackingField.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254569115093372899, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <ProjectilesDataCollection>k__BackingField.Array.data[1].<Direction>k__BackingField.x
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254569115093372899, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <ProjectilesDataCollection>k__BackingField.Array.data[1].<Direction>k__BackingField.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254569115093372899, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <ProjectilesDataCollection>k__BackingField.Array.data[2].<Direction>k__BackingField.x
+      value: -0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254569115093372899, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <ProjectilesDataCollection>k__BackingField.Array.data[2].<Direction>k__BackingField.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254569115093372899, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <ProjectilesDataCollection>k__BackingField.Array.data[0].<PositionOffset>k__BackingField.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254569115093372899, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <ProjectilesDataCollection>k__BackingField.Array.data[0].<PositionOffset>k__BackingField.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254569115093372899, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <ProjectilesDataCollection>k__BackingField.Array.data[1].<PositionOffset>k__BackingField.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254569115093372899, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <ProjectilesDataCollection>k__BackingField.Array.data[1].<PositionOffset>k__BackingField.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254569115093372899, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <ProjectilesDataCollection>k__BackingField.Array.data[2].<PositionOffset>k__BackingField.x
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5254569115093372899, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: <ProjectilesDataCollection>k__BackingField.Array.data[2].<PositionOffset>k__BackingField.y
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6761524613659964965, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
+      propertyPath: m_Name
+      value: UfoDoubleProjectileWeapon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9fbbf31985e76984d9fcae58ac9e03f8, type: 3}
