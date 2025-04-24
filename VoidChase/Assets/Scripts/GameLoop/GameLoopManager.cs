@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using VoidChase.PauseManagement;
 using VoidChase.Player;
@@ -25,7 +26,7 @@ namespace VoidChase.GameLoop
 		[field: SerializeField]
 		private float PlayerVictoryAnimationTime { get; set; } = 3.0f;
 		[field: SerializeField]
-		private float PlayerVictoryAnimationSpeed { get; set; } = 0.004f;
+		private float PlayerVictoryAnimationDistance { get; set; } = 20.0f;
 
 		public float GetLevelProgress => BoundLevelProgressController.GetProgress();
 		public bool IsEndedWithSuccess { get; private set; }
@@ -66,13 +67,13 @@ namespace VoidChase.GameLoop
 		{
 			Transform playerModel = CurrentPlayerReferences.PlayerModel.transform;
 			CurrentPlayerReferences.ThrusterFlameImage.forceRenderingOff = false;
-			float timeSinceAnimationStart = 0.0f;
 
-			while (timeSinceAnimationStart <= PlayerVictoryAnimationTime)
+			Tween tween = playerModel
+				.DOMoveY(playerModel.position.y + PlayerVictoryAnimationDistance, PlayerVictoryAnimationTime)
+				.SetEase(Ease.Linear);
+
+			while (tween.IsActive() && tween.IsPlaying())
 			{
-				playerModel.Translate(Vector2.up * PlayerVictoryAnimationSpeed);
-				timeSinceAnimationStart += Time.deltaTime;
-
 				yield return null;
 			}
 
@@ -85,6 +86,7 @@ namespace VoidChase.GameLoop
 			CurrentPlayerReferences.PlayerModel.SetActive(false);
 			ParticleSystem playerDestructionEffect = CurrentPlayerReferences.DestructionEffect;
 			playerDestructionEffect.Play();
+			CurrentPlayerReferences.DestructionAudio.Play();
 
 			yield return new WaitWhile(IsDestructionEffectPlaying);
 

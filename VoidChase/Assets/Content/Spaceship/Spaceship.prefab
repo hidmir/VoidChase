@@ -159,6 +159,7 @@ Transform:
   - {fileID: 3879350000063055645}
   - {fileID: 805305160473449862}
   - {fileID: 5943316504939650408}
+  - {fileID: 2154652978239946136}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1241705959456186630
@@ -494,6 +495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <DestructionEffect>k__BackingField: {fileID: 4195025209273548672}
+  <DestructionAudio>k__BackingField: {fileID: 7337142694779419868}
   <PlayerModel>k__BackingField: {fileID: 4474105752538100447}
   <ThrusterFlameImage>k__BackingField: {fileID: 5517762186810340375}
 --- !u!1 &5616180540441187085
@@ -631,6 +633,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ScoreDifference>k__BackingField: -5
+--- !u!1 &9033026910199659028
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2154652978239946136}
+  - component: {fileID: 7337142694779419868}
+  m_Layer: 0
+  m_Name: DestructionAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2154652978239946136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033026910199659028}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 365028535777279767}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7337142694779419868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9033026910199659028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1633632841
+      Data2: 1086493064
+      Data3: -1940968821
+      Data4: 1242309356
+    Path: event:/SFX/SpaceshipDestruction1
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &3753356633520147386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -685,7 +750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8209486714243039572, guid: 0250866e014235a43afaade79aa7d330, type: 3}
       propertyPath: m_Name
-      value: DestructionPartcles
+      value: DestructionParticles
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
