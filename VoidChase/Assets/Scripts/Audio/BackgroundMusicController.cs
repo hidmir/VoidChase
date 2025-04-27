@@ -10,7 +10,7 @@ namespace VoidChase.Audio
 		[field: SerializeField]
 		private StudioEventEmitter BoundAudio { get; set; }
 
-		private EventInstance CurrentSound => BoundAudio.EventInstance;
+		public EventInstance CurrentSound => BoundAudio.EventInstance;
 
 		public void OnPause ()
 		{
