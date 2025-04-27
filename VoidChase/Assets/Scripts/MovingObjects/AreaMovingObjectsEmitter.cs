@@ -1,7 +1,9 @@
 using UnityEngine;
+using VoidChase.Audio;
 using VoidChase.Environment.GameSpeed;
 using VoidChase.PauseManagement;
 using VoidChase.Utilities;
+using VoidChase.Utilities.Attributes;
 
 namespace VoidChase.MovingObjects
 {
@@ -14,6 +16,16 @@ namespace VoidChase.MovingObjects
 		private GameSpeedSO GameSpeedSO { get; set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
+		[field: SerializeField]
+		private EmitterStartTrigger StartTrigger { get; set; }
+		[field: SerializeField, ShowIf(nameof(IsStartTriggerAudio)), Min(0)]
+		private int StartAudioEventNumber { get; set; }
+		[field: SerializeField]
+		private EmitterEndTrigger EndTrigger { get; set; }
+		[field: SerializeField, ShowIf(nameof(IsEndTriggerAudio)), Min(0)]
+		private int EndAudioEventNumber { get; set; }
+
+		[field: Space]
 		[field: SerializeField]
 		private float SpawningFrequency { get; set; } = 1.0f;
 		[field: SerializeField]
@@ -31,22 +43,26 @@ namespace VoidChase.MovingObjects
 		[field: SerializeField]
 		private float VisualizationWidth { get; set; } = 0.5f;
 
+		private bool IsStartTriggerAudio => StartTrigger is EmitterStartTrigger.AudioEvent;
+		private bool IsEndTriggerAudio => EndTrigger is EmitterEndTrigger.AudioEvent;
+
 		private float timeSinceLastSpawning;
-		private bool isSpawningEnabled = true;
+		private bool isSpawningEnabled;
+		private bool isPaused;
 
 		public void OnPause ()
 		{
-			isSpawningEnabled = false;
+			isPaused = true;
 		}
 
 		public void OnResume ()
 		{
-			isSpawningEnabled = true;
+			isPaused = false;
 		}
 
 		protected virtual void Update ()
 		{
-			if (isSpawningEnabled)
+			if (isSpawningEnabled && !isPaused)
 			{
 				SpawnMovingObjects();
 			}
@@ -64,12 +80,46 @@ namespace VoidChase.MovingObjects
 
 		private void Start ()
 		{
+			if (StartTrigger is EmitterStartTrigger.StartUnityFunction)
+			{
+				isSpawningEnabled = true;
+			}
+
 			Spawner.Initialize();
+			AttachToEvents();
 		}
 
 		private void OnDisable ()
 		{
 			((IPausable) this).UnregisterPausable();
+		}
+
+		private void OnDestroy ()
+		{
+			DetachFromEvents();
+		}
+
+		private void AttachToEvents ()
+		{
+			AudioEventsController.AudioEventInvoked += OnAudioEventInvoked;
+		}
+
+		private void DetachFromEvents ()
+		{
+			AudioEventsController.AudioEventInvoked -= OnAudioEventInvoked;
+		}
+
+		private void OnAudioEventInvoked (int eventIndex)
+		{
+			if (IsStartTriggerAudio && StartAudioEventNumber == eventIndex)
+			{
+				isSpawningEnabled = true;
+			}
+
+			if (IsEndTriggerAudio && EndAudioEventNumber == eventIndex)
+			{
+				isSpawningEnabled = false;
+			}
 		}
 
 		private void SpawnMovingObjects ()
