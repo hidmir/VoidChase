@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using VoidChase.Utilities;
+using VoidChase.Utilities.Attributes;
 
 namespace VoidChase.MovingObjects
 {
@@ -18,6 +19,8 @@ namespace VoidChase.MovingObjects
 		private float LifeTime { get; set; } = 5.0f;
 		[field: SerializeField]
 		private bool SetRotationBasedOnDirection { get; set; }
+		[field: SerializeField, ShowIf(nameof(SetRotationBasedOnDirection))]
+		private bool InvertRotation { get; set; }
 
 		[NonSerialized]
 		public bool isMovementEnabled;
@@ -36,7 +39,7 @@ namespace VoidChase.MovingObjects
 
 			if (SetRotationBasedOnDirection)
 			{
-				transform.up = direction;
+				transform.up = !InvertRotation ? direction : direction * -1.0f;
 			}
 
 			cachedDirection = direction;
