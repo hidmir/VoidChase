@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 646cfe53799736d49be6e3c36a144de0, type: 3}
+  m_Name: FrequencyBandSettings
+  m_EditorClassIdentifier: 
+  <FrequencyBandDataCollection>k__BackingField:
+  - <Name>k__BackingField: SubBass
+    <MinFrequency>k__BackingField: 20
+    <MaxFrequency>k__BackingField: 60
+  - <Name>k__BackingField: Bass
+    <MinFrequency>k__BackingField: 60
+    <MaxFrequency>k__BackingField: 140
+  - <Name>k__BackingField: LowMid
+    <MinFrequency>k__BackingField: 140
+    <MaxFrequency>k__BackingField: 400
+  - <Name>k__BackingField: Mid
+    <MinFrequency>k__BackingField: 400
+    <MaxFrequency>k__BackingField: 1000
+  - <Name>k__BackingField: UpperMid
+    <MinFrequency>k__BackingField: 1000
+    <MaxFrequency>k__BackingField: 3000
+  - <Name>k__BackingField: Presence
+    <MinFrequency>k__BackingField: 3000
+    <MaxFrequency>k__BackingField: 6000
+  - <Name>k__BackingField: Brilliance
+    <MinFrequency>k__BackingField: 6000
+    <MaxFrequency>k__BackingField: 12000
+  - <Name>k__BackingField: Air
+    <MinFrequency>k__BackingField: 12000
+    <MaxFrequency>k__BackingField: 20000
