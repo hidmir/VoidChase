@@ -5,5 +5,6 @@ namespace VoidChase.Utilities.Dropdown
 		public const string PanelsCollectionName = "PanelsNames";
 		public const string WeaponsCollectionName = "WeaponsNames";
 		public const string LevelsCollectionName = "LevelsNames";
+		public const string FrequencyBandsCollectionName = "FrequencyBandNames";
 	}
 }
