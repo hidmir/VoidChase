@@ -10,7 +10,7 @@ namespace VoidChase.Score
 		public static event Action<int> ScoreChanged = delegate { };
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
-		[field: SerializeField, Dropdown(StringCollectionNames.LEVELS_COLLECTION_NAME)]
+		[field: SerializeField, Dropdown(StringCollectionNames.LevelsCollectionName)]
 		private string LevelName { get; set; }
 		[field: SerializeField]
 		private bool CanBeNegative { get; set; }

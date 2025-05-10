@@ -22,7 +22,7 @@ namespace VoidChase.UI.LevelSelection
 		private Button BoundButton { get; set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
-		[field: SerializeField, Dropdown(StringCollectionNames.LEVELS_COLLECTION_NAME)]
+		[field: SerializeField, Dropdown(StringCollectionNames.LevelsCollectionName)]
 		private string LevelName { get; set; }
 
 		public void UpdateDisplayedScore ()

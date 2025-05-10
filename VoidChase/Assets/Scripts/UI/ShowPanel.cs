@@ -5,7 +5,7 @@ namespace VoidChase.UI
 {
 	public class ShowPanel : MonoBehaviour
 	{
-		[field: SerializeField, Dropdown(StringCollectionNames.PANELS_COLLECTION_NAME)]
+		[field: SerializeField, Dropdown(StringCollectionNames.PanelsCollectionName)]
 		private string PanelName { get; set; }
 		[field: SerializeField]
 		private bool ShowAtStart { get; set; }

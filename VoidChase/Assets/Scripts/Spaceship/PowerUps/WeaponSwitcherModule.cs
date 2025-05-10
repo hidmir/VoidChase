@@ -13,7 +13,7 @@ namespace VoidChase.Spaceship.PowerUps
 		public UnityEvent WeaponSwitched { get; private set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
-		[field: SerializeField, Dropdown(StringCollectionNames.WEAPONS_COLLECTION_NAME)]
+		[field: SerializeField, Dropdown(StringCollectionNames.WeaponsCollectionName)]
 		private string WeaponName { get; set; }
 
 		protected virtual void OnTriggerEnter2D (Collider2D other)

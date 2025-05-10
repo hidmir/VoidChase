@@ -7,7 +7,7 @@ namespace VoidChase.UI
 	[Serializable]
 	public class PanelData
 	{
-		[field: SerializeField, Dropdown(StringCollectionNames.PANELS_COLLECTION_NAME)]
+		[field: SerializeField, Dropdown(StringCollectionNames.PanelsCollectionName)]
 		public string Name { get; private set; }
 		[field: SerializeField]
 		public BasePanelController ObjectReference { get; private set; }

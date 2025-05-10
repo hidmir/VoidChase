@@ -7,7 +7,7 @@ namespace VoidChase.Weapons
 	[Serializable]
 	public class WeaponData
 	{
-		[field: SerializeField, Dropdown(StringCollectionNames.WEAPONS_COLLECTION_NAME)]
+		[field: SerializeField, Dropdown(StringCollectionNames.WeaponsCollectionName)]
 		public string Name { get; private set; }
 		[field: SerializeField]
 		public BaseWeapon ObjectReference { get; private set; }

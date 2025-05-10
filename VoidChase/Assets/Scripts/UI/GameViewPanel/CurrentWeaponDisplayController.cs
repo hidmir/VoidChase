@@ -33,7 +33,7 @@ namespace VoidChase.UI.GameView
 		[Serializable]
 		private class WeaponVisualizationData
 		{
-			[field: SerializeField, Dropdown(StringCollectionNames.WEAPONS_COLLECTION_NAME)]
+			[field: SerializeField, Dropdown(StringCollectionNames.WeaponsCollectionName)]
 			public string WeaponName { get; private set; }
 			[field: SerializeField]
 			public GameObject BoundObject { get; private set; }

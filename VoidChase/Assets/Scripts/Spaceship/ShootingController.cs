@@ -20,7 +20,7 @@ namespace VoidChase.Spaceship
 		public WeaponsProvider BoundWeaponsProvider { get; set; }
 
 		[field: Header(InspectorNames.SETTINGS_NAME)]
-		[field: SerializeField, Dropdown(StringCollectionNames.WEAPONS_COLLECTION_NAME)]
+		[field: SerializeField, Dropdown(StringCollectionNames.WeaponsCollectionName)]
 		public string InitialWeapon { get; private set; }
 
 		public string CurrentWeaponName { get; private set; }
